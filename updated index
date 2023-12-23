@@ -1908,8 +1908,16 @@ const handleUserInput = async (noteContent) => {
 
     };
     //gptvideo.src = 'vid-whatsbroughtyouin.mp4';
-    document.getElementById("mutedmp4_src").src = "videos/vid-whatsbroughtyouin.mp4";
+    document.getElementById("mutedmp4_src").src = "videos/inlondon.mp4";
     gptvideo.load();
+
+    gptvideo.onended =  function(e) {
+      recognition.start();  document.getElementById('listeninggif').style.display = 'unset';    document.getElementById('stop-consultation-btn').style.display = 'unset';   document.getElementById('replayButton').style.display = 'unset';   document.getElementById('home').style.display = 'unset'; actionTriggered = false;
+      
+      document.getElementById('myVideo').style.display = 'unset';
+      document.getElementById('mutedVideo').style.display = 'none';
+    };
+  
 
   });
   await Promise.all([responsePromise, videoPromise]);
