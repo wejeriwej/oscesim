@@ -602,6 +602,12 @@ var response_question = "";
 recognition.continuous = true;
 
 
+var silenceTimeout = null;
+
+// Function to reset the silence timeout
+
+  
+  
 
 
 
@@ -610,9 +616,10 @@ recognition.continuous = true;
 // This block is called every time the Speech APi captures a line.
 recognition.onresult = function(event) {
 
- 
- 
-
+  if(silenceTimeout){
+  clearTimeout(silenceTimeout);
+  silenceTimeout = null;
+  }
 
   
   // event is a SpeechRecognitionEvent object.
@@ -637,8 +644,14 @@ recognition.onresult = function(event) {
   }
 
 
+  silenceTimeout = setTimeout(function() {
+    // Trigger pause action after 4 seconds of continuous silence
+    pauseBtn.click();
+  }, 5000);//change this to 12-15 seconds in the future
 
 };//end of recognition.onresult
+
+
 
 
 
@@ -654,14 +667,14 @@ let actionTriggered = false;
 
   document.getElementById("executeButton").addEventListener("click", function() {
         onesecdelaybeforestoprecog();
-        actionTriggered = true;
+        actionTriggered = true; clearTimeout(silenceTimeout);
         });
 
 
   document.addEventListener("keydown", function (event) {
     if (event.key === "Enter" && !actionTriggered) {
        onesecdelaybeforestoprecog();
-       actionTriggered = true;
+       actionTriggered = true; clearTimeout(silenceTimeout);
        document.getElementById("executeButton").removeEventListener("click", arguments.callee);    document.removeEventListener("keydown", handleKeyDown);
     }   });
 
@@ -671,7 +684,7 @@ let actionTriggered = false;
 var onesecdelay = null;
   function onesecdelaybeforestoprecog() {
     onesecdelay = setTimeout(function () {
-      recognition.stop(); executeActionAfterDelay();
+      recognition.stop(); executeActionAfterDelay(); clearTimeout(silenceTimeout);
     }, 1000);
   }
 //////
@@ -682,7 +695,7 @@ var timerforsubmitting = null;
 
   function executeActionAfterDelay() {
     timerforsubmitting = setTimeout(function () {
-      submitquestion();
+      submitquestion(); clearTimeout(silenceTimeout);
     }, 1500);
   }
 
