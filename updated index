@@ -31,7 +31,7 @@ var noteContent = '';
 //For the replay video Button!!
 document.getElementById('replayButton').addEventListener('click', function() {
   replayVideo();
-  document.getElementById('replayButton').style.display = 'none'; recognition.stop();  document.getElementById('listeninggif').style.display = 'none';    document.getElementById('stop-consultation-btn').style.display = 'none';  document.getElementById('home').style.display = 'none';
+  document.getElementById('replayButton').style.display = 'none'; recognition.stop();  document.getElementById('listeninggif').style.display = 'none';    document.getElementById('stop-consultation-btn').style.display = 'none';  document.getElementById('home').style.display = 'none'; document.getElementById('executeButton').style.display = 'none';
     
 });
 
@@ -42,7 +42,7 @@ function replayVideo() {
   videoElement.play(); // Start playing the video
   document.getElementById('myVideo').onended = function(e) {
     recognition.start();  document.getElementById('listeninggif').style.display = 'unset';    document.getElementById('stop-consultation-btn').style.display = 'unset';    document.getElementById('home').style.display = 'unset';
-    document.getElementById('replayButton').style.display = 'unset';
+    document.getElementById('replayButton').style.display = 'unset';  document.getElementById('executeButton').style.display = 'unset';
   }}
 
 
@@ -66,7 +66,9 @@ function startFunction() {
     readOutLoud("Go");
 
   //readOutLoud("Enable the microphone and then start speaking, and once you've asked your question double press the ENTER key");
-  recognition.start();  document.getElementById('listeninggif').style.display = 'unset'; document.getElementById('stop-consultation-btn').style.display = 'unset';    document.getElementById('replayButton').style.display = 'unset';  document.getElementById('home').style.display = 'unset';
+  recognition.start();  document.getElementById('listeninggif').style.display = 'unset'; 
+  document.getElementById('stop-consultation-btn').style.display = 'unset'; document.getElementById('executeButton').style.display = 'unset';
+  document.getElementById('replayButton').style.display = 'unset';  document.getElementById('home').style.display = 'unset';
 
 
   }
@@ -108,7 +110,7 @@ function initialstopConsultation(){
   document.getElementById('move-onto-questions-btn').style.display = 'unset';//this button goes to the first question
   document.getElementById('end-consultation-btn').style.display = 'unset';
 
-  recognition.stop(); document.getElementById('listeninggif').style.display = 'none';   document.getElementById('replayButton').style.display = 'none';   document.getElementById('stop-consultation-btn').style.display = 'none';  document.getElementById('home').style.display = 'none';
+  recognition.stop(); document.getElementById('listeninggif').style.display = 'none';   document.getElementById('replayButton').style.display = 'none';   document.getElementById('stop-consultation-btn').style.display = 'none';  document.getElementById('home').style.display = 'none'; document.getElementById('executeButton').style.display = 'none';
   document.getElementById('pause-countdown').style.display = 'none';
   document.getElementById('countdown-value').style.display = 'none';
 
@@ -127,7 +129,7 @@ function endConsultation(){
   document.getElementById('move-onto-questions-btn').style.display = 'none';
 
   document.getElementById('myVideo').pause();
-  recognition.stop(); document.getElementById('listeninggif').style.display = 'none';   document.getElementById('replayButton').style.display = 'none';   document.getElementById('stop-consultation-btn').style.display = 'none';
+  recognition.stop(); document.getElementById('listeninggif').style.display = 'none';   document.getElementById('replayButton').style.display = 'none';   document.getElementById('stop-consultation-btn').style.display = 'none'; document.getElementById('executeButton').style.display = 'none';
   recognition1.stop(); recognition1.stop(); recognition_differentials.stop(); recognition_investigations.stop(); recognition_riskfactors.stop(); recognition_treatments.stop();
 
   document.getElementById('examinations').style.display = 'none';
@@ -182,7 +184,7 @@ THIS NEXT PART IS JUST TO MAKE THE ENDCONSULTATION BUTTON STILL SUBMIT THE ANSWE
 
     var summarygender =  $('#summarygender'); var summarygender1 = $('#summarygender1');
         if (summaryreview.includes("male")||summaryreview.includes("man")||summaryreview.includes("bloke")){
-        summarygender.text(""); summarygender1.text("● Gender");
+        summarygender.text(""); summarygender1.text("● sGender");
         summarygender1.css('color', 'rgb(0, 0, 0)');
   }
   }, 2000);
@@ -422,12 +424,12 @@ pauseBtn.addEventListener("click", function() {
     pauseBtn.style.top = '50%'; pauseBtn.style.left = '50%'; pauseBtn.style.transform = 'translate(-50%, -50%)';
     pauseBtn.style.backgroundImage = "url('play-button-black-and-white.png')";
 
-    myVideo.pause(); recognition.stop(); document.getElementById('listeninggif').style.display = 'none';   document.getElementById('replayButton').style.display = 'none';   document.getElementById('stop-consultation-btn').style.display = 'none';   document.getElementById('home').style.display = 'none';
+    myVideo.pause(); recognition.stop(); document.getElementById('listeninggif').style.display = 'none';   document.getElementById('replayButton').style.display = 'none';   document.getElementById('stop-consultation-btn').style.display = 'none';   document.getElementById('home').style.display = 'none'; document.getElementById('executeButton').style.display = 'none';
 
   } else {
     timer = setInterval(updateTimeLeft, 1000);
     pauseBtn.innerHTML = ""; pauseBtn.style.fontWeight = "normal"; pauseBtn.style.fontSize = "15px"; pauseBtn.style.height = '35px'; pauseBtn.style.padding = '10px 20px';
-    recognition.start(); document.getElementById('listeninggif').style.display = 'unset'; document.getElementById('stop-consultation-btn').style.display = 'unset';
+    recognition.start(); document.getElementById('listeninggif').style.display = 'unset'; document.getElementById('stop-consultation-btn').style.display = 'unset'; document.getElementById('executeButton').style.display = 'unset';
     pauseBtn.style.backgroundImage = "url('pause_button_black_and_white-removebg-preview.png')"
 
     pauseBtn.style.top = ''; pauseBtn.style.left = ''; pauseBtn.style.transform = ''; // Reset the position property to its default value
@@ -443,7 +445,7 @@ pauseBtn.addEventListener("click", function() {
 function homeButton() {
   document.getElementById('taking-history-section').style.display = 'unset';
   document.getElementById('taking-history-section-part2').style.display = 'unset';
-  recognition.stop(); document.getElementById('listeninggif').style.display = 'none';   document.getElementById('replayButton').style.display = 'none';   document.getElementById('stop-consultation-btn').style.display = 'none';
+  recognition.stop(); document.getElementById('listeninggif').style.display = 'none';   document.getElementById('replayButton').style.display = 'none';   document.getElementById('stop-consultation-btn').style.display = 'none'; document.getElementById('executeButton').style.display = 'none';
   
   document.getElementById('fullscreenvideobackground').style.display = 'unset';
   document.body.style.backgroundColor = 'rgb(209, 228, 236)';
@@ -668,6 +670,7 @@ let actionTriggered = false;
   document.getElementById("executeButton").addEventListener("click", function() {
         onesecdelaybeforestoprecog();
         actionTriggered = true; clearTimeout(silenceTimeout);
+        document.getElementById('listeninggif').style.display = 'none';    document.getElementById('stop-consultation-btn').style.display = 'none';   document.getElementById('replayButton').style.display = 'none';   document.getElementById('home').style.display = 'none'; document.getElementById('executeButton').style.display = 'none';
         });
 
 
@@ -675,8 +678,10 @@ let actionTriggered = false;
     if (event.key === "Enter" && !actionTriggered) {
        onesecdelaybeforestoprecog();
        actionTriggered = true; clearTimeout(silenceTimeout);
+       document.getElementById('listeninggif').style.display = 'none';    document.getElementById('stop-consultation-btn').style.display = 'none';   document.getElementById('replayButton').style.display = 'none';   document.getElementById('home').style.display = 'none'; document.getElementById('executeButton').style.display = 'none';
        document.getElementById("executeButton").removeEventListener("click", arguments.callee);    document.removeEventListener("keydown", handleKeyDown);
-    }   });
+       
+      }   });
 
 
 
@@ -729,7 +734,7 @@ var timerforsubmitting = null;
   
 
   recognition.stop();
-  document.getElementById('listeninggif').style.display = 'none';   document.getElementById('replayButton').style.display = 'none';   document.getElementById('stop-consultation-btn').style.display = 'none';  document.getElementById('home').style.display = 'none';
+  document.getElementById('listeninggif').style.display = 'none';   document.getElementById('replayButton').style.display = 'none';   document.getElementById('stop-consultation-btn').style.display = 'none';  document.getElementById('home').style.display = 'none'; document.getElementById('executeButton').style.display = 'none';
 
 
 
@@ -1669,7 +1674,7 @@ const handleUserInput = async (noteContent) => {
     gptvideo.load();
 
     gptvideo.onended =  function(e) {
-      recognition.start();  document.getElementById('listeninggif').style.display = 'unset';    document.getElementById('stop-consultation-btn').style.display = 'unset';   document.getElementById('replayButton').style.display = 'unset';   document.getElementById('home').style.display = 'unset'; actionTriggered = false;
+      recognition.start();  document.getElementById('listeninggif').style.display = 'unset';    document.getElementById('stop-consultation-btn').style.display = 'unset';   document.getElementById('replayButton').style.display = 'unset';   document.getElementById('home').style.display = 'unset'; document.getElementById('executeButton').style.display = 'unset'; actionTriggered = false;
       
       document.getElementById('myVideo').style.display = 'unset';
       document.getElementById('mutedVideo').style.display = 'none';
@@ -1688,7 +1693,7 @@ const handleUserInput = async (noteContent) => {
     const gptvideo = document.getElementById('mutedVideo');
     gptvideo.pause(); // Pause the video after the speech synthesis finishes
     //gptvideo.volume = 1;
-    recognition.start();  document.getElementById('listeninggif').style.display = 'unset'; document.getElementById('stop-consultation-btn').style.display = 'unset';
+    recognition.start();  document.getElementById('listeninggif').style.display = 'unset'; document.getElementById('stop-consultation-btn').style.display = 'unset'; document.getElementById('executeButton').style.display = 'unset';
     document.getElementById('myVideo').style.display = 'unset';
     document.getElementById('mutedVideo').style.display = 'none';
     
@@ -1718,7 +1723,11 @@ handleUserInput(userInput);
 
 function allifsaction(){
   document.getElementById("myVideo").load(); document.getElementById('myVideo').onended = function(e) {
-    recognition.start();  document.getElementById('listeninggif').style.display = 'unset';    document.getElementById('stop-consultation-btn').style.display = 'unset';   document.getElementById('replayButton').style.display = 'unset';   document.getElementById('home').style.display = 'unset'; actionTriggered = false;
+    recognition.start();  document.getElementById('listeninggif').style.display = 'unset';    
+    document.getElementById('stop-consultation-btn').style.display = 'unset';   
+    document.getElementById('replayButton').style.display = 'unset';   document.getElementById('home').style.display = 'unset'; 
+    document.getElementById('executeButton').style.display = 'unset';   
+    actionTriggered = false;
   }
 }
 
