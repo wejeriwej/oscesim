@@ -670,7 +670,7 @@ let actionTriggered = false;
   document.getElementById("executeButton").addEventListener("click", function() {
         onesecdelaybeforestoprecog();
         actionTriggered = true; clearTimeout(silenceTimeout);
-        document.getElementById('listeninggif').style.display = 'none';    document.getElementById('stop-consultation-btn').style.display = 'none';   document.getElementById('replayButton').style.display = 'none';   document.getElementById('home').style.display = 'none'; document.getElementById('executeButton').style.display = 'none';
+        document.getElementById('listeninggif').style.display = 'none';    document.getElementById('stop-consultation-btn').style.display = 'none';   document.getElementById('replayButton').style.display = 'none';   document.getElementById('home').style.display = 'none'; document.getElementById('executeButton').style.display = 'none'; document.getElementById('loadingcircle').style.display = 'unset'; 
         });
 
 
@@ -678,7 +678,7 @@ let actionTriggered = false;
     if (event.key === "Enter" && !actionTriggered) {
        onesecdelaybeforestoprecog();
        actionTriggered = true; clearTimeout(silenceTimeout);
-       document.getElementById('listeninggif').style.display = 'none';    document.getElementById('stop-consultation-btn').style.display = 'none';   document.getElementById('replayButton').style.display = 'none';   document.getElementById('home').style.display = 'none'; document.getElementById('executeButton').style.display = 'none';
+       document.getElementById('listeninggif').style.display = 'none';    document.getElementById('stop-consultation-btn').style.display = 'none';   document.getElementById('replayButton').style.display = 'none';   document.getElementById('home').style.display = 'none'; document.getElementById('executeButton').style.display = 'none'; document.getElementById('loadingcircle').style.display = 'unset';
        document.getElementById("executeButton").removeEventListener("click", arguments.callee);    document.removeEventListener("keydown", handleKeyDown);
        
       }   });
@@ -700,7 +700,7 @@ var timerforsubmitting = null;
 
   function executeActionAfterDelay() {
     timerforsubmitting = setTimeout(function () {
-      submitquestion(); clearTimeout(silenceTimeout);
+      submitquestion(); clearTimeout(silenceTimeout); document.getElementById('loadingcircle').style.display = 'none';
     }, 1500);
   }
 
@@ -917,9 +917,9 @@ var timerforsubmitting = null;
     
     //pain
     
-    else if (noteContent.includes("where")&&(noteContent.includes("pain")||noteContent.includes("discomfort")||noteContent.includes("hurt")
+    else if (noteContent.includes(" where")&&(noteContent.includes("pain")||noteContent.includes("discomfort")||noteContent.includes("hurt")
     )) {
-      //readOutLoud("The pain is in the middle of my chest");
+      //readOutLoud("The pain is in the middle of my chest"); - DON'T REMOVE THE SPACE BEFORE 'WHERE' AS CAN BE 'ANYWHERE (ELSE)'FOR RADIATION OF PAIN
       previousquestion = noteContent;   response_question = "The pain's in the middle of my chest";
       painlocationx = true;
 
