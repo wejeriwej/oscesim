@@ -171,216 +171,11 @@
 
 
 
-/*
-.timer-container {
-  width: 400px;
-  margin: 0 auto;
-}
 
-.timer-background {
-  height: 30px;
-  background-color: #e6e6e6;
-  border-radius: 15px;
-  position: relative;
-}
 
-.timer-bar {
-  height: 100%;
-  background-color: #ff0000;
-  border-radius: 15px;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 0%;
-}
 
-.timer-controls {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
 
-.timer-text {
-  text-align: center;
-  margin-bottom: 30px;
-}
 
-.timer-text p {
-  font-size: 20px;
-  margin-top: 0;
-  margin-bottom: 5px;
-}
-
-#start-button,
-#pause-button {
-  font-size: 16px;
-  padding: 10px;
-  border-radius: 5px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-#start-button:hover,
-#pause-button:hover {
-  background-color: #3e8e41;
-}
-
-#start-button:active,
-#pause-button:active {
-  background-color: #2c6738;
-}
-
-#start-button[disabled],
-#pause-button[disabled] {
-  background-color: grey;
-  cursor: not-allowed;
-}
-
-input[type="range"] {
-  width: 100%;
-  margin: 0 10px;
-}
-
-input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  width: 30px;
-  height: 30px;
-  background-color: #4CAF50;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-input[type="range"]::-moz-range-thumb {
-  width: 30px;
-  height: 30px;
-  background-color: #4CAF50;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-input[type="range"]::-ms-thumb {
-  width: 30px;
-  height: 30px;
-  background-color: #4CAF50;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-input[type="range"]::-webkit-slider-runnable-track {
-  height: 5px;
-  background-color: #b3b3b3;
-  border-radius: 5px;
-}
-
-input[type="range"]::-moz-range-track {
-  height: 5px;
-  background-color: #b3b3b3;
-  border-radius: 5px;
-}
-
-input[type="range"]::-ms-track {
-  height: 5px;
-  background-color: #b3b3b3;
-  border-radius: 5px;
-}
-
-input[type="range"]::-ms-fill-lower {
-  background-color: #4CAF50;
-  border-radius: 5px;
-}
-
-input[type="range"]::-webkit-slider-thumb:hover,
-input[type="range"]::-moz-range-thumb:hover,
-input[type="range"]::-ms-thumb:hover {
-  background-color: #3e8e41;
-}
-
-input[type="range"]::-webkit-slider-thumb:active,
-input[type="range"]::-moz-range-thumb:active,
-input[type="range"]::-ms-thumb:active {
-  background-color: #2c6738;
-}
-*/
-
-/*
-.timer-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 50px auto;
-  width: 300px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-.timer-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  margin-bottom: 20px;
-}
-
-.timer-title {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.timer-duration {
-  display: flex;
-  align-items: center;
-}
-
-.duration-label {
-  font-size: 18px;
-  font-weight: bold;
-  margin-right: 10px;
-}
-
-.duration-value {
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.timer-slider {
-  width: 100%;
-  margin-bottom: 20px;
-}
-
-.timer-controls {
-  display: flex;
-  align-items: center;
-}
-
-.start-btn {
-  font-size: 18px;
-  font-weight: bold;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  padding: 10px;
-  margin-right: 10px;
-  cursor: pointer;
-}
-
-.pause-btn {
-  font-size: 18px;
-  font-weight: bold;
-  background-color: #f44336;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  padding: 10px;
-  cursor: pointer;
-}
-
-*/
 
 
 #logoduringconsultation{
@@ -484,7 +279,14 @@ input[type="range"]::-ms-thumb:active {
 
 
 
+#executeButton{
+  background-color: #ee9bef;
+  position: absolute;
 
+  z-index: 20000;
+  left: 75%;
+  top: 75%;
+}
 
 
 
@@ -571,7 +373,7 @@ input[type="range"]::-ms-thumb:active {
 }
 
 #review-section, #examinations, #summary, #differentials, #investigations, #end-consultation-btn, 
-#move-onto-questions-btn,#stop-consultation-btn,#listeninggif, #riskfactors, #treatments, #replayButton, #home{
+#move-onto-questions-btn,#stop-consultation-btn,#listeninggif, #loadingcircle, #riskfactors, #treatments, #replayButton, #home, #executeButton{
   display:none;
 }
 
@@ -681,6 +483,16 @@ input[type="range"]::-ms-thumb:active {
   z-index: 1;
 
   
+}
+
+#loadingcircle{
+  position: absolute;
+  top: 49.5%;
+  left: 49.5%;
+  opacity: 0.6;
+  z-index: 1;
+  width: 55px;
+  height: 55px;
 }
 
 #home{
