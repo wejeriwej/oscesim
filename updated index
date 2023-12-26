@@ -7,7 +7,10 @@ catch(e) {
   $('.no-browser-support').show();
   $('.app').hide();
 }
- 
+
+
+
+
 var noteTextarea = $('#note-textarea');
 var instructions = $('#recording-instructions');
 var notesList = $('ul#notes');
@@ -15,16 +18,13 @@ var whatforgottosay = $('#whatforgottosay');
  
 var noteContent = '';
 
- 
+let messagebeforeacceptingmic = document.getElementById('messagebeforeacceptingmic');
+
 // Get all notes from previous sessions and display them.
 
 
 //var notes = getAllNotes();
 //renderNotes(notes);
-
-
-
-
 
 
 
@@ -64,12 +64,15 @@ function startFunction() {
 
   document.getElementById('myVideo').onended = function(e) {
     readOutLoud("Go");
+    messagebeforeacceptingmic.style.display = 'unset';
 
   //readOutLoud("Enable the microphone and then start speaking, and once you've asked your question double press the ENTER key");
   recognition.start();  document.getElementById('listeninggif').style.display = 'unset'; 
   document.getElementById('stop-consultation-btn').style.display = 'unset'; document.getElementById('executeButton').style.display = 'unset';
   document.getElementById('replayButton').style.display = 'unset';  document.getElementById('home').style.display = 'unset';
 
+
+  
 
   }
   
@@ -614,9 +617,13 @@ var silenceTimeout = null;
 
 
 
- 
+
+
 // This block is called every time the Speech APi captures a line.
 recognition.onresult = function(event) {
+
+  
+  
 
   if(silenceTimeout){
   clearTimeout(silenceTimeout);
@@ -720,10 +727,63 @@ var timerforsubmitting = null;
                                       }, 8000);
 
                                     ///////////////////////////////////////////////////////////////////////////////////////////////////////--*/
+                                   /* document.getElementById('loadingcircle').style.display = 'none';
+                                    navigator.permissions.query({ name: 'microphone' })
+                                    .then(function(permissionStatus) {
+                                      if (permissionStatus.state === 'granted') {
+                                        document.getElementById('loadingcircle').style.display = 'unset';
+
+                                      } else {
+                                        startButton.addEventListener('click', function() {
+                                          // Request microphone permission when the button is clicked
+                                          navigator.mediaDevices.getUserMedia({ audio: true })//this gets the message asking for permission on the user interface to come back
+                                            .then(function(stream) {
+                                              //resultDisplay.style.display = 'block';
+                                              document.getElementById('loadingcircle').style.display = 'unset';                                            })
+
+                                          });
+                                        }
+                                      })*/
 
 
 
 
+                                      //let executeButton = document.getElementById('executeButton');
+
+                                      
+
+
+
+
+
+                          /*        
+                                      recognition.onend = function() {
+                                        //console.log('Microphone is inactive');
+                                        loadingcircle.style.display = 'none';
+                                      };*/
+                                  
+                                      /*executeButton.addEventListener('click', function() {
+                                        recognition.start();
+                                      });*/
+                                  
+                                      // Check for microphone permission on page load
+                                  /*    navigator.permissions.query({ name: 'microphone' })
+                                    .then(function(permissionStatus) {
+                                      if (permissionStatus.state === 'granted') {
+                                        loadingcircle.style.display = 'unset';
+                                      }
+                                    });*/
+
+
+
+
+
+
+
+
+
+
+                                                                                
 
 
 
@@ -2369,22 +2429,23 @@ let generalhistorycounter = 0;
 
 
 
+/*--------------------Is for bringing up the 'listening icon/microphone icon once the user accepts the use of the mic-------------- */
 
+  let loadingcircle = document.getElementById('delete');
 
-
+  
 recognition.onstart = function() {
-  instructions.text('Microphone is activated. Try speaking into the microphone. Then double click the Submit Question button.');
+  loadingcircle.style.backgroundColor = 'yellow';
+  loadingcircle.style.display = 'unset';
+  messagebeforeacceptingmic.style.display = 'none';
+
 }
- 
-//recognition.onspeechend = function() {
- // instructions.text('DOUBLE CLICK THE SUBMIT BUTTON. (Once you get the response, press the Microphone button to ask another question)');
-//}
- 
-recognition.onerror = function(event) {
-  if(event.error == 'no-speech') {
-    instructions.text('No speech was detected. Try again.');  
-  };
-}
+
+recognition.onend = function() {
+  loadingcircle.style.display = 'none';
+  //loadingcircle.style.backgroundColor = 'red';
+};
+
  
 
 
