@@ -19,6 +19,11 @@ var whatforgottosay = $('#whatforgottosay');
 var noteContent = '';
 
 let messagebeforeacceptingmic = document.getElementById('messagebeforeacceptingmic');
+let initialpromptforpresssubmit = document.getElementById('initialpromptforpresssubmit');
+let emptyif = document.getElementById('emptyif');
+
+
+
 
 // Get all notes from previous sessions and display them.
 
@@ -63,7 +68,7 @@ function startFunction() {
   
 
   document.getElementById('myVideo').onended = function(e) {
-    readOutLoud("Go");
+    //readOutLoud("Go");
     messagebeforeacceptingmic.style.display = 'unset';
 
   //readOutLoud("Enable the microphone and then start speaking, and once you've asked your question double press the ENTER key");
@@ -427,13 +432,13 @@ pauseBtn.addEventListener("click", function() {
     pauseBtn.style.top = '50%'; pauseBtn.style.left = '50%'; pauseBtn.style.transform = 'translate(-50%, -50%)';
     pauseBtn.style.backgroundImage = "url('play-button-black-and-white.png')";
 
-    myVideo.pause(); recognition.stop(); document.getElementById('listeninggif').style.display = 'none';   document.getElementById('replayButton').style.display = 'none';   document.getElementById('stop-consultation-btn').style.display = 'none';   document.getElementById('home').style.display = 'none'; document.getElementById('executeButton').style.display = 'none';
+    myVideo.pause(); recognition.stop(); document.getElementById('listeninggif').style.display = 'none';   document.getElementById('replayButton').style.display = 'none';   document.getElementById('stop-consultation-btn').style.display = 'none';   document.getElementById('home').style.display = 'none'; document.getElementById('executeButton').style.display = 'none'; initialpromptforpresssubmit.style.display = 'none';
 
   } else {
     timer = setInterval(updateTimeLeft, 1000);
     pauseBtn.innerHTML = ""; pauseBtn.style.fontWeight = "normal"; pauseBtn.style.fontSize = "15px"; pauseBtn.style.height = '35px'; pauseBtn.style.padding = '10px 20px';
     recognition.start(); document.getElementById('listeninggif').style.display = 'unset'; document.getElementById('stop-consultation-btn').style.display = 'unset'; document.getElementById('executeButton').style.display = 'unset';
-    pauseBtn.style.backgroundImage = "url('pause_button_black_and_white-removebg-preview.png')"
+    pauseBtn.style.backgroundImage = "url('pause_button_black_and_white-removebg-preview.png')";  document.getElementById('silencemessage').style.display = 'none';
 
     pauseBtn.style.top = ''; pauseBtn.style.left = ''; pauseBtn.style.transform = ''; // Reset the position property to its default value
   }
@@ -579,6 +584,7 @@ oedemax = false;
 
 var painlocationrepeat = false;
 var onsetrepeat = false;
+let counterforpresssubmitprompt = 0;
 
 var previousquestion = "";
 var response_question = "";
@@ -652,12 +658,12 @@ recognition.onresult = function(event) {
     noteTextarea.val(noteContent);
   }
 
-
+/*
   silenceTimeout = setTimeout(function() {
     // Trigger pause action after 4 seconds of continuous silence
     pauseBtn.click();
   }, 5000);//change this to 12-15 seconds in the future
-
+*/
 };//end of recognition.onresult
 
 
@@ -677,7 +683,7 @@ let actionTriggered = false;
   document.getElementById("executeButton").addEventListener("click", function() {
         onesecdelaybeforestoprecog();
         actionTriggered = true; clearTimeout(silenceTimeout);
-        document.getElementById('listeninggif').style.display = 'none';    document.getElementById('stop-consultation-btn').style.display = 'none';   document.getElementById('replayButton').style.display = 'none';   document.getElementById('home').style.display = 'none'; document.getElementById('executeButton').style.display = 'none'; document.getElementById('loadingcircle').style.display = 'unset'; 
+        document.getElementById('listeninggif').style.display = 'none';    document.getElementById('stop-consultation-btn').style.display = 'none';   document.getElementById('replayButton').style.display = 'none';   document.getElementById('home').style.display = 'none'; document.getElementById('executeButton').style.display = 'none'; document.getElementById('loadingcircle').style.display = 'unset';  micisworking.style.display = 'none'; initialpromptforpresssubmit.style.display = 'none';
         });
 
 
@@ -685,7 +691,7 @@ let actionTriggered = false;
     if (event.key === "Enter" && !actionTriggered) {
        onesecdelaybeforestoprecog();
        actionTriggered = true; clearTimeout(silenceTimeout);
-       document.getElementById('listeninggif').style.display = 'none';    document.getElementById('stop-consultation-btn').style.display = 'none';   document.getElementById('replayButton').style.display = 'none';   document.getElementById('home').style.display = 'none'; document.getElementById('executeButton').style.display = 'none'; document.getElementById('loadingcircle').style.display = 'unset';
+       document.getElementById('listeninggif').style.display = 'none';    document.getElementById('stop-consultation-btn').style.display = 'none';   document.getElementById('replayButton').style.display = 'none';   document.getElementById('home').style.display = 'none'; document.getElementById('executeButton').style.display = 'none'; document.getElementById('loadingcircle').style.display = 'unset';  micisworking.style.display = 'none'; initialpromptforpresssubmit.style.display = 'none';
        document.getElementById("executeButton").removeEventListener("click", arguments.callee);    document.removeEventListener("keydown", handleKeyDown);
        
       }   });
@@ -1601,6 +1607,10 @@ var timerforsubmitting = null;
       previousquestion = noteContent;   response_question = "yes it was quite hard for me, thank you";
       document.getElementById("mp4_src").src = "videos/yesitwasquitehardforme.mp4"; allifsaction();}//Sorry to here about that
 
+else if (noteContent === ""){
+  emptyif.style.display = 'unset';
+}
+
     else {
       
 
@@ -2431,22 +2441,33 @@ let generalhistorycounter = 0;
 
 /*--------------------Is for bringing up the 'listening icon/microphone icon once the user accepts the use of the mic-------------- */
 
-  let loadingcircle = document.getElementById('delete');
+  let micisworking = document.getElementById('micisworking');
 
   
 recognition.onstart = function() {
-  loadingcircle.style.backgroundColor = 'yellow';
-  loadingcircle.style.display = 'unset';
+  micisworking.style.backgroundColor = 'yellow';
+  micisworking.style.display = 'unset';
   messagebeforeacceptingmic.style.display = 'none';
 
+
+
+          
+          if (counterforpresssubmitprompt==0){
+            initialpromptforpresssubmit.style.display = 'unset';
+            counterforpresssubmitprompt++;
+          }
 }
 
 recognition.onend = function() {
-  loadingcircle.style.display = 'none';
-  //loadingcircle.style.backgroundColor = 'red';
-};
+  micisworking.style.display = 'none';
+  //micisworking.style.backgroundColor = 'red';
 
- 
+        if (actionTriggered == false){
+        pauseBtn.click(); 
+        document.getElementById('silencemessage').style.display = 'unset';
+        }
+
+}; 
 
 
 
