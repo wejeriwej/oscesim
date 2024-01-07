@@ -277,8 +277,25 @@
  
  <p id="micisworking" style=" display : none; z-index: 1; position: absolute; color: brown;">Your mic is working!</p>
  <p id="messagebeforeacceptingmic" style=" display : none; z-index: 1; position: absolute; color: rgb(67, 42, 165);">Allow permission to use the microphone</p>
- <p id="silencemessage" style=" display : none; z-index: 1; position: absolute; color: rgb(42, 165, 81);">The microphone will stop following a prolonged period of silence.<br>Remember to press the ENTER key or press the submit button after you've asked your question in order to send your question</p>
- <p id="initialpromptforpresssubmit" style=" display : none; z-index: 1; position: absolute; color: rgb(165, 42, 128);">Ask your first question to your patient,<br>then press the 'ENTER' key or the submit button</p>
+ 
+
+ 
+ <div id="silencemessage">
+      <div id = "silencemessage_title" style="font-size: x-large;">Unfortunately the system did not pick up anything/there was a prolonged period of silence, and so the consultation was paused.</div><br>If you did ask a question and this has come up, then try the following:
+        <div id="silencemessage_bulletpoints" style="margin-left: 10px;">
+          
+          <ul id="silencemessage_format2nd">
+            <li>Check your microphone on your device by testing it using the microphone/voice option on <a href="https://www.google.com/" target=”_blank” style="color: rgb(79, 99, 186)">Google</a> and try and say something to see if voice recognition works.</li>
+            <li>If the above doesn't work, then try the same thing but on a different browser. If it then works, then open OSCESIMULATIONS on that same browser.</li>
+            <li>Remember that the microphone will automatically stop following a prolonged period of silence</li>
+            <li>Remember to press the ENTER key/press the submit button after you've asked your question</li>
+            <li>Make sure there is no background noise</li>
+            <li>Finally, try simply speaking louder and ask your question again</li>
+          </ul>
+        </div></div>
+ 
+
+  <p id="initialpromptforpresssubmit" style=" display : none; z-index: 1; position: absolute; color: rgb(165, 42, 128);">Ask your first question to your patient,<br>then press the 'ENTER' key or the submit button</p>
  <p id="emptyif" style=" display : none; z-index: 1; position: absolute; color: rgb(67, 42, 165);"><u>Your question did not go through unfortunately:</u><br>- Check you microphone (Sometimes mic doesn't work on some earphones)<br>- Check your internet connection<br>- Make sure there is no background noise whatsoever<br>- Try and ask your question as clearly as possible and with a louder voice<br>- Make sure you ask a question before submitting<br></p>
 
 
@@ -511,62 +528,62 @@
 <div id="colorbox-painlocation"> 
                       <span id="colorbox-painlocation-before"></span>
                         <p id = "painlocationtest">● <b style="font-weight: 900;">S</b>ite</p>
-                          <div id = "painlocationtest-comment"><div class = "explanationparagraph"> - The location of the pain </div> </div>      
+                          <div id = "painlocationtest-comment"><ul><li class = "explanationparagraph">The location of the pain </li></ul> </div>      
                             <div class="borderline"></div>  </div>
                 
 <div id="colorbox-onset"> 
                       <span id="colorbox-onset-before"></span>
                         <p id = "onsettest">● <b style="font-weight: 900;">O</b>nset</p>
-                          <div id = "onsettest-comment"><div class = "explanationparagraph"> - How did the pain start? </div> </div>      
+                          <div id = "onsettest-comment"><ul><li class = "explanationparagraph">How did the pain start? </li></ul> </div>      
                             <div class="borderline"></div> </div>
 
 <div id="colorbox-character"> 
                       <span id="colorbox-character-before"></span>
                         <p id = "charactertest">● <b style="font-weight: 900;">C</b>haracter</p>
-                            <div id = "charactertest-comment"><div class = "explanationparagraph"> - Describe the pain? Is it sharp? dull? burning sensation? etc  </div> </div>      
+                            <div id = "charactertest-comment"><ul><li class = "explanationparagraph">Describe the pain? Is it sharp? dull? burning sensation? etc  </li></ul> </div>      
                               <div class="borderline"></div> </div>
 
 <div id="colorbox-radiate"> 
                       <span id="colorbox-radiate-before"></span>
                         <p id = "radiatetest">● <b style="font-weight: 900;">R</b>adiation</p>
-                          <div id = "radiatetest-comment"><div class = "explanationparagraph"> - Does the pain radiate to anywhere? the neck? the left arm? etc  </div> </div>
+                          <div id = "radiatetest-comment"><ul><li class = "explanationparagraph">Does the pain radiate to anywhere? the neck? the left arm? etc  </li></ul> </div>
                             <div class="borderline"></div>  </div>
 
 <div id="colorbox-associatedsymptoms"> 
                       <span id="colorbox-associatedsymptoms-before"></span>
                         <p id = "associatedsymptomstest">● <b style="font-weight: 900;">A</b>ssociated symptoms</p>
-                          <div id = "associatedsymptomstest-comment"><div class = "explanationparagraph"> - Were there any other symptoms that came along with the pain  </div> </div>      
+                          <div id = "associatedsymptomstest-comment"><ul><li class = "explanationparagraph">Were there any other symptoms that came along with the pain  </li></ul> </div>      
                             <div class="borderline"></div>  </div>
 
 <div id="colorbox-timecourse"> 
                       <span id="colorbox-timecourse-before"></span>
                         <p id = "timecoursetest">● <b style="font-weight: 900;">T</b>ime course</p>
-                          <div id = "timecoursetest-comment"><div class = "explanationparagraph"> - How has the pain changed over time? Is it constant? Does it come and go? </div> </div>      
+                          <div id = "timecoursetest-comment"><ul><li class = "explanationparagraph">How has the pain changed over time? Is it constant? Does it come and go? </li></ul> </div>      
                             <div class="borderline"></div>  </div>
 
 <div id="colorbox-makeitworse"> 
                       <span id="colorbox-makeitworse-before"></span>
                         <p id = "makeitworsetest">● <b style="font-weight: 900;">E</b>xacerbating factors</p>
-                          <div id = "makeitworsetest-comment"><div class = "explanationparagraph"> - What makes the pain worse? </div> </div>      
+                          <div id = "makeitworsetest-comment"><ul><li class = "explanationparagraph">What makes the pain worse? </li></ul> </div>      
                             <div class="borderline"></div>  </div>
 
 <div id="colorbox-ratepain"> 
                       <span id="colorbox-ratepain-before"></span>
                         <p id = "ratepaintest">● <b style="font-weight: 900;">S</b>everity</p>
-                          <div id = "ratepaintest-comment"><div class = "explanationparagraph"> - On a scale of 1-10 how'd you rate the pain, with 10 being the worst pain? </div> </div>      
+                          <div id = "ratepaintest-comment"><ul><li class = "explanationparagraph">On a scale of 1-10 how'd you rate the pain, with 10 being the worst pain? </li></ul> </div>      
                             <div class="borderline"></div>  </div>
 
 <div id="colorbox-makeitbetter"> 
                       <span id="colorbox-makeitbetter-before"></span>
                         <p id = "makeitbettertest">● Relieving factors</p>
-                          <div id = "makeitbettertest-comment"><div class = "explanationparagraph"> - What makes the pain better? </div> </div>      
+                          <div id = "makeitbettertest-comment"><ul><li class = "explanationparagraph">What makes the pain better? </li></ul> </div>      
                             <div class="borderline"></div>  </div>
 
 
 <div id="colorbox-happenbefore"> 
                       <span id="colorbox-happenbefore-before"></span>
                         <p id = "happenbeforetest">● Has this happened before?</p>
-                          <div id = "happenbeforetest-comment"><div class = "explanationparagraph"> - Important to know as you want to know if their symptoms have happened in the past </div> </div>      
+                          <div id = "happenbeforetest-comment"><ul><li class = "explanationparagraph">Important to know as you want to know if their symptoms have happened in the past </li></ul> </div>      
             
 
           <div class="borderline"style="border: 5px solid; opacity: 1;"></div>  
@@ -577,7 +594,7 @@
 <div id="colorbox-ideas"> <!---->
                     <span id="colorbox-ideas-before"></span>
                       <p id = "ideastest">● Pt's <b style="font-weight: 900;">I</b>deas</p>
-                        <div id = "ideastest-comment"><div class = "explanationparagraph"> - What does the patient think/feel is going on? </div> </div>      
+                        <div id = "ideastest-comment"><ul><li class = "explanationparagraph">What does the patient think/feel is going on? </li></ul> </div>      
                             <div class="borderline"></div>  </div>
 
 <div id="colorbox-concerns"> 
@@ -588,7 +605,7 @@
 <div id="colorbox-expectations"> 
                     <span id="colorbox-expectations-before"></span>
                       <p id = "expectationstest">● Pt's <b style="font-weight: 900;">E</b>xpectations</p>
-                        <div id = "expectationstest-comment"><div class = "explanationparagraph"> - What does the patient want to get out of the consultation with you? is it a particular drug/treatment? a firm diagnosis? some investigations? etc </div> </div>      
+                        <div id = "expectationstest-comment"><ul><li class = "explanationparagraph">What does the patient want to get out of the consultation with you? is it a particular drug/treatment? a firm diagnosis? some investigations? etc </li></ul> </div>      
                             <div class="borderline"></div>  </div>
 
 <div id="colorbox-familyhistory"> <p id = "familyhistorytest">● Family Hx</p>                    
@@ -629,7 +646,7 @@
 <div id="colorbox-homesituation"> 
                     <span id="colorbox-homesituation-before"></span>
                         <p id = "homesituationtest">● Pt's home situation</p>
-                          <div id = "homesituationtest-comment"><div class = "explanationparagraph"> - You want to know who they are living with, where do they live (in a bungalo? a flat? etc), do they need help with mobilising at home? do they have the support at home? </div> </div>      
+                          <div id = "homesituationtest-comment"><ul><li class = "explanationparagraph">You want to know who they are living with, where do they live (in a bungalo? a flat? etc), do they need help with mobilising at home? do they have the support at home? </li></ul> </div>      
                             <div class="borderline"></div>  </div>
 
 <div id="colorbox-smoking"> 
@@ -657,61 +674,61 @@
 <div id="correct-colorbox-painlocation">              
               <span id="correct-colorbox-painlocation-before"></span>
                   <p id = "painlocationtest1">● <b style="font-weight: 900;">S</b>ite</p>
-                    <div id = "painlocationtest-comment2" style="color: rgb(209, 228, 236);"><div class = "explanationparagraph"> - The location of the pain </div> </div>      
+                    <div id = "painlocationtest-comment2" style="color: rgb(209, 228, 236);"><ul><li class = "explanationparagraph">The location of the pain </li></ul> </div>      
                         <div class="borderline"></div>  </div>
 
 <div id="correct-colorbox-onset">
               <span id="correct-colorbox-onset-before"></span>
                   <p id = "onsettest1">● <b style="font-weight: 900;">O</b>nset</p>
-                    <div id = "onsettest-comment2" style="color: rgb(209, 228, 236);"><div class = "explanationparagraph"> - How did the pain start? </div> </div>      
+                    <div id = "onsettest-comment2" style="color: rgb(209, 228, 236);"><ul><li class = "explanationparagraph">How did the pain start? </li></ul> </div>      
                         <div class="borderline"></div>  </div>
 
 <div id="correct-colorbox-character">
               <span id="correct-colorbox-character-before"></span>
                   <p id = "charactertest1">● <b style="font-weight: 900;">C</b>haracter</p>
-                    <div id = "charactertest-comment2" style="color: rgb(209, 228, 236);"><div class = "explanationparagraph"> - Describe the pain? Is it sharp? dull? burning sensation? etc </div> </div>          
+                    <div id = "charactertest-comment2" style="color: rgb(209, 228, 236);"><ul><li class = "explanationparagraph">Describe the pain? Is it sharp? dull? burning sensation? etc </li></ul> </div>          
                         <div class="borderline"></div>  </div>
 
 <div id="correct-colorbox-radiate">
               <span id="correct-colorbox-radiate-before"></span>
                   <p id = "radiatetest1">● <b style="font-weight: 900;">R</b>adiation</p>
-                    <div id = "radiatetest-comment2" style="color: rgb(209, 228, 236);"><div class = "explanationparagraph"> - Does the pain radiate to anywhere? the neck? the left arm? etc </div> </div>      
+                    <div id = "radiatetest-comment2" style="color: rgb(209, 228, 236);"><ul><li class = "explanationparagraph">Does the pain radiate to anywhere? the neck? the left arm? etc </li></ul> </div>      
                         <div class="borderline"></div>  </div>
 
 <div id="correct-colorbox-associatedsymptoms">
               <span id="correct-colorbox-associatedsymptoms-before"></span>
                   <p id = "associatedsymptomstest1">● <b style="font-weight: 900;">A</b>ssociated symptoms</p>
-                    <div id = "associatedsymptomstest-comment2" style="color: rgb(209, 228, 236);"><div class = "explanationparagraph"> - Were there any other symptoms that came along with the pain </div> </div>      
+                    <div id = "associatedsymptomstest-comment2" style="color: rgb(209, 228, 236);"><ul><li class = "explanationparagraph">Were there any other symptoms that came along with the pain </li></ul> </div>      
                         <div class="borderline"></div>  </div>
 
 <div id="correct-colorbox-timecourse">
               <span id="correct-colorbox-timecourse-before"></span>
                   <p id = "timecoursetest1">● <b style="font-weight: 900;">T</b>ime course</p>
-                    <div id = "timecoursetest-comment2" style="color: rgb(209, 228, 236);"><div class = "explanationparagraph"> - How has the pain changed over time? Is it constant? Does it come and go? </div> </div>      
+                    <div id = "timecoursetest-comment2" style="color: rgb(209, 228, 236);"><ul><li class = "explanationparagraph">How has the pain changed over time? Is it constant? Does it come and go? </li></ul> </div>      
                         <div class="borderline"></div>  </div>
 
 <div id="correct-colorbox-makeitworse">
               <span id="correct-colorbox-makeitworse-before"></span>
                   <p id = "makeitworsetest1">● <b style="font-weight: 900;">E</b>xacerbating factors</p>
-                    <div id = "makeitworsetest-comment2" style="color: rgb(209, 228, 236);"><div class = "explanationparagraph"> - What makes the pain worse? </div> </div>      
+                    <div id = "makeitworsetest-comment2" style="color: rgb(209, 228, 236);"><ul><li class = "explanationparagraph">What makes the pain worse? </li></ul> </div>      
                         <div class="borderline"></div>  </div>
 
 <div id="correct-colorbox-ratepain">
               <span id="correct-colorbox-ratepain-before"></span>
                   <p id = "ratepaintest1">● <b style="font-weight: 900;">S</b>everity</p>
-                    <div id = "ratepaintest-comment2" style="color: rgb(209, 228, 236);"><div class = "explanationparagraph"> - On a scale of 1-10 how'd you rate the pain, with 10 being the worst pain? </div> </div>      
+                    <div id = "ratepaintest-comment2" style="color: rgb(209, 228, 236);"><ul><li class = "explanationparagraph">On a scale of 1-10 how'd you rate the pain, with 10 being the worst pain? </li></ul> </div>      
                         <div class="borderline"></div>  </div>
 
 <div id="correct-colorbox-makeitbetter">
               <span id="correct-colorbox-makeitbetter-before"></span>
                   <p id = "makeitbettertest1">● Relieving factors</p>
-                    <div id = "makeitbettertest-comment2" style="color: rgb(209, 228, 236);"><div class = "explanationparagraph"> - What makes the pain better? </div> </div>      
+                    <div id = "makeitbettertest-comment2" style="color: rgb(209, 228, 236);"><ul><li class = "explanationparagraph">What makes the pain better? </li></ul> </div>      
                         <div class="borderline"></div>  </div>
 
 <div id="correct-colorbox-happenbefore">
               <span id="correct-colorbox-happenbefore-before"></span>
                   <p id = "happenbeforetest1">● Has this happened before?</p>
-                    <div id = "happenbeforetest-comment2" style="color: rgb(209, 228, 236);"><div class = "explanationparagraph"> - Important to know as you want to know if their symptoms have happened in the past </div> </div>      
+                    <div id = "happenbeforetest-comment2" style="color: rgb(209, 228, 236);"><ul><li class = "explanationparagraph">Important to know as you want to know if their symptoms have happened in the past </li></ul> </div>      
                         
                     
                     
@@ -725,7 +742,7 @@
 <div id="correct-colorbox-ideas" >
             <span id="correct-colorbox-ideas-before"></span>
                 <p id = "ideastest1">● Pt's <b style="font-weight: 900;">I</b>deas</p>
-                    <div id = "ideastest-comment2" style="color: rgb(209, 228, 236);"><div class = "explanationparagraph"> - What does the patient think/feel is going on? </div> </div>      
+                    <div id = "ideastest-comment2" style="color: rgb(209, 228, 236);"><ul><li class = "explanationparagraph">What does the patient think/feel is going on? </li></ul> </div>      
                             <div class="borderline"></div>  </div>
 
 <div id="correct-colorbox-concerns">
@@ -736,7 +753,7 @@
 <div id="correct-colorbox-expectations">
               <span id="correct-colorbox-expectations-before"></span>
                   <p id = "expectationstest1">● Pt's <b style="font-weight: 900;">E</b>xpectations</p>
-                    <div id = "expectationstest-comment2" style="color: rgb(209, 228, 236);"><div class = "explanationparagraph"> - What does the patient want to get out of the consultation with you? is it a particular drug/treatment? a firm diagnosis? some investigations? etc </div> </div>      
+                    <div id = "expectationstest-comment2" style="color: rgb(209, 228, 236);"><ul><li class = "explanationparagraph">What does the patient want to get out of the consultation with you? is it a particular drug/treatment? a firm diagnosis? some investigations? etc </li></ul> </div>      
                         <div class="borderline"></div>  </div>
 
 <div id="correct-colorbox-familyhistory">
@@ -784,7 +801,7 @@
 <div id="correct-colorbox-homesituation">
               <span id="correct-colorbox-homesituation-before"></span>
                   <p id = "homesituationtest1">● Pt's home situation</p>
-                    <div id = "homesituationtest-comment2" style="color: rgb(209, 228, 236);"><div class = "explanationparagraph"> - You want to know who they are living with, where do they live (in a bungalo? a flat? etc), do they need help with mobilising at home? do they have the support at home? </div> </div>      
+                    <div id = "homesituationtest-comment2" style="color: rgb(209, 228, 236);"><ul><li class = "explanationparagraph">You want to know who they are living with, where do they live (in a bungalo? a flat? etc), do they need help with mobilising at home? do they have the support at home? </li></ul> </div>      
                         <div class="borderline"></div>  </div>
 
 <div id="correct-colorbox-smoking">
@@ -840,67 +857,67 @@
   <div id="colorbox-dyspnoea">    
     <span id="colorbox-dyspnoea-before"></span>
         <p id = "dyspnoeatest">● Dyspnoea/SOB</p>
-            <div id = "dyspnoeatest-comment"><div class = "explanationparagraph"> - Shortness of breath is a symptom of heart failure, Cardiovascular disease, heart valve disorders and many other cardiac causes. It is also present in pulmonary causes like COPD, asthma, PE, and pneumonia. You can also get it in anaemia, oesity, anxiety attacks and musculoskeletal issues. </div> </div>      
+            <div id = "dyspnoeatest-comment"><ul><li class = "explanationparagraph">Shortness of breath is a symptom of heart failure, Cardiovascular disease, heart valve disorders and many other cardiac causes. It is also present in pulmonary causes like COPD, asthma, PE, and pneumonia. You can also get it in anaemia, oesity, anxiety attacks and musculoskeletal issues. </li></ul> </div>      
                     <div class="borderline"></div>  </div>
 
    <div id="colorbox-orthopnoea">    
     <span id="colorbox-orthopnoea-before"></span>                 
         <p id = "orthopnoeatest">● Orthopnoea</p>
-            <div id = "orthopnoeatest-comment"><div class = "explanationparagraph"> - This is when you get SOB when lying flat, so patients would normally sleep in an upright position. A good question to ask for would be to ask how many pillows they sleep with at night. Make sure to clarify that it is because of SOB and not because of pain or anything else. </div> </div>      
+            <div id = "orthopnoeatest-comment"><ul><li class = "explanationparagraph">This is when you get SOB when lying flat, so patients would normally sleep in an upright position. A good question to ask for would be to ask how many pillows they sleep with at night. Make sure to clarify that it is because of SOB and not because of pain or anything else. </li></ul> </div>      
             <div class="borderline"></div>  </div>
 
    <div id="colorbox-pnd">    
     <span id="colorbox-pnd-before"></span>
         <p id = "pndtest">● Paroxysmal nocturnal dyspnoea (PND)</p>
-            <div id = "pndtest-comment"><div class = "explanationparagraph"> - This is when you wake up in the middle of the night short of breath/gasping for air.  </div> </div>      
+            <div id = "pndtest-comment"><ul><li class = "explanationparagraph">This is when you wake up in the middle of the night short of breath/gasping for air.  </li></ul> </div>      
             <div class="borderline"></div>  </div>
 
    <div id="colorbox-cough">    
     <span id="colorbox-cough-before"></span>
         <p id = "coughtest">● Any cough?</p>
-            <div id = "coughtest-comment"><div class = "explanationparagraph"> - Good to ask as you can get a cough in conditions such as pneumonia, heart failure, pulmonary embolism and many others. Also important to ask if there's any sputum and it's consistency/colour if sputum is present.  </div> </div>      
+            <div id = "coughtest-comment"><ul><li class = "explanationparagraph">Good to ask as you can get a cough in conditions such as pneumonia, heart failure, pulmonary embolism and many others. Also important to ask if there's any sputum and it's consistency/colour if sputum is present.  </li></ul> </div>      
             <div class="borderline"></div>  </div>
 
    <div id="colorbox-FHheartconditions">    
     <span id="colorbox-FHheartconditions-before"></span>
         <p id = "FHheartconditionstest">● Family history of heart conditions</p>
-            <div id = "FHheartconditionstest-comment"><div class = "explanationparagraph"> - Important to ask about heart conditions specifically as it can increase risk of Cardiovascular disease. A lot of cardiomyopathies run in families too like Hypertrophiccardiomyopathy (HCM) and dilated cardiomyopathy.   </div> </div>      
+            <div id = "FHheartconditionstest-comment"><ul><li class = "explanationparagraph">Important to ask about heart conditions specifically as it can increase risk of Cardiovascular disease. A lot of cardiomyopathies run in families too like Hypertrophiccardiomyopathy (HCM) and dilated cardiomyopathy.   </li></ul> </div>      
             <div class="borderline"></div>  </div>
 
    <div id="colorbox-diabetes">    
     <span id="colorbox-diabetes-before"></span>
         <p id = "diabetestest">● PMHx of diabetes</p>
-            <div id = "diabetestest-comment"><div class = "explanationparagraph"> - Having diabetes increases the risk of developing CVD by more than 2-4 times, so is an important risk factor to ask about </div> </div>      
+            <div id = "diabetestest-comment"><ul><li class = "explanationparagraph">Having diabetes increases the risk of developing CVD by more than 2-4 times, so is an important risk factor to ask about </li></ul> </div>      
             <div class="borderline"></div>  </div>
 
    <div id="colorbox-hypertension">    
     <span id="colorbox-hypertension-before"></span>
         <p id = "hypertensiontest">● PMHx of hypertension</p>
-            <div id = "hypertensiontest-comment"><div class = "explanationparagraph"> - Is an important risk factor </div> </div>      
+            <div id = "hypertensiontest-comment"><ul><li class = "explanationparagraph">Is an important risk factor </li></ul> </div>      
             <div class="borderline"></div>  </div>
 
    <div id="colorbox-heartattacks">    
     <span id="colorbox-heartattacks-before"></span>
         <p id = "heartattackstest">● Any previous heart attacks</p>
-            <div id = "heartattackstest-comment"><div class = "explanationparagraph"> - Important risk factor </div> </div>      
+            <div id = "heartattackstest-comment"><ul><li class = "explanationparagraph">Important risk factor </li></ul> </div>      
             <div class="borderline"></div>  </div>
 
    <div id="colorbox-dizziness">    
     <span id="colorbox-dizziness-before"></span>
         <p id = "dizzinesstest">● Dizziness/fainting/lightheadedness</p>
-            <div id = "dizzinesstest-comment"><div class = "explanationparagraph"> - Can point towards arrhythmias or reduced blood flow to the brain. </div> </div>      
+            <div id = "dizzinesstest-comment"><ul><li class = "explanationparagraph">Can point towards arrhythmias or reduced blood flow to the brain. </li></ul> </div>      
             <div class="borderline"></div>  </div>
 
    <div id="colorbox-physicalactivity">    
     <span id="colorbox-physicalactivity-before"></span>
         <p id = "physicalactivitytest">● Physical activity</p>
-            <div id = "physicalactivitytest-comment"><div class = "explanationparagraph"> - Understanding the level of physical activity helps assess lifestyle factors and overall cardiovascular health </div> </div>      
+            <div id = "physicalactivitytest-comment"><ul><li class = "explanationparagraph">Understanding the level of physical activity helps assess lifestyle factors and overall cardiovascular health </li></ul> </div>      
             <div class="borderline"></div>  </div>
 
    <div id="colorbox-palpitations">    
     <span id="colorbox-palpitations-before"></span>
         <p id = "palpitationstest">● Palpitations/irregular heart beats</p>
-            <div id = "palpitationstest-comment"><div class = "explanationparagraph"> - Can point towards arrhythmias/abnormal heart beats </div> </div>      
+            <div id = "palpitationstest-comment"><ul><li class = "explanationparagraph">Can point towards arrhythmias/abnormal heart beats </li></ul> </div>      
             <div class="borderline"></div>  </div>
           </div>
 
@@ -916,67 +933,67 @@
    <div id="correct-colorbox-dyspnoea">
                 <span id="correct-colorbox-dyspnoea-before"></span>
                     <p id = "dyspnoeatest1">● Dyspnoea/SOB</p>
-                        <div id = "dyspnoeatest-comment2" style="color: rgb(209, 228, 236);"><div class = "explanationparagraph"> - Shortness of breath is a symptom of heart failure, Cardiovascular disease, heart valve disorders and many other cardiac causes. It is also present in pulmonary causes like COPD, asthma, PE, and pneumonia. You can also get it in anaemia, oesity, anxiety attacks and musculoskeletal issues. </div> </div>      
+                        <div id = "dyspnoeatest-comment2" style="color: rgb(209, 228, 236);"><ul><li class = "explanationparagraph">Shortness of breath is a symptom of heart failure, Cardiovascular disease, heart valve disorders and many other cardiac causes. It is also present in pulmonary causes like COPD, asthma, PE, and pneumonia. You can also get it in anaemia, oesity, anxiety attacks and musculoskeletal issues. </li></ul> </div>      
                         <div class="borderline"></div>  </div>
 
    <div id="correct-colorbox-orthopnoea">
                 <span id="correct-colorbox-orthopnoea-before"></span>
                     <p id = "orthopnoeatest1">● Orthopnoea</p>
-                        <div id = "orthopnoeatest-comment2" style="color: rgb(209, 228, 236);"><div class = "explanationparagraph"> - This is when you get SOB when lying flat, so patients would normally sleep in an upright position. A good question to ask for would be to ask how many pillows they sleep with at night. Make sure to clarify that it is because of SOB and not because of pain or anything else. </div> </div>      
+                        <div id = "orthopnoeatest-comment2" style="color: rgb(209, 228, 236);"><ul><li class = "explanationparagraph">This is when you get SOB when lying flat, so patients would normally sleep in an upright position. A good question to ask for would be to ask how many pillows they sleep with at night. Make sure to clarify that it is because of SOB and not because of pain or anything else. </li></ul> </div>      
                         <div class="borderline"></div>  </div>
 
    <div id="correct-colorbox-pnd">
                 <span id="correct-colorbox-pnd-before"></span>
                     <p id = "pndtest1">● Paroxysmal nocturnal dyspnoea (PND)</p>
-                        <div id = "pndtest-comment2" style="color: rgb(209, 228, 236);"><div class = "explanationparagraph"> - This is when you wake up in the middle of the night short of breath/gasping for air. </div> </div>          
+                        <div id = "pndtest-comment2" style="color: rgb(209, 228, 236);"><ul><li class = "explanationparagraph">This is when you wake up in the middle of the night short of breath/gasping for air. </li></ul> </div>          
                         <div class="borderline"></div>  </div>
 
    <div id="correct-colorbox-cough">
                 <span id="correct-colorbox-cough-before"></span>
                     <p id = "coughtest1">● Any cough?</p>
-                        <div id = "coughtest-comment2" style="color: rgb(209, 228, 236);"><div class = "explanationparagraph"> -  Good to ask as you can get a cough in conditions such as pneumonia, heart failure, pulmonary embolism and many others. Also important to ask if there's any sputum and it's consistency/colour if sputum is present. </div> </div>      
+                        <div id = "coughtest-comment2" style="color: rgb(209, 228, 236);"><ul><li class = "explanationparagraph"> Good to ask as you can get a cough in conditions such as pneumonia, heart failure, pulmonary embolism and many others. Also important to ask if there's any sputum and it's consistency/colour if sputum is present. </li></ul> </div>      
                         <div class="borderline"></div>  </div>
 
    <div id="correct-colorbox-FHheartconditions">
                 <span id="correct-colorbox-FHheartconditions-before"></span>
                     <p id = "FHheartconditionstest1">● Family history of heart conditions</p>
-                        <div id = "FHheartconditionstest-comment2" style="color: rgb(209, 228, 236);"><div class = "explanationparagraph"> - Important to ask about heart conditions specifically as it can increase risk of Cardiovascular disease. A lot of cardiomyopathies run in families too like Hypertrophiccardiomyopathy (HCM) and dilated cardiomyopathy. </div> </div>      
+                        <div id = "FHheartconditionstest-comment2" style="color: rgb(209, 228, 236);"><ul><li class = "explanationparagraph">Important to ask about heart conditions specifically as it can increase risk of Cardiovascular disease. A lot of cardiomyopathies run in families too like Hypertrophiccardiomyopathy (HCM) and dilated cardiomyopathy. </li></ul> </div>      
                         <div class="borderline"></div>  </div>
 
    <div id="correct-colorbox-diabetes">
                 <span id="correct-colorbox-diabetes-before"></span>
                     <p id = "diabetestest1">● PMHx of diabetes</p>
-                        <div id = "diabetestest-comment2" style="color: rgb(209, 228, 236);"><div class = "explanationparagraph"> - Having diabetes increases the risk of developing CVD by more than 2-4 times, so is an important risk factor to ask about </div> </div>      
+                        <div id = "diabetestest-comment2" style="color: rgb(209, 228, 236);"><ul><li class = "explanationparagraph">Having diabetes increases the risk of developing CVD by more than 2-4 times, so is an important risk factor to ask about </li></ul> </div>      
                         <div class="borderline"></div>  </div>
 
    <div id="correct-colorbox-hypertension">
                 <span id="correct-colorbox-hypertension-before"></span>
                     <p id = "hypertensiontest1">● PMHx of hypertension</p>
-                        <div id = "hypertensiontest-comment2" style="color: rgb(209, 228, 236);"><div class = "explanationparagraph"> -Is an important risk factor </div> </div>      
+                        <div id = "hypertensiontest-comment2" style="color: rgb(209, 228, 236);"><ul><li class = "explanationparagraph"> -Is an important risk factor </li></ul> </div>      
                         <div class="borderline"></div>  </div>
 
    <div id="correct-colorbox-heartattacks">
                 <span id="correct-colorbox-heartattacks-before"></span>
                     <p id = "heartattackstest1">● Any previous heart attacks</p>
-                        <div id = "heartattackstest-comment2" style="color: rgb(209, 228, 236);"><div class = "explanationparagraph"> - Important risk factor </div> </div>      
+                        <div id = "heartattackstest-comment2" style="color: rgb(209, 228, 236);"><ul><li class = "explanationparagraph">Important risk factor </li></ul> </div>      
                         <div class="borderline"></div>  </div>
 
    <div id="correct-colorbox-dizziness">
                 <span id="correct-colorbox-dizziness-before"></span>
                     <p id = "dizzinesstest1">● Dizziness/fainting/lightheadedness</p>
-                        <div id = "dizzinesstest-comment2" style="color: rgb(209, 228, 236);"><div class = "explanationparagraph"> - Can point towards arrhythmias or reduced blood flow to the brain. </div> </div>      
+                        <div id = "dizzinesstest-comment2" style="color: rgb(209, 228, 236);"><ul><li class = "explanationparagraph">Can point towards arrhythmias or reduced blood flow to the brain. </li></ul> </div>      
                         <div class="borderline"></div>  </div>
 
    <div id="correct-colorbox-physicalactivity">
                 <span id="correct-colorbox-physicalactivity-before"></span>
                     <p id = "physicalactivitytest1">● Physical activity</p>
-                        <div id = "physicalactivitytest-comment2" style="color: rgb(209, 228, 236);"><div class = "explanationparagraph"> - Understanding the level of physical activity helps assess lifestyle factors and overall cardiovascular health </div> </div>      
+                        <div id = "physicalactivitytest-comment2" style="color: rgb(209, 228, 236);"><ul><li class = "explanationparagraph">Understanding the level of physical activity helps assess lifestyle factors and overall cardiovascular health </li></ul> </div>      
                         <div class="borderline"></div>  </div>
 
    <div id="correct-colorbox-palpitations">
                 <span id="correct-colorbox-palpitations-before"></span>
                     <p id = "palpitationstest1">● Palpitations/irregular heart beats</p>
-                        <div id = "palpitationstest-comment2" style="color: rgb(209, 228, 236);"><div class = "explanationparagraph"> - Can point towards arrhythmias/abnormal heart beats </div> </div>      
+                        <div id = "palpitationstest-comment2" style="color: rgb(209, 228, 236);"><ul><li class = "explanationparagraph">Can point towards arrhythmias/abnormal heart beats </li></ul> </div>      
                         <div class="borderline"></div>  </div>
 
        </div>        
@@ -1019,31 +1036,31 @@
    <div id="colorbox-sleepapnoea">    
     <span id="colorbox-sleepapnoea-before"></span>
         <p id = "sleepapnoeatest">● Sleep apnoea/snoring</p>
-            <div id = "sleepapnoeatest-comment"><div class = "explanationparagraph"> - Sleep apnoea is linked to an increased risk of CVD </div> </div>      
+            <div id = "sleepapnoeatest-comment"><ul><li class = "explanationparagraph">Sleep apnoea is linked to an increased risk of CVD </li></ul> </div>      
             <div class="borderline"></div>  </div>
 
    <div id="colorbox-pad">    
     <span id="colorbox-pad-before"></span>
         <p id = "padtest">● PMHx of Peripheral Artery Disease</p>
-            <div id = "padtest-comment"><div class = "explanationparagraph"> - Associated with coronary artery disease </div> </div>      
+            <div id = "padtest-comment"><ul><li class = "explanationparagraph">Associated with coronary artery disease </li></ul> </div>      
             <div class="borderline"></div>  </div>
 
    <div id="colorbox-fever">    
     <span id="colorbox-fever-before"></span>
         <p id = "fevertest">● Fever</p>
-            <div id = "fevertest-comment"><div class = "explanationparagraph"> - Can be associated with things such as endocarditis, pneumonia  </div> </div>      
+            <div id = "fevertest-comment"><ul><li class = "explanationparagraph">Can be associated with things such as endocarditis, pneumonia  </li></ul> </div>      
             <div class="borderline"></div>  </div>
 
    <div id="colorbox-weight">    
     <span id="colorbox-weight-before"></span>
         <p id = "weighttest">● Changes in weight</p>
-            <div id = "weighttest-comment"><div class = "explanationparagraph"> - You can get wt gain from oedema/fluid retention, wt loss in atrial myxoma (tumour in the atria)  </div> </div>      
+            <div id = "weighttest-comment"><ul><li class = "explanationparagraph">You can get wt gain from oedema/fluid retention, wt loss in atrial myxoma (tumour in the atria)  </li></ul> </div>      
             <div class="borderline"></div>  </div>
 
    <div id="colorbox-oedema">    
     <span id="colorbox-oedema-before"></span>
         <p id = "oedematest">● Peripheral oedema</p>
-            <div id = "oedematest-comment"><div class = "explanationparagraph"> - Important to ask about any swelling in the ankles as it is a sign of right sided heart failure, which could be one of the differentials in this case.   </div> </div>      
+            <div id = "oedematest-comment"><ul><li class = "explanationparagraph">Important to ask about any swelling in the ankles as it is a sign of right sided heart failure, which could be one of the differentials in this case.   </li></ul> </div>      
             <div class="borderline"></div>  </div>
           </div>
 
@@ -1059,31 +1076,31 @@
    <div id="correct-colorbox-sleepapnoea">
                 <span id="correct-colorbox-sleepapnoea-before"></span>
                     <p id = "sleepapnoeatest1">● Sleep apnoea/snoring</p>
-                        <div id = "sleepapnoeatest-comment2" style="color: rgb(209, 228, 236);"><div class = "explanationparagraph"> - Sleep apnoea is linked to an increased risk of CVD </div> </div>      
+                        <div id = "sleepapnoeatest-comment2" style="color: rgb(209, 228, 236);"><ul><li class = "explanationparagraph">Sleep apnoea is linked to an increased risk of CVD </li></ul> </div>      
                         <div class="borderline"></div>  </div>
 
    <div id="correct-colorbox-pad">
                 <span id="correct-colorbox-pad-before"></span>
                     <p id = "padtest1">● PMHx of Peripheral Artery Disease</p>
-                        <div id = "padtest-comment2" style="color: rgb(209, 228, 236);"><div class = "explanationparagraph"> - Associated with coronary artery disease </div> </div>          
+                        <div id = "padtest-comment2" style="color: rgb(209, 228, 236);"><ul><li class = "explanationparagraph">Associated with coronary artery disease </li></ul> </div>          
                         <div class="borderline"></div>  </div>
 
    <div id="correct-colorbox-fever">
                 <span id="correct-colorbox-fever-before"></span>
                     <p id = "fevertest1">● Fever</p>
-                        <div id = "fevertest-comment2" style="color: rgb(209, 228, 236);"><div class = "explanationparagraph"> -  Can be associated with things such as endocarditis, pneumonia </div> </div>      
+                        <div id = "fevertest-comment2" style="color: rgb(209, 228, 236);"><ul><li class = "explanationparagraph"> Can be associated with things such as endocarditis, pneumonia </li></ul> </div>      
                         <div class="borderline"></div>  </div>
 
    <div id="correct-colorbox-weight">
                 <span id="correct-colorbox-weight-before"></span>
                     <p id = "weighttest1">● Changes in weight</p>
-                        <div id = "weighttest-comment2" style="color: rgb(209, 228, 236);"><div class = "explanationparagraph"> - You can get wt gain from oedema/fluid retention, wt loss in atrial myxoma (tumour in the atria) </div> </div>
+                        <div id = "weighttest-comment2" style="color: rgb(209, 228, 236);"><ul><li class = "explanationparagraph">You can get wt gain from oedema/fluid retention, wt loss in atrial myxoma (tumour in the atria) </li></ul> </div>
                         <div class="borderline"></div>  </div>
 
    <div id="correct-colorbox-oedema">
                 <span id="correct-colorbox-oedema-before"></span>
                     <p id = "oedematest1">● Peripheral oedema</p>
-                        <div id = "oedematest-comment2" style="color: rgb(209, 228, 236);"><div class = "explanationparagraph"> - Important to ask about any swelling in the ankles as it is a sign of right sided heart failure, which could be one of the differentials in this case. </div> </div>      
+                        <div id = "oedematest-comment2" style="color: rgb(209, 228, 236);"><ul><li class = "explanationparagraph">Important to ask about any swelling in the ankles as it is a sign of right sided heart failure, which could be one of the differentials in this case. </li></ul> </div>      
                         <div class="borderline"></div>  </div>
 
        </div>        
@@ -1117,9 +1134,9 @@
                 <div class='colourofcross'><div class="box-enclosingcrossandtick"><h class="titleforEBI"> ❌</h></div></div>
                 <div class="important-colour-box"><p id = "summaryage">● Age</p></div>
                 <p id = "summarygender">● Male</p> 
-                        <div class = "explanationparagraph">- You want to mention that the patient is male </div>
-                        <div class = "explanationparagraph">- You want to mention that the patient is male </div>
-                        <div class = "explanationparagraph">- You want to mention that the patient is male </div>
+                        <ul><li class = "explanationparagraph">You want to mention that the patient is male </li></ul>
+                        <ul><li class = "explanationparagraph">You want to mention that the patient is male </li></ul>
+                        <ul><li class = "explanationparagraph">You want to mention that the patient is male </li></ul>
 
 
 
