@@ -2484,7 +2484,6 @@ recognition.onend = function() {
  
 
 
-
  
 
 
@@ -4436,6 +4435,10 @@ window.onload = function () {
 
 
 
+const WWWEBItitles = document.querySelector('WWWEBItitles');
+const evenbetterifgeneral = document.querySelector('evenbetterifgeneral');
+
+WWWEBItitles.style.height = getComputedStyle(evenbetterifgeneral).height;
 
 
 
