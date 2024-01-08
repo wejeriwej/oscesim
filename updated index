@@ -1841,17 +1841,22 @@ Things we forgot to ask about in the consultation for EBI
 
 let generalhistorycounter = 0;
 
+var painlocationreal1 = $('#painlocationreal1');
+var painlocationreal2 = $('#painlocationreal2');
+painlocationreal1.css({'visibility': 'hidden','border':'none'});
+painlocationreal2.css({'visibility': 'visible','border':'1px solid rgb(190, 188, 188)','border-left': '2px solid rgb(190, 188, 188)'});
+
+
+//var painlocationreal1 = document.querySelectorAll('#customers #painlocationreal td:nth-child(2)');
+//var painlocationreal2 = document.querySelectorAll('#customers #painlocationreal td:nth-child(3)');
+//painlocationreal1.css('display: none');
+
+
+       
 
 
 
-
-
-
-     
-      
-
-
-
+     /*
 var painlocationtest = $('#painlocationtest'); var painlocationtest1 = $('#painlocationtest1');
         if (painlocationx === true){
         painlocationtest.css('color', 'rgb(209, 228, 236)');
@@ -1866,7 +1871,7 @@ var painlocationtest = $('#painlocationtest'); var painlocationtest1 = $('#painl
                     var correctcolorboxpainlocation = $('#correct-colorbox-painlocation');  correctcolorboxpainlocation.css('background-color', 'rgb(197, 244, 197)');
                   $('#correct-colorbox-painlocation-before').css('background-color', 'rgb(197, 244, 197)');
       }
-
+*/
       var onsettest = $('#onsettest'); var onsettest1 = $('#onsettest1');
         if (onsetx === true){
         onsettest.css('color', 'rgb(209, 228, 236)');
