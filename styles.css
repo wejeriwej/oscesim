@@ -456,14 +456,19 @@ width: 10px;
 }
 
 #customers tr th:nth-child(2), #customers tr th:nth-child(3) {
-  font-size: 40px; 
+  font-size: 40px;
+  border: 2px solid;
+  border-color:rgb(190, 188, 188) ;
 }
-
 
 #customers tr th:nth-child(1){
   text-align:left;
   border: 1px solid;
 }
+
+
+
+
 
 #customers tr td:nth-child(1){
   background-color: transparent;
@@ -473,15 +478,23 @@ width: 10px;
     height: 0;
     border: none;
     
-    /* Remove padding */
     padding: 0;
-    
-    /* Remove margin */
-    margin: 0;
-    
-    /* Optionally, if there's any content, hide it */
+    margin: 0;    
     visibility: hidden;
 }
+
+#customers tr td:nth-child(2){
+  background-color: rgb(240, 225, 225);
+  border: 1px solid; border-right: 2px solid;  border-color:rgb(190, 188, 188) ;
+}
+
+#customers tr td:nth-child(3){
+  background-color: rgb(225, 240, 227);
+  border: 1px solid;  border-color:rgb(190, 188, 188) ;
+  visibility: hidden; border: none;
+}
+
+
 
 
 
@@ -1682,9 +1695,6 @@ td, th {
 
 }
 
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
 
 
 
