@@ -920,7 +920,7 @@ var timerforsubmitting = null;
     else if (painlocationrepeat === false&&!noteContent.includes("family")&&!noteContent.includes("other")&&!noteContent.includes("medical")
     &&(noteContent.includes("brought")||noteContent.includes("bring")||noteContent.includes("what can")||noteContent.includes("why")
         ||noteContent.includes("come")||noteContent.includes("how do you feel")
-        ||noteContent.includes("I help")||noteContent.includes("you have any pain")
+        ||noteContent.includes("I help")||(noteContent.includes("you have any pain")&&!noteContent.includes("else"))
         ||noteContent.includes("i can do for you")||noteContent.includes("can i do for you")
         ||noteContent.includes("problem"))) {
       //readOutLoud("This morning I was speaking to my friend and suddenly I had this really strange feeling in my chest. it was really painful and it felt as if I got kicked really hard in my chest region. I've tried taking paracetamol but it hasn't done anything");
@@ -983,8 +983,8 @@ var timerforsubmitting = null;
     
     //pain
     
-    else if (noteContent.includes(" where")&&(noteContent.includes("pain")||noteContent.includes("discomfort")||noteContent.includes("hurt")
-    )) {
+    else if (noteContent.includes("where")&&(noteContent.includes("pain")||noteContent.includes("discomfort")||noteContent.includes("hurt"))&&!noteContent.includes("else")&&!noteContent.includes("somewhere")
+    ) {
       //readOutLoud("The pain is in the middle of my chest"); - DON'T REMOVE THE SPACE BEFORE 'WHERE' AS CAN BE 'ANYWHERE (ELSE)'FOR RADIATION OF PAIN
       previousquestion = noteContent;   response_question = "The pain's in the middle of my chest";
       painlocationx = true;
@@ -1841,8 +1841,18 @@ Things we forgot to ask about in the consultation for EBI
 
 let generalhistorycounter = 0;
 
+
+
+
+
+
+
      
-      var painlocationtest = $('#painlocationtest'); var painlocationtest1 = $('#painlocationtest1');
+      
+
+
+
+var painlocationtest = $('#painlocationtest'); var painlocationtest1 = $('#painlocationtest1');
         if (painlocationx === true){
         painlocationtest.css('color', 'rgb(209, 228, 236)');
         painlocationtest1.css('color', 'rgb(0, 0, 0)');
