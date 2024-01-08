@@ -413,6 +413,97 @@ background-color: #eee;
 
 
 
+/*For the main table for EBI/WWW
+
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+  border: 3px solid #73AD21;
+}
+#customers #jack td:nth-child(1), #customers #jack td:nth-child(2) {
+border: none;
+};
+
+#customers tr th{
+width: 10px;
+}
+
+*/
+
+
+
+#customers tr th {
+  text-align: center;
+  font-size: larger; 
+}
+
+#customers tr th:nth-child(2), #customers tr th:nth-child(3) {
+  font-size: 40px; 
+}
+
+
+#customers tr th:nth-child(1){
+  text-align:left;
+  border: 1px solid;
+}
+
+#customers tr td:nth-child(1){
+  background-color: transparent;
+    
+    /* Set width and height to 0 to make it invisible */
+    width: 0;
+    height: 0;
+    border: none;
+    
+    /* Remove padding */
+    padding: 0;
+    
+    /* Remove margin */
+    margin: 0;
+    
+    /* Optionally, if there's any content, hide it */
+    visibility: hidden;
+}
+
+
+
+
+@media screen and (max-width: 800px) {
+#customers tr td:nth-child(1), #customers tr th:nth-child(1){
+  display: none;
+}
+}
+
+#customers tr td {
+content: "";
+}
+
+
+
+
+
+
+
+
+
 
 
 
@@ -789,10 +880,21 @@ box-shadow: 0px 0px 9px 4px #747DE8;
 
 .app {
   margin-left: 3.5%;
-  margin-right: 3.5%;
+  margin-right: 2%;
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
+  @media screen and (max-width: 1000px) {
+    .app {margin-right: 1.5%;}
+  }
+  @media screen and (max-width: 600px) {
+    .app {margin-right: 0.5%;}
+  }
+
+
+
+
 
 #casename {
   margin-left: 3.5%;
