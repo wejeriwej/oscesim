@@ -448,6 +448,7 @@ width: 10px;
 
 */
 
+#customers tr:hover {background-color: #ddd;}
 
 
 #customers tr th {
@@ -459,11 +460,12 @@ width: 10px;
   font-size: 40px;
   border: 2px solid;
   border-color:rgb(190, 188, 188) ;
+  
 }
 
 #customers tr th:nth-child(1){
   text-align:left;
-  border: 1px solid;
+  border: 2px solid;
 }
 
 
@@ -472,26 +474,25 @@ width: 10px;
 
 #customers tr td:nth-child(1){
   background-color: transparent;
-    
-    /* Set width and height to 0 to make it invisible */
     width: 0;
     height: 0;
-    border: none;
+    border-left: 2px solid; border-color: rgb(233, 246, 253);
+    background-color: rgb(233, 246, 253);
     
     padding: 0;
     margin: 0;    
-    visibility: hidden;
+    
 }
 
 #customers tr td:nth-child(2){
   background-color: rgb(240, 225, 225);
-  border: 1px solid; border-right: 2px solid;  border-color:rgb(190, 188, 188) ;
+  border: 1px solid; border-right: 2px solid; border-left: 2px solid;  border-color:rgb(190, 188, 188);
 }
 
 #customers tr td:nth-child(3){
   background-color: rgb(225, 240, 227);
   border: 1px solid;  border-color:rgb(190, 188, 188) ;
-  visibility: hidden; border: none;
+  visibility: hidden; border: none; border-right: 2px solid; border-color:rgb(190, 188, 188);
 }
 
 
@@ -892,17 +893,17 @@ box-shadow: 0px 0px 9px 4px #747DE8;
 
 
 .app {
-  margin-left: 3.5%;
+  margin-left: 2%;
   margin-right: 2%;
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
   @media screen and (max-width: 1000px) {
-    .app {margin-right: 1.5%;}
+    .app {margin-right: 1.5%; margin-left: 1.5%;}
   }
   @media screen and (max-width: 600px) {
-    .app {margin-right: 0.5%;}
+    .app {margin-right: 0.5%; margin-left: 0.5%;}
   }
 
 
@@ -1680,20 +1681,7 @@ legend {
 
 
 
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-  background-color: #e7f1fa;
-}
 
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-  
-
-}
 
 
 
@@ -1994,15 +1982,31 @@ body {
 
 
 
+
+
+
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+      background-color: rgb(255, 255, 255);
+    }
+    
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px
+    }
+
+
+
+
   body {
     /*background-color: lightblue;*/
-    background-color: rgb(209, 228, 236);
+    background-color: rgb(233, 246, 253);
 
-  }
+  }/*MAKE SURE TO ALSO CHANGE THE COLOUR IN SCRIPT.JS NEAR THE START*/
 
-  hr {
-    background-color: rgb(209, 228, 236);
-  }
   
   
 
