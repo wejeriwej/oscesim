@@ -149,7 +149,7 @@ function endConsultation(){
 
 
   document.getElementById('fullscreenvideobackground').style.display = 'unset';
-  document.body.style.backgroundColor = 'rgb(209, 228, 236)';
+  document.body.style.backgroundColor = 'rgb(233, 246, 253)';
   document.getElementById('logoduringconsultation').style.display = 'none';
   document.getElementById('myVideo').style.display = 'none';
 
@@ -456,7 +456,7 @@ function homeButton() {
   recognition.stop(); document.getElementById('listeninggif').style.display = 'none';   document.getElementById('replayButton').style.display = 'none';   document.getElementById('stop-consultation-btn').style.display = 'none'; document.getElementById('executeButton').style.display = 'none';
   
   document.getElementById('fullscreenvideobackground').style.display = 'unset';
-  document.body.style.backgroundColor = 'rgb(209, 228, 236)';
+  document.body.style.backgroundColor = 'rgb(233, 246, 253)';//BACKGROUND OF REVIEW SECTION!!!!!!
   document.getElementById('logoduringconsultation').style.display = 'none';
   document.getElementById('myVideo').style.display = 'none';
 
@@ -1843,8 +1843,8 @@ let generalhistorycounter = 0;
 
 var painlocationreal1 = $('#painlocationreal1');
 var painlocationreal2 = $('#painlocationreal2');
-painlocationreal1.css({'visibility': 'hidden','border':'none'});
-painlocationreal2.css({'visibility': 'visible','border':'1px solid rgb(190, 188, 188)','border-left': '2px solid rgb(190, 188, 188)'});
+painlocationreal1.css({'visibility': 'hidden'});//,'border':'none'
+painlocationreal2.css({'visibility': 'visible'});//,'border':'1px solid rgb(190, 188, 188)','border-left': '2px solid rgb(190, 188, 188)'
 
 
 //var painlocationreal1 = document.querySelectorAll('#customers #painlocationreal td:nth-child(2)');
