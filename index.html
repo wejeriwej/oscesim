@@ -281,16 +281,19 @@
 
  
  <div id="silencemessage">
-      <div id = "silencemessage_title" style="font-size: x-large;">Unfortunately the system did not pick up anything/there was a prolonged period of silence, and so the consultation was paused.</div><br>If you did ask a question and this has come up, then try the following:
+      <div id = "silencemessage_title" style="font-size: x-large;">Unfortunately the system did not pick up any sound/there was a prolonged period of silence, so the consultation was paused.</div><br>If you did ask a question and this has come up, then try the following:
         <div id="silencemessage_bulletpoints" style="margin-left: 10px;">
           
           <ul id="silencemessage_format2nd">
-            <li>Check your microphone on your device by testing it using the microphone/voice option on <a href="https://www.google.com/" target=”_blank” style="color: rgb(79, 99, 186)">Google</a> and try and say something to see if voice recognition works.</li>
+            <li style="margin-top: 10px;">Check your microphone on your device by testing it using the microphone/voice option on <a href="https://www.google.com/" target=”_blank” style="color: rgb(79, 99, 186)">Google</a> and try and say something to see if voice recognition works.</li>
             <li>If the above doesn't work, then try the same thing but on a different browser. If it then works, then open OSCESIMULATIONS on that same browser.</li>
             <li>Remember that the microphone will automatically stop following a prolonged period of silence</li>
             <li>Remember to press the ENTER key/press the submit button after you've asked your question</li>
             <li>Make sure there is no background noise</li>
             <li>Finally, try simply speaking louder and ask your question again</li>
+          
+            <center><button id="comebacktonormal" onclick="pauseBtn.click(); silentmsg = false;">Return to consultation</button></center>
+            
           </ul>
         </div></div>
  
@@ -481,7 +484,7 @@
   <br>
 
 
-  <h1> <u style="text-decoration-thickness: 2px; padding-bottom: 1px; margin-top: 5px;">Review of your history:</u></h1>
+  <h1> <u style="font-size: larger; text-decoration-thickness: 2px; padding-bottom: 1px; margin-top: 5px; text-underline-offset: 3px;">Review of your history:</u></h1>
 <br>
   <table id="customers">
     <tr>
@@ -489,13 +492,29 @@
       <th>❌</th>
       <th>✔️</th>
     </tr>
+
+
+
     <tr id="painlocationreal">
       <td></td>
-      <td id="painlocationreal1"><b style="font-weight: 900;">S</b>ite</td>
-      <td id="painlocationreal2"><b style="font-weight: 900;">S</b>ite</td>
+      <td id="painlocationreal1"><ul><li><b style="font-weight: 900;">S</b>ite</li></ul>
+          <ul class="j1"><li class = "explanationparagraph">The location of the pain</li></ul></td>
+      <td id="painlocationreal2"><ul><li><b style="font-weight: 900;">S</b>ite</li></ul>
+          <ul class="j1"><li class = "explanationparagraph">The location of the pain</li></ul></td>
     </tr>
-    <tr>
+    
+    <tr id="onsetreal">
       <td></td>
+      <td id="onsetreal1"><ul><li><b style="font-weight: 900;">O</b>nset</li></ul>
+          <ul class="j1"><li class = "explanationparagraph">How did the pain start?</li></ul></td>
+      <td id="onsetreal2"><ul><li><b style="font-weight: 900;">O</b>nset</li></ul>
+          <ul class="j1"><li class = "explanationparagraph">How did the pain start?</li></ul></td>
+    </tr>
+    
+    
+    
+    <tr>
+      <td></td>    
       <td>Christina Berglund</td>
       <td>Sweden</td>
     </tr>
