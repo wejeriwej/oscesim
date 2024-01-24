@@ -121,6 +121,7 @@ function initialstopConsultation(){
   recognition.stop(); document.getElementById('listeninggif').style.display = 'none';   document.getElementById('replayButton').style.display = 'none';   document.getElementById('stop-consultation-btn').style.display = 'none';  document.getElementById('home').style.display = 'none'; document.getElementById('executeButton').style.display = 'none';
   document.getElementById('pause-countdown').style.display = 'none';
   document.getElementById('countdown-value').style.display = 'none';
+  silentmsg = true;
 
 
  
@@ -403,26 +404,7 @@ slider.addEventListener("input", function() {
 //});
 
 
-
-
-
-
-/*pauseBtn.addEventListener("click", function() {
-  if (pauseBtn.style.backgroundImage = "url('pause_button_black_and_white-removebg-preview.png')") {
-    clearInterval(timer);
-    pauseBtn.innerHTML = "1"; pauseBtn.style.fontWeight = "bold"; pauseBtn.style.fontSize = "45px"; pauseBtn.style.height = '85px'; pauseBtn.style.padding = '1px 50px';
-    pauseBtn.style.backgroundImage = "url('play-button-black-and-white.png')";
-    recognition.stop(); document.getElementById('listeninggif').style.display = 'none';   document.getElementById('stop-consultation-btn').style.display = 'none';
-
-  } else if (pauseBtn.style.backgroundImage = "url('play-button-black-and-white.png')"){
-    timer = setInterval(updateTimeLeft, 1000);
-    pauseBtn.innerHTML = ""; pauseBtn.style.fontWeight = "normal"; pauseBtn.style.fontSize = "15px"; pauseBtn.style.height = '35px'; pauseBtn.style.padding = '10px 20px';
-    recognition.start(); document.getElementById('listeninggif').style.display = 'unset';     document.getElementById('stop-consultation-btn').style.display = 'unset';
-    pauseBtn.style.backgroundImage = "url('pause_button_black_and_white-removebg-preview.png')"
-  }
-});*/
-
-
+let silentmsg = false;
 
 
 pauseBtn.addEventListener("click", function() {
@@ -433,6 +415,8 @@ pauseBtn.addEventListener("click", function() {
     pauseBtn.style.backgroundImage = "url('play-button-black-and-white.png')";
 
     myVideo.pause(); recognition.stop(); document.getElementById('listeninggif').style.display = 'none';   document.getElementById('replayButton').style.display = 'none';   document.getElementById('stop-consultation-btn').style.display = 'none';   document.getElementById('home').style.display = 'none'; document.getElementById('executeButton').style.display = 'none'; initialpromptforpresssubmit.style.display = 'none';
+    pauseBtn.style.display = "unset"; //actionTriggered = true;
+    silentmsg = true;
 
   } else {
     timer = setInterval(updateTimeLeft, 1000);
@@ -441,6 +425,8 @@ pauseBtn.addEventListener("click", function() {
     pauseBtn.style.backgroundImage = "url('pause_button_black_and_white-removebg-preview.png')";  document.getElementById('silencemessage').style.display = 'none';
 
     pauseBtn.style.top = ''; pauseBtn.style.left = ''; pauseBtn.style.transform = ''; // Reset the position property to its default value
+    pauseBtn.style.display = "unset"; //actionTriggered = true;
+    silentmsg = false;
   }
 });
 
@@ -1841,11 +1827,32 @@ Things we forgot to ask about in the consultation for EBI
 
 let generalhistorycounter = 0;
 
-var painlocationreal1 = $('#painlocationreal1');
-var painlocationreal2 = $('#painlocationreal2');
-painlocationreal1.css({'visibility': 'hidden'});//,'border':'none'
-painlocationreal2.css({'visibility': 'visible'});//,'border':'1px solid rgb(190, 188, 188)','border-left': '2px solid rgb(190, 188, 188)'
 
+
+
+var painlocationreal1 = $('#painlocationreal1'); var painlocationreal2 = $('#painlocationreal2');
+if (painlocationx === true){
+redstyles(painlocationreal1); greenstyles(painlocationreal2);
+}
+
+var onsetreal1 = $('#onsetreal1'); var onsetreal2 = $('#onsetreal2');
+if (onsetx === true){
+redstyles(onsetreal1); greenstyles(onsetreal2);
+}
+
+
+
+
+
+
+
+
+
+function redstyles(element){
+  element.css({'visibility': 'hidden'});}
+
+function greenstyles(element){
+  element.css({'visibility': 'visible','border-bottom':'1px solid rgb(190, 188, 188)','border-top':'1px solid rgb(190, 188, 188)'});}
 
 //var painlocationreal1 = document.querySelectorAll('#customers #painlocationreal td:nth-child(2)');
 //var painlocationreal2 = document.querySelectorAll('#customers #painlocationreal td:nth-child(3)');
@@ -2473,16 +2480,26 @@ recognition.onstart = function() {
           }
 }
 
-recognition.onend = function() {
+
+
+
+
+
+recognition.onend= function () {
   micisworking.style.display = 'none';
   //micisworking.style.backgroundColor = 'red';
 
-        if (actionTriggered == false){
+        if (actionTriggered == false && silentmsg == false){
         pauseBtn.click(); 
+        silentmsg = false;
         document.getElementById('silencemessage').style.display = 'unset';
-        }
+        pauseBtn.style.display = "none";
+      }
+
+
 
 }; 
+//&& !pauseBtn.click
 
 
 
