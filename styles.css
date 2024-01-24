@@ -57,6 +57,7 @@
 
 li {
   list-style-position: outside;
+  
 }
 
 
@@ -167,9 +168,29 @@ li {
 
 
 
-#review-section ul li {
+#review-section ul:nth-child(1){
+  list-style: '● ';
+  
+  margin-left: -25px;
+
+}
+
+
+.j1 {
+  /*margin-left: -25px;*/
+  list-style: none;
   list-style: '- ';
 }
+
+.explanationparagraph{
+  margin-left: 3%;
+  margin-right: 1px;
+  font-size: 12px;
+  font-style: italic;
+  list-style: '- ';
+
+}
+
 
 
 
@@ -390,15 +411,53 @@ li {
 
 
 
-#silencemessage{
-display : none; z-index: 1; position: absolute; color: rgb(0, 0, 0);
 
+
+
+
+#silencemessage{
+margin:auto;
+position: absolute;
+  left: 0;
+  right: 0;
+
+display : none; z-index: 1; position: absolute; color: rgb(0, 0, 0);
 margin: auto;
 padding: 30px;
+padding-bottom: 10px;
 border: 3px solid #73AD21;
-width: 900px;
+width: 80%;
 background-color: #eee;
 }
+
+#comebacktonormal {
+  display: inline-flex;
+  font-size: large;
+  background-color: #73AD21;
+  margin: 25px auto;
+  margin-bottom: 0%; 
+  text-align: center; 
+}
+
+
+@media screen and (max-width: 800px) {
+  #silencemessage{
+    width: 95%;
+    padding: 15px;
+    padding-bottom: 5px;
+    font-size: small;
+  }
+#silencemessage_title{
+  font-size: small;
+}
+#comebacktonormal{
+  margin: 20px auto;
+  margin-bottom: 0%; 
+}
+}
+  
+
+
 
 #silencemessage_format{
   display: inline-block;
@@ -453,16 +512,20 @@ width: 10px;
 
 #customers tr th {
   text-align: center;
-  font-size: larger; 
+  font-size: 20px;/*font-size: larger;*/
+  background-color: #f0f0f0; 
 }
 
 #customers tr th:nth-child(2), #customers tr th:nth-child(3) {
   font-size: 40px;
   border: 2px solid;
-  border-color:rgb(190, 188, 188) ;
+  border-color:rgb(0, 0, 0) ;/*rgb(190, 188, 188)*/
   
 }
 
+#customers tr td{
+  font-size: 17.5px;
+}
 #customers tr th:nth-child(1){
   text-align:left;
   border: 2px solid;
@@ -1080,14 +1143,6 @@ box-shadow: 0px 0px 9px 4px #747DE8;
   color: rgb(241, 58, 58);
 }
 
-.explanationparagraph{
-  margin-left: 10px;
-  margin-right: 10px;
-
-  font-size: 15px;
-}
-
-
 
 
 
@@ -1375,7 +1430,7 @@ box-shadow: 0px 0px 9px 4px #747DE8;
 
 
 #review-section p {
-  margin-left: 10px;
+  margin-left: 0px;
 }
 
 
