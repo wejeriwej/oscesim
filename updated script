@@ -416,7 +416,7 @@ pauseBtn.addEventListener("click", function() {
 
     myVideo.pause(); recognition.stop(); document.getElementById('listeninggif').style.display = 'none';   document.getElementById('replayButton').style.display = 'none';   document.getElementById('stop-consultation-btn').style.display = 'none';   document.getElementById('home').style.display = 'none'; document.getElementById('executeButton').style.display = 'none'; initialpromptforpresssubmit.style.display = 'none';
     pauseBtn.style.display = "unset"; //actionTriggered = true;
-    silentmsg = true;
+    silentmsg = true; document.getElementById('emptyif').style.display = 'none';
 
   } else {
     timer = setInterval(updateTimeLeft, 1000);
@@ -674,7 +674,7 @@ let actionTriggered = false;
 
 
   document.addEventListener("keydown", function (event) {
-    if (event.key === "Enter" && !actionTriggered) {
+    if (event.key === "Enter" && micisworking.style.display !== 'none') {// && !actionTriggered  
        onesecdelaybeforestoprecog();
        actionTriggered = true; clearTimeout(silenceTimeout);
        document.getElementById('listeninggif').style.display = 'none';    document.getElementById('stop-consultation-btn').style.display = 'none';   document.getElementById('replayButton').style.display = 'none';   document.getElementById('home').style.display = 'none'; document.getElementById('executeButton').style.display = 'none'; document.getElementById('loadingcircle').style.display = 'unset';  micisworking.style.display = 'none'; initialpromptforpresssubmit.style.display = 'none';
@@ -1594,7 +1594,10 @@ var timerforsubmitting = null;
       document.getElementById("mp4_src").src = "videos/yesitwasquitehardforme.mp4"; allifsaction();}//Sorry to here about that
 
 else if (noteContent === ""){
+  
+  pauseBtn.click(); pauseBtn.style.display = "none";
   emptyif.style.display = 'unset';
+  
 }
 
     else {
