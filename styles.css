@@ -415,7 +415,7 @@ li {
 
 
 
-#silencemessage{
+#silencemessage, #emptyif{
 margin:auto;
 position: absolute;
   left: 0;
@@ -430,18 +430,24 @@ width: 80%;
 background-color: #eee;
 }
 
+#emptyif{
+  margin: 5px auto;
+  padding-bottom: 20px;
+
+}
+
 #comebacktonormal {
   display: inline-flex;
   font-size: large;
   background-color: #73AD21;
-  margin: 25px auto;
+  margin: 5px auto;
   margin-bottom: 0%; 
   text-align: center; 
 }
 
 
 @media screen and (max-width: 800px) {
-  #silencemessage{
+  #silencemessage {
     width: 95%;
     padding: 15px;
     padding-bottom: 5px;
@@ -451,8 +457,15 @@ background-color: #eee;
   font-size: small;
 }
 #comebacktonormal{
-  margin: 20px auto;
+  margin: 2.5px auto;
   margin-bottom: 0%; 
+}
+#emptyif{
+  width: 95%; padding: 15px; font-size: small;
+}
+#emptyif h1{
+  font-size: 27.5px;
+
 }
 }
   
