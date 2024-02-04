@@ -964,9 +964,9 @@ var timerforsubmitting = null;
     else if (noteContent.includes("how")&&(noteContent.includes("pain")||noteContent.includes("it"))&&(noteContent.includes("develop")||noteContent.includes("start")||noteContent.includes("begin")||noteContent.includes("come")||noteContent.includes("brought"))
     ||noteContent.includes("what happen")) {
       //readOutLoud("To be honest the pain came quite quickly and randomly, I wasn't doing anything in particular I think, I was just walking to the shops");
-      previousquestion = noteContent;   response_question = "The pain came on quickly and randomly when I was walking to the shops";
+      previousquestion = noteContent;   response_question = "The pain came on quickly and randomly when I was walking to the shops"; onsetx = true;
       document.getElementById("mp4_src").src = "videos/howhappen.mp4"; allifsaction();}//how did you get the pain/how did it start
-    
+      
     //pain
     
     else if (noteContent.includes("where")&&(noteContent.includes("pain")||noteContent.includes("discomfort")||noteContent.includes("hurt"))&&!noteContent.includes("else")&&!noteContent.includes("somewhere")
