@@ -1,9 +1,17 @@
+@font-face {
+  font-family: Cheflat;
+  src: url(Cheflat.ttf);
+}
+
+
+
 #topheader {
   margin: 0;
   padding: 0;
   list-style-type: none;
   background-color: lightcyan;
   height: 90px;
+  
 }
 
 #logo {
@@ -11,11 +19,15 @@
   margin-left: 0px;
  
   height: 78px;
-  width: 320px;
+  width: 150px; /*width: 320px;*/
 }
 
 .logoplacement{
-  text-align: center;
+  /*text-align: center;*/
+  margin-right: 5px;
+  margin-left: 7.5%;
+  
+  
 }
 
 .nav-area{
@@ -306,7 +318,7 @@ li {
 
 
 #executeButton{
-  background-color: #ee9bef;
+  
   position: absolute;
 
   z-index: 20000;
@@ -542,6 +554,7 @@ width: 10px;
 #customers tr th:nth-child(1){
   text-align:left;
   border: 2px solid;
+  font-family: Cheflat;
 }
 
 
@@ -557,6 +570,7 @@ width: 10px;
     
     padding: 0;
     margin: 0;    
+    
     
 }
 
@@ -585,7 +599,6 @@ width: 10px;
 #customers tr td {
 content: "";
 }
-
 
 
 
@@ -639,7 +652,7 @@ content: "";
 #fakeVideo {
   float: right; 
   margin-left: 10px; 
-  margin-right: 10px; 
+  margin-right: 0px;
   margin-bottom: 5px; 
   /*border: solid black 1px; 
   padding: 1px; */
@@ -906,22 +919,35 @@ img {vertical-align: middle;}
 }
 
 /* Next & previous buttons */
-.prev, .next {
+.prev, .next, #executeButton, #stop-consultation-btn, #move-onto-questions-btn, #end-consultation-btn, #start-consultation-btn {
   cursor: pointer;
   position: absolute;
   /*top: 50%;*/
   width: auto;
   padding: 16px;
-  margin-top: -22px;
   color: white;
   font-weight: bold;
+  margin-top: -22px;
   font-size: 18px;
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
   user-select: none;
   background-color: rgba(196, 195, 195, 0.8);
-  
+  font-family: Cheflat;
 }
+#executeButton, #stop-consultation-btn, #move-onto-questions-btn, #end-consultation-btn, #start-consultation-btn{
+  margin-top: 0px;
+height:auto;
+padding-top: 5px;
+padding-bottom: 5px;
+font-weight: 100;
+border-radius: 3px 3px 3px 3px;
+}
+/*
+#start-consultation-btn{
+  font-size: large;
+}*/
+
 
 /* Position the "next button" to the right */
 .next {
@@ -930,19 +956,25 @@ img {vertical-align: middle;}
 }
 
 /* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
+.prev:hover, .next:hover, #executeButton:hover, #start-consultation-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #109D59;
+  text-decoration: none;
+
 }
 
 /* Caption text */
+
 .text {
   color: #000000;
-  font-size: 25px;
+  font-size: 35px;
   padding: 16px 12px;
   position: absolute;
   /*bottom: 8px;*/
   width: 100%;
   text-align: center;
+  font-family: Cheflat;
+
 }
 
 /* Number text (1/3 etc) */
@@ -1093,26 +1125,35 @@ img {vertical-align: middle;}
 
 
 .app {
-  margin-left: 2%;
-  margin-right: 2%;
+  /*margin-left: 2%;
+  margin-right: 2%;*/
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
+
+
+
+
+  .container {
+  margin-left: 7.5%;
+  margin-right: 7.5%;
+  }
+
+
   @media screen and (max-width: 1000px) {
-    .app {margin-right: 1.5%; margin-left: 1.5%;}
+    .container {margin-right: 1.5%; margin-left: 1.5%;}
   }
   @media screen and (max-width: 600px) {
-    .app {margin-right: 0.5%; margin-left: 0.5%;}
+    .container {margin-right: 0.5%; margin-left: 0.5%;}
   }
-
-
 
 
 
 #casename {
-  margin-left: 3.5%;
+  /*margin-left: 3.5%;*/
   display: block;
+  /*font-family: Cheflat;*/
 }
 
 
