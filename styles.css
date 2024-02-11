@@ -3,6 +3,11 @@
   src: url(Cheflat.ttf);
 }
 
+@font-face {
+  font-family: Involve;
+  src: url(Involve.ttf);
+}
+
 
 
 #topheader {
@@ -15,11 +20,12 @@
 }
 
 #logo {
-  margin-top: 12px;
+  margin-top: 0px;
   margin-left: 0px;
+  margin-bottom: -12px;
  
-  height: 78px;
-  width: 150px; /*width: 320px;*/
+  height: 63px;
+  width: 125px; /*width: 320px;*/
 }
 
 .logoplacement{
@@ -298,6 +304,7 @@ li {
   margin-top: 30px;
   float:left;/*Consider removing this if you want to make it central in the whole page*/
   
+
   
 }
 
@@ -318,6 +325,24 @@ li {
   font-size: 15px;
   margin-bottom: -2.5px;
 }
+
+input[type=range] {
+  width: 100%;
+  height: 10px;
+  background: #a0a0a0; /* background: #d3d3d3; */
+  outline: none;
+  border-radius: 15px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  
+  background: #f0c88c; /* Default thumb color */
+  cursor: pointer;
+  border: 1px solid #000000;
+}
+
+
 
 .countdown-container {
   display: flex;
@@ -582,7 +607,8 @@ width: 10px;
 #customers tr th:nth-child(1){
   text-align:left;
   border: 2px solid;
-  font-family: Cheflat;
+  font-family: Involve;
+
 }
 
 
@@ -657,7 +683,12 @@ content: "";
 }
 
 
-
+#tutorial {
+  height: 120px;
+  width: 180px;
+  float: right;
+  margin-left: 60px;
+}
 
 
 
@@ -684,10 +715,11 @@ content: "";
   margin-bottom: 5px; 
   /*border: solid black 1px; 
   padding: 1px; */
-  width:55%;
-  border-radius: 15px;
+  width: 57%;
+  border-radius: 10px;
 
-
+  transition: box-shadow 0.3s;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -950,7 +982,7 @@ img {vertical-align: middle;}
 /* Next & previous buttons */
 .prev, .next, #executeButton, #stop-consultation-btn, #move-onto-questions-btn, #end-consultation-btn, #start-consultation-btn {
   cursor: pointer;
-  position: absolute;
+  /*position: absolute;*/
   /*top: 50%;*/
   width: auto;
   padding: 16px;
@@ -962,8 +994,17 @@ img {vertical-align: middle;}
   border-radius: 0 3px 3px 0;
   user-select: none;
   background-color: rgba(196, 195, 195, 0.8);
-  font-family: Cheflat;
+  font-family: Involve;
+  transition: box-shadow 0.3s;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
 }
+
+.prev, .next {
+    position: absolute;
+    transition: box-shadow 0.3s;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+}
+
 #executeButton, #stop-consultation-btn, #move-onto-questions-btn, #end-consultation-btn, #start-consultation-btn{
   margin-top: 0px;
 height:auto;
@@ -973,11 +1014,22 @@ font-weight: 100;
 border-radius: 3px 3px 3px 3px;
 }
 #start-consultation-btn {
-  font-size: 35px;
+  font-size: 30px;
   padding-top: 20px;
 padding-bottom: 20px;
 margin-top: 0px;
+/*background-color: #ededed;*/
+background:rgb(248, 253, 255);
+background:rgb(237, 250, 255);
+background: #fbf2e5;
 
+border: 1.5px solid #4CAF50;
+
+border-color: #3a4f64;
+border-radius: 100px;
+color: #000000;
+transition: box-shadow 0.9s;
+box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.6);
 }
 
 /*
@@ -1010,7 +1062,7 @@ margin-top: 0px;
   /*bottom: 8px;*/
   width: 100%;
   text-align: center;
-  font-family: Cheflat;
+  font-family: Involve;
 
 }
 
@@ -1062,6 +1114,97 @@ margin-top: 0px;
 
 
 
+
+
+
+
+
+
+
+
+
+
+/*TUTORIAL SECTION*/
+
+/* Style the Image Used to Trigger the Modal */
+#myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (Image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content, #caption {
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+  from {transform:scale(0)}
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
 
 
 
@@ -1836,7 +1979,7 @@ margin-top: 0px;
 }
 #bottombanner {
   margin-top: -10px;
-  height: 3px;
+  height: 2px;
 
 }
 
@@ -1854,7 +1997,7 @@ a {
 
 .nav-area {
 	/*background: #262626;*/
-  background:rgb(255, 255, 255);
+  background:rgb(237, 250, 255);/*  background:rgb(248, 253, 255); background:rgb(237, 250, 255); */
   
 }
 .nav-area:after {
@@ -1871,7 +2014,7 @@ a {
 	
 	position:relative;
   display: inline-block;
-  margin-top: 25px;
+  margin-top: 8px;
   
 }
 .nav-area ul li a {
@@ -2286,7 +2429,7 @@ body {
 
   body {
     /*background-color: lightblue;*/
-    background-color: rgb(233, 246, 253);
+    background-color: rgb(255, 255, 255);/* rgb(233, 246, 253); rgb(250, 252, 252)*/
 
   }/*MAKE SURE TO ALSO CHANGE THE COLOUR IN SCRIPT.JS NEAR THE START*/
 
