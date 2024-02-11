@@ -269,7 +269,7 @@
 
 
               
-              <h4 id="casename">Case:</h3>
+              <center><h2 id="casename">Marc Jevner</h2></center>
 
 
 
@@ -345,34 +345,73 @@
 
 
 
+<div id="placementofpage" style="width: 46%;">
+                <br><h4 id="introstatement" style="margin-bottom: -10px;"><b>You are a Junior Doctor in a GP, and your next patient is a 31 year old male that is complaining of chest pain. Please take a full history.</b></h4>
 
-                <h4 id="introstatement" style="margin-bottom: -10px;"><b>You are a Junior Doctor in a GP, and your next patient is a 31 year old male that is complaining of chest pain. Please take a full history.</b></h4>
+<br>
 
                 <!--Countdown timer-->
-                <div class="timer-container">
+                <div class="timer-container" style="display: inline-block; vertical-align: top;">
+                  <!--<img id="tutorial" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Lesliejordan.jpg/220px-Lesliejordan.jpg">-->
+
+
+
+<!-- TUTORIAL -->
+<!--<video id="myImg" src="videos/3or4pillows.mp4" alt="snow" style="width:100%;max-width:300px"></video>-->
+<div style="position: relative; width: 40%; max-width: 300px; float: right;margin-right: 35px;">
+  <video id="myImg" src="videos/3or4pillows.mp4" alt="snow" style="width: 110%; max-width: 300px;  "></video>
+  <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; padding: 0px 0px; border-radius: 5px; pointer-events: none; font-size: 30px;">
+      Tutorial  </div></div><!--background-color: rgba(0, 0, 0, 0.5);-->
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- The Close Button -->
+  <span class="close">&times;</span>
+
+  <!-- Modal Content (The Video) -->
+  <video class="modal-content" id="img01" controls>
+    <source src="videos/3or4pillows.mp4" type="video/mp4">    Your browser does not support the video tag.
+  </video>
+
+  <!-- Modal Caption (Image Text)--> 
+  <div id="caption">Tutorial</div>
+</div>
+
+
+
+
+
+
                   <div class="slider-container">
                     <input type="range" min="5" max="10" step="1" value="5" id="slider">
-                    <div id="slider-value">5 min</div>
+                <div id="slider-value">5 min</div>
                   </div>
-                  <div id="countdown-updated">5:00</div>
+
+
+                  <div style="width: 200px;"><center><div id="countdown-updated">5:00</div>
+                  <p style="font-size: small; float: left;   margin-top: -10px;">Slide the toggle above to change the duration of your history</p></center><!--can use adjust instead of slide-->
+                </div>
                   <div class="countdown-container">
+
                     <div id="countdown-value">5:00</div>
                     <div class="buttons-container">
                       <button id="pause-countdown" ></button>
                     </div>
                   </div>
-                  <p style="font-size: small; float: left;   margin-top: -10px;">Adjust the toggle above to change the duration of your history</p>
+                  
 
                 </div>
 
+                <center><button id="start-consultation-btn" onclick="style.display = 'none', startFunction()" type="button">Start Consultation</button></center>
 
+              </div>
                <!-- <input type="image" id=logo src="logo.png" name="saveForm" class="btTxt submit" id="saveForm" />-->
 
 
                 <br>
-                <p style="float: right; margin-top: 0px;">Marc Jevner, 31 y/o M</p>
+                <p style="float: right; margin-top: -170px;">Marc Jevner, 31 y/o M</p>
                 <div id="formatstartbtn">
-                  <button id="start-consultation-btn" onclick="style.display = 'none', startFunction()" type="button">Start Consultation</button>
 
                 </div>
                 
@@ -594,7 +633,7 @@
                         
                         <tr>
                           <td id="leftsidebox" style=" border: 2px solid; border-top: 2.7px solid; background-color: #f0f0f0; 
-                          text-align: center; font-size: 20px; font-weight: bold; z-index: 1000; position: relative; font-family: Cheflat;">ICE + other History</td>
+                          text-align: center; font-size: 20px; font-weight: bold; z-index: 1000; position: relative; font-family: Involve;">ICE + other History</td>
                           <td>Maria Anders things I didnt know abiut are very frustsr=ationg and did you knwo that there are things that happen like</td>
                           <td>Maria Anders things I didnt know abiut are very frustsr=ationg and did you knwo that there are things that happen like</td>
                         </tr>
