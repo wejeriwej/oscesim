@@ -262,14 +262,14 @@
                 
 
                 <figure>
-                <video id="fakeVideo" autoplay> <source id="mp4_src" src="videos/vid-whatsbroughtyouin.mp4" type="video/mp4"></video><!--is the vid that's acting as a image-->
+                <video id="fakeVideo" autoplay > <source id="mp4_src" src="videos/vid-whatsbroughtyouin.mp4" type="video/mp4"></video><!--is the vid that's acting as a image-->
 
               </div>
               </figure>
 
 
               
-              <center><h2 id="casename">Marc Jevner</h2></center>
+              <center><b><h2 id="casename">Marc Jevner</h2></b></center>
 
 
 
@@ -301,9 +301,10 @@
 
  <button id="executeButton">Submit ❯</button>
  
- <p id="micisworking" style=" display : none; z-index: 1; position: absolute; color: brown;">Your mic is working!</p>
- <p id="messagebeforeacceptingmic" style=" display : none; z-index: 1; position: absolute; color: rgb(67, 42, 165);">Allow permission to use the microphone</p>
- 
+ <img id="micisworking" src="micfinal.gif" style="display: none; z-index: 1;"></img>
+ <p id="micisworking"style="display: none; z-index: 2;">Mic is on</p>
+ <img id="messagebeforeacceptingmic" src="permissionformic.png" style=" display : none; z-index: 1;"></img>
+
 
  
  <div id="silencemessage">
@@ -325,7 +326,7 @@
         </div></div>
  
 
-  <p id="initialpromptforpresssubmit" style=" display : none; z-index: 1; position: absolute; color: rgb(165, 42, 128);">Ask your first question to your patient,<br>then press the 'ENTER' key or the submit button</p>
+  <p id="initialpromptforpresssubmit" style=" display : none; z-index: 1; color: #f0f0f0;"><b>Only speak when this icon above appears.</b><br><br>Ask your first question to your patient,<br>then press the 'ENTER' key or the submit button</p>
  
 
 
@@ -358,7 +359,8 @@
 
 <!-- TUTORIAL -->
 <!--<video id="myImg" src="videos/3or4pillows.mp4" alt="snow" style="width:100%;max-width:300px"></video>-->
-<div style="position: relative; width: 40%; max-width: 300px; float: right;margin-right: 35px;">
+
+<div id="tutorial" style="position: relative; width: 40%; max-width: 300px; float: right;margin-right: 35px;">
   <video id="myImg" src="videos/3or4pillows.mp4" alt="snow" style="width: 110%; max-width: 300px;  "></video>
   <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; padding: 0px 0px; border-radius: 5px; pointer-events: none; font-size: 30px;">
       Tutorial  </div></div><!--background-color: rgba(0, 0, 0, 0.5);-->
