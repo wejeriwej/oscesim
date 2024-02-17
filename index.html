@@ -262,7 +262,16 @@
                 
 
                 <figure>
-                <video id="fakeVideo" autoplay > <source id="mp4_src" src="videos/vid-whatsbroughtyouin.mp4" type="video/mp4"></video><!--is the vid that's acting as a image-->
+
+
+                
+                <div class="vidthatsfake">
+                  <video id="fakeVideo" src="videos/vid-whatsbroughtyouin.mp4"  style="width:100%"></video>
+                  <div class="groupedvid">
+                    <h4><b>Marc Jevner</b></h4> 
+                    <p>31 y/o Male</p> 
+                  </div>
+                </div>
 
               </div>
               </figure>
@@ -346,10 +355,34 @@
 
 
 
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
 <div id="placementofpage" style="width: 46%;">
                 <br><h4 id="introstatement" style="margin-bottom: -10px;"><b>You are a Junior Doctor in a GP, and your next patient is a 31 year old male that is complaining of chest pain. Please take a full history.</b></h4>
 
 <br>
+
+
+
+
+
+
+
+
 
                 <!--Countdown timer-->
                 <div class="timer-container" style="display: inline-block; vertical-align: top;">
@@ -361,6 +394,9 @@
 <!--<video id="myImg" src="videos/3or4pillows.mp4" alt="snow" style="width:100%;max-width:300px"></video>-->
 
 <div id="tutorial" style="position: relative; width: 40%; max-width: 300px; float: right;margin-right: 35px;">
+  
+ <!-- <img id="myImg" src="trialtutorial.jpg" style="width: 110%; max-width: 300px;  "></img>-->
+
   <video id="myImg" src="videos/3or4pillows.mp4" alt="snow" style="width: 110%; max-width: 300px;  "></video>
   <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; padding: 0px 0px; border-radius: 5px; pointer-events: none; font-size: 30px;">
       Tutorial  </div></div><!--background-color: rgba(0, 0, 0, 0.5);-->
@@ -412,11 +448,79 @@
 
 
                 <br>
-                <p style="float: right; margin-top: -170px;">Marc Jevner, 31 y/o M</p>
+               <!-- <p style="float: right; margin-top: -170px;">Marc Jevner, 31 y/o M</p>-->
+
                 <div id="formatstartbtn">
 
                 </div>
                 
+
+
+
+
+<br>
+
+                <h2>Cases:</h2>
+                <p>Use the horizontal scrollbar to see the other cases.</p>
+                
+                <div class="scroll-container">
+                  <img src="logo.png" alt="Cinque Terre" width="600" height="400">
+                  <img src="logo.png" alt="Forest" width="600" height="400">
+                  <img src="logo.png" alt="Northern Lights" width="600" height="400">
+                  <img src="logo.png" alt="Mountains" width="600" height="400">
+                </div>
+                
+                <p>Note that the images are of same size.</p>
+
+
+
+
+
+
+
+
+                <h2>Automatic Slideshow</h2>
+                <p>Change image every 2 seconds:</p>
+                
+                <div class="slideshow-container1">
+                
+                <div class="mySlides1 fade">
+                  <div class="numbertext1">1 / 3</div>
+                  <img src="logo.png" style="width:100%">
+                  <div class="text1">Caption Text</div>
+                </div>
+                
+                <div class="mySlides1 fade">
+                  <div class="numbertext1">2 / 3</div>
+                  <img src="logo.png" style="width:100%">
+                  <div class="text1">Caption Two</div>
+                </div>
+                
+                <div class="mySlides1 fade">
+                  <div class="numbertext1">3 / 3</div>
+                  <img src="logo.png" style="width:100%">
+                  <div class="text1">Caption Three</div>
+                </div>
+                
+                </div>
+                <br>
+                
+                <div style="text-align:center">
+                  <span class="dot1"></span> 
+                  <span class="dot1"></span> 
+                  <span class="dot1"></span> 
+                </div>
+              
+              
+
+
+
+
+
+
+
+
+
                 
                 <!--Main consultation area-->                    
                 <button id="stop-consultation-btn" onclick="style.display = 'none', initialstopConsultation()" type="button">End History</button>
@@ -585,6 +689,15 @@
                       <a class="prev" title="Management" onclick="plusSlides(-1)">❮</a>
                       <a class="next" title="Advanced history taking" onclick="plusSlides(1)">❯</a>
 
+                      
+                      <div class="w3-light-grey w3-round-xlarge">
+                        <div class="w3-container w3-blue w3-round-xlarge" style="width:25%">25%</div>
+                      </div>
+
+
+
+
+
                     <div style="text-align:center">
                       <span class="dot" title="History fundamentals" onclick="currentSlide(1)"></span> 
                       <span class="dot" title="Advanced history" onclick="currentSlide(2)"></span> 
@@ -669,6 +782,34 @@
                     
                     
                     </div>
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                     
 
@@ -1756,7 +1897,10 @@
 
 
 
-
+<footer>
+  <p>Author: Zak Francillon<br>
+  <a href="mailto:hege@example.com">hege@example.com</a></p>
+</footer>
 
 
 
