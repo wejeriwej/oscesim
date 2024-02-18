@@ -150,7 +150,7 @@ function endConsultation(){
 
 
   document.getElementById('fullscreenvideobackground').style.display = 'unset';
-  document.body.style.backgroundColor = 'rgb(233, 246, 253)';
+  document.body.style.backgroundColor = 'rgb(255, 255, 255)';
   document.getElementById('logoduringconsultation').style.display = 'none';
   document.getElementById('myVideo').style.display = 'none';
 
@@ -3662,7 +3662,7 @@ document.getElementById('review-section').style.display = 'unset';
 
 
   document.getElementById('fullscreenvideobackground').style.display = 'unset';
-  document.body.style.backgroundColor = 'rgb(209, 228, 236)';
+  document.body.style.backgroundColor = 'rgb(255, 255, 255)';
   document.getElementById('logoduringconsultation').style.display = 'none';
   document.getElementById('myVideo').style.display = 'none';
 
