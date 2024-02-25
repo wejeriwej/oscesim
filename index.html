@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="styles.css">
         <link rel="icon" type="image/png" href="logoupdated1.png">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
     </head>
@@ -56,15 +56,15 @@
             
            
             
-            <li class = "homebtn">
-              <a href="homepage.html">home</a>
+            <li class = "homebtn" id="r1">
+              <a href="home.html">home</a>
             </li>
             
 
 
 
 
-            <li class = "secondheaderbtn">
+            <li class = "secondheaderbtn" id="r1">
               
               <a href="#" style="border-bottom-left-radius: 0%; border-bottom-right-radius: 0%;">Cases by Topic ᵕ</a>
               <ul id = "casebytopiclayout">
@@ -172,12 +172,12 @@
               </ul>
             </li>
             
-            <li class = "thirdheaderbtn">
+            <li class = "thirdheaderbtn" id="r1">
               <a href="#" >About us</a>
             </li>
             
 
-            <li class = "fourthheaderbtn">
+            <li class = "fourthheaderbtn" id="r1">
               <a href="#" >Contact us</a>
             </li>
           
@@ -193,6 +193,21 @@
             <li class = "searchbtn">
               <a href="#" style="font-size: 30px; margin-top: -13px;" >⌕</a>
             </li>
+
+            
+            
+            <li class="mobilenavarea"><a href="javascript:void(0);" class="icon" onclick="myFunction()">
+              <i class="fa fa-bars"></i>
+            </a>
+          </li>
+
+
+            <div id="myLinks" style="display: none;">
+              <a href="#news">News</a>
+              <a href="#contact">Contact</a>
+              <a href="#about">About</a>
+            </div>
+            
             
           </ul>
         </center>
@@ -218,9 +233,6 @@
 
 
 
-
-
-        
         <div class="container">
             
             
@@ -481,7 +493,7 @@
                 <h2>Automatic Slideshow</h2>
                 <p>Change image every 2 seconds:</p>
                 
-                <div class="slideshow-container1">
+                <div class="slideshow-container">
                 
                 <div class="mySlides1 fade">
                   <div class="numbertext1">1 / 3</div>
@@ -510,6 +522,10 @@
                   <span class="dot1"></span> 
                 </div>
               
+              
+              
+
+
               
 
 
@@ -705,7 +721,7 @@
 
 
                     <a class="prev" title="Management" onclick="plusSlides(-1)">❮</a>
-                    <a class="next" title="Advanced history taking" onclick="plusSlides(1)">Next ❯</a>
+                    <a class="next" title="Advanced history taking" onclick="plusSlides(1)">next ❯</a>
 
                   </div>
 
