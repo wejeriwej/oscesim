@@ -1,21 +1,21 @@
 @font-face {
   font-family: Cheflat;
-  src: url(Cheflat.ttf);
+  src: url(fonts/Cheflat.ttf);
 }
 
 @font-face {
   font-family: Involve;
-  src: url(Involve.ttf);
+  src: url(fonts/Involve.ttf);
 }
 
 @font-face {
   font-family: LTSoul;
-  src: url(LTSoul.otf);
+  src: url(fonts/LTSoul.otf);
 }
 
 @font-face {
   font-family: LTSoulBold;
-  src: url(LTSoul-Bold.otf);
+  src: url(fonts/LTSoul-Bold.otf);
 }
 
 
@@ -44,11 +44,25 @@
   float: left;
   margin-right: 5px;
   margin-left: 7.5%;
-  
-  
-  
-  
+ 
 }
+
+
+
+
+@media screen and (max-width: 1000px) {
+  .logoplacement{
+    margin-left: 15px;
+  }}
+
+@media screen and (max-width: 600px) {
+  .logoplacement{
+    margin-left: 5px;
+  }}
+
+  
+
+
 
 .nav-area{
   
@@ -98,6 +112,23 @@
         margin-right: 7.5%;
         
         }
+
+        @media screen and (max-width: 1000px) {
+          .loginbtn{
+            margin-right: 0px;
+          }}
+        
+        @media screen and (max-width: 600px) {
+          .loginbtn{
+            margin-right: -10px;
+          }}
+
+
+
+
+
+
+
 
         .searchbtn{
           margin-right: 15px;
@@ -334,6 +365,7 @@ li {
 #slider-value {
   font-size: 15px;
   margin-bottom: -2.5px;
+  font-family: LTSoul;
 }
 
 input[type=range] {
@@ -352,6 +384,11 @@ input[type=range]::-webkit-slider-thumb {
   border: 1px solid #000000;
 }
 
+input[type=range]::-webkit-slider-thumb:hover { 
+  background: #845e27;
+  border: 2px solid #000000;
+}
+
 
 
 .countdown-container {
@@ -363,6 +400,7 @@ input[type=range]::-webkit-slider-thumb {
 #countdown-updated{
   font-size: 40px;
   margin-bottom: 0px;
+  font-family: LTSoul;
 }
 
 .buttons-container {
@@ -744,8 +782,6 @@ content: "";
 
 
 
-
-
 #myVideo, #mutedVideo {
   position: absolute;
   top: 50%;
@@ -1057,7 +1093,7 @@ box-shadow: 0px 0px 9px 4px #747DE8;
 
 
 /*----------------------------------SLIDESHOW IN REVIEW SECTION----------------------------------*/
-* {box-sizing: border-box}
+* {box-sizing: border-box; }
 body {font-family: Verdana, sans-serif; margin:0}
 .mySlides {display: none}
 img {vertical-align: middle;}
@@ -2181,11 +2217,12 @@ a {
 	text-transform: uppercase;
 }
 
+/*
 @media screen and (max-width: 600px) {
   a {
     font-size: 12.5px;   
   }}
-
+*/
 
 .nav-area {
 	/*background: #262626;*/
@@ -2212,7 +2249,6 @@ box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.5), inset 0px 0px 2px rgba(154, 147, 113
   display: inline-block;
   margin-top: 14px;
   z-index: 1;
-  
 }
 .nav-area ul li a {
 	text-decoration: none;
@@ -2222,7 +2258,7 @@ box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.5), inset 0px 0px 2px rgba(154, 147, 113
 	display: block;
 
 }
-
+/*
 @media screen and (max-width: 1000px) {
   .nav-area ul li a {
     padding: 15px 10px;
@@ -2232,7 +2268,7 @@ box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.5), inset 0px 0px 2px rgba(154, 147, 113
     .nav-area ul li a {
       padding: 15px 0px;
     }}
-
+*/
 
     
 
@@ -2312,9 +2348,43 @@ legend {
 
 
 
+.mobilenavarea {
+  visibility: hidden;
+}
 
 
 
+
+@media only screen and (min-width: 878px) {
+  #myLinks {
+    visibility: hidden;
+    }}
+
+
+    #myLinks a {
+      display: block; /* Display links as blocks (vertically) */
+      padding: 5px 0; /* Add padding for better spacing */
+      }
+
+      #myLinks a:hover {
+        background: #c7d7e8;
+        border-radius: 10px;
+        color: white;
+        transition: background-color 1.5s ease, color 0.5s ease;
+      }
+
+
+@media only screen and (max-width: 878px) {
+  .mobilenavarea {
+    visibility: visible;
+  
+    }
+}
+
+@media only screen and (max-width: 878px) {
+  #r1 {
+    display: none;}
+}
 
 
 
@@ -2544,6 +2614,7 @@ p {
 
 * {
   box-sizing: border-box;
+  
 }
 
 body {
@@ -2674,7 +2745,6 @@ body {
   
   h1,h2,h3,h4,h5, h4 {
     font-family: LTSoulBold;
-  
   }
 
 
@@ -2780,3 +2850,5 @@ body {
   }
 
   */
+
+
