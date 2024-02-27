@@ -36,7 +36,7 @@ let emptyif = document.getElementById('emptyif');
 //For the replay video Button!!
 document.getElementById('replayButton').addEventListener('click', function() {
   replayVideo();
-  document.getElementById('replayButton').style.display = 'none'; recognition.stop();  document.getElementById('listeninggif').style.display = 'none';    document.getElementById('stop-consultation-btn').style.display = 'none';  document.getElementById('home').style.display = 'none'; document.getElementById('executeButton').style.display = 'none';
+  document.getElementById('replayButton').style.display = 'none'; recognition.stop();      document.getElementById('stop-consultation-btn').style.display = 'none';  document.getElementById('home').style.display = 'none'; document.getElementById('executeButton').style.display = 'none';
     
 });
 
@@ -46,7 +46,7 @@ function replayVideo() {
   videoElement.currentTime = 0; // Set the current time of the video to the beginning
   videoElement.play(); // Start playing the video
   document.getElementById('myVideo').onended = function(e) {
-    recognition.start();  document.getElementById('listeninggif').style.display = 'unset';    document.getElementById('stop-consultation-btn').style.display = 'unset';    document.getElementById('home').style.display = 'unset';
+    recognition.start();      document.getElementById('stop-consultation-btn').style.display = 'unset';    document.getElementById('home').style.display = 'unset';
     document.getElementById('replayButton').style.display = 'unset';  document.getElementById('executeButton').style.display = 'unset';
   }}
 
@@ -72,7 +72,7 @@ function startFunction() {
     messagebeforeacceptingmic.style.display = 'unset';
 
   //readOutLoud("Enable the microphone and then start speaking, and once you've asked your question double press the ENTER key");
-  recognition.start();  document.getElementById('listeninggif').style.display = 'unset'; 
+  recognition.start();   
   document.getElementById('stop-consultation-btn').style.display = 'unset'; document.getElementById('executeButton').style.display = 'unset';
   document.getElementById('replayButton').style.display = 'unset';  document.getElementById('home').style.display = 'unset';
   
@@ -118,7 +118,7 @@ function initialstopConsultation(){
   document.getElementById('move-onto-questions-btn').style.display = 'unset';//this button goes to the first question
   document.getElementById('end-consultation-btn').style.display = 'unset';
 
-  recognition.stop(); document.getElementById('listeninggif').style.display = 'none';   document.getElementById('replayButton').style.display = 'none';   document.getElementById('stop-consultation-btn').style.display = 'none';  document.getElementById('home').style.display = 'none'; document.getElementById('executeButton').style.display = 'none';
+  recognition.stop();    document.getElementById('replayButton').style.display = 'none';   document.getElementById('stop-consultation-btn').style.display = 'none';  document.getElementById('home').style.display = 'none'; document.getElementById('executeButton').style.display = 'none';
   document.getElementById('pause-countdown').style.display = 'none';
   document.getElementById('countdown-value').style.display = 'none';
   silentmsg = true;
@@ -138,7 +138,7 @@ function endConsultation(){
   document.getElementById('move-onto-questions-btn').style.display = 'none';
 
   document.getElementById('myVideo').pause();
-  recognition.stop(); document.getElementById('listeninggif').style.display = 'none';   document.getElementById('replayButton').style.display = 'none';   document.getElementById('stop-consultation-btn').style.display = 'none'; document.getElementById('executeButton').style.display = 'none';
+  recognition.stop();    document.getElementById('replayButton').style.display = 'none';   document.getElementById('stop-consultation-btn').style.display = 'none'; document.getElementById('executeButton').style.display = 'none';
   recognition1.stop(); recognition1.stop(); recognition_differentials.stop(); recognition_investigations.stop(); recognition_riskfactors.stop(); recognition_treatments.stop();
 
   document.getElementById('examinations').style.display = 'none';
@@ -161,7 +161,7 @@ THIS NEXT PART IS JUST TO MAKE THE ENDCONSULTATION BUTTON STILL SUBMIT THE ANSWE
 --------*/
 
   //examinations - save the response if press the end consultation button
-    recognition_examinations.stop();    document.getElementById('listeninggif').style.display = 'none';
+    recognition_examinations.stop();    
         setTimeout(function() {
         var recordinginstructionsforexaminations = $('#recording-instructions-for-examinations');
         recognition_examinations.onspeechend = function() {
@@ -174,7 +174,7 @@ THIS NEXT PART IS JUST TO MAKE THE ENDCONSULTATION BUTTON STILL SUBMIT THE ANSWE
   
   
   //Summary - save the response if press the end consultation button
-    recognition1.stop();    document.getElementById('listeninggif').style.display = 'none';
+    recognition1.stop();    
         setTimeout(function() {
         var recordinginstructionsforsummary = $('#recording-instructions-for-summary');
         recognition1.onspeechend = function() {
@@ -200,7 +200,7 @@ THIS NEXT PART IS JUST TO MAKE THE ENDCONSULTATION BUTTON STILL SUBMIT THE ANSWE
    
   
   //Differentials - save the response if press the end consultation button
-    recognition_differentials.stop();   document.getElementById('listeninggif').style.display = 'none';
+    recognition_differentials.stop();   
           setTimeout(function() {
           var recordinginstructionsfordifferentials = $('#recording-instructions-for-differentials');
           recognition_differentials.onspeechend = function() {
@@ -213,7 +213,7 @@ THIS NEXT PART IS JUST TO MAKE THE ENDCONSULTATION BUTTON STILL SUBMIT THE ANSWE
 
 
   //Investigations - save the response if press the end consultation button
-    recognition_investigations.stop();    document.getElementById('listeninggif').style.display = 'none';
+    recognition_investigations.stop();    
         setTimeout(function() {
         var recordinginstructionsforinvestigations = $('#recording-instructions-for-investigations');
         recognition_investigations.onspeechend = function() {
@@ -226,7 +226,7 @@ THIS NEXT PART IS JUST TO MAKE THE ENDCONSULTATION BUTTON STILL SUBMIT THE ANSWE
   
 
   //riskfactors - save the response if press the end consultation button
-    recognition_riskfactors.stop();    document.getElementById('listeninggif').style.display = 'none';
+    recognition_riskfactors.stop();    
         setTimeout(function() {
         var recordinginstructionsforriskfactors = $('#recording-instructions-for-riskfactors');
         recognition_riskfactors.onspeechend = function() {
@@ -239,7 +239,7 @@ THIS NEXT PART IS JUST TO MAKE THE ENDCONSULTATION BUTTON STILL SUBMIT THE ANSWE
 
 
   //Treatments - save the response if press the end consultation button
-    recognition_treatments.stop();    document.getElementById('listeninggif').style.display = 'none';
+    recognition_treatments.stop();    
         setTimeout(function() {
         var recordinginstructionsfortreatments = $('#recording-instructions-for-treatments');
         recognition_treatments.onspeechend = function() {
@@ -271,7 +271,7 @@ function movetoQuestions(){
   document.getElementById('myVideo').style.display = 'unset'; document.getElementById("mp4_src").src = "videos/examinations.mp4"; document.getElementById("myVideo").load();
   
   document.getElementById('myVideo').onended = function(e) {
-  recognition_examinations.start();  document.getElementById('listeninggif').style.display = 'unset';   // document.getElementById('stop-consultation-btn').style.display = 'unset';
+  recognition_examinations.start();     // document.getElementById('stop-consultation-btn').style.display = 'unset';
   document.getElementById('save-note-btn-for-examinations').style.display = 'unset';
 
   }
@@ -289,10 +289,10 @@ function movetoQuestions_examinations(){
   document.getElementById('examinations').style.display = 'none';
   document.getElementById('summary').style.display = 'unset';
 
-  recognition_examinations.stop(); document.getElementById('listeninggif').style.display = 'none';   document.getElementById('stop-consultation-btn').style.display = 'none';
+  recognition_examinations.stop();    document.getElementById('stop-consultation-btn').style.display = 'none';
   document.getElementById("mp4_src").src = "videos/summary.mp4"; document.getElementById("myVideo").load();
   document.getElementById('myVideo').onended = function(e) {
-  recognition1.start();  document.getElementById('listeninggif').style.display = 'unset';   // document.getElementById('stop-consultation-btn').style.display = 'unset';
+  recognition1.start();     // document.getElementById('stop-consultation-btn').style.display = 'unset';
   document.getElementById('save-note-btn-for-summary').style.display = 'unset';
   }
 }
@@ -302,10 +302,10 @@ function movetoQuestions_summary(){
   document.getElementById('summary').style.display = 'none';
   document.getElementById('differentials').style.display = 'unset';
 
-  recognition1.stop(); document.getElementById('listeninggif').style.display = 'none';   document.getElementById('stop-consultation-btn').style.display = 'none';
+  recognition1.stop();    document.getElementById('stop-consultation-btn').style.display = 'none';
   document.getElementById("mp4_src").src = "videos/differential.mp4"; document.getElementById("myVideo").load();
   document.getElementById('myVideo').onended = function(e) {
-  recognition_differentials.start();  document.getElementById('listeninggif').style.display = 'unset';   // document.getElementById('stop-consultation-btn').style.display = 'unset';
+  recognition_differentials.start();     // document.getElementById('stop-consultation-btn').style.display = 'unset';
   document.getElementById('save-note-btn-for-differentials').style.display = 'unset';
   }
 }
@@ -314,10 +314,10 @@ function movetoQuestions_differentials(){
   document.getElementById('differentials').style.display = 'none';
   document.getElementById('investigations').style.display = 'unset';
 
-  recognition_differentials.stop(); document.getElementById('listeninggif').style.display = 'none';   document.getElementById('stop-consultation-btn').style.display = 'none';
+  recognition_differentials.stop();    document.getElementById('stop-consultation-btn').style.display = 'none';
   document.getElementById("mp4_src").src = "videos/investigations.mp4"; document.getElementById("myVideo").load();
   document.getElementById('myVideo').onended = function(e) {
-  recognition_investigations.start();  document.getElementById('listeninggif').style.display = 'unset';   // document.getElementById('stop-consultation-btn').style.display = 'unset';
+  recognition_investigations.start();     // document.getElementById('stop-consultation-btn').style.display = 'unset';
   document.getElementById('save-note-btn-for-investigations').style.display = 'unset';
   }
 }
@@ -326,10 +326,10 @@ function movetoQuestions_investigations(){
   document.getElementById('investigations').style.display = 'none';
   document.getElementById('riskfactors').style.display = 'unset';
 
-  recognition_investigations.stop(); document.getElementById('listeninggif').style.display = 'none';   document.getElementById('stop-consultation-btn').style.display = 'none';
+  recognition_investigations.stop();    document.getElementById('stop-consultation-btn').style.display = 'none';
   document.getElementById("mp4_src").src = "videos/riskfactors.mp4"; document.getElementById("myVideo").load();
   document.getElementById('myVideo').onended = function(e) {
-  recognition_riskfactors.start();  document.getElementById('listeninggif').style.display = 'unset';   // document.getElementById('stop-consultation-btn').style.display = 'unset';
+  recognition_riskfactors.start();     // document.getElementById('stop-consultation-btn').style.display = 'unset';
   document.getElementById('save-note-btn-for-riskfactors').style.display = 'unset';
   }
 }
@@ -338,10 +338,10 @@ function movetoQuestions_riskfactors(){
   document.getElementById('riskfactors').style.display = 'none';
   document.getElementById('treatments').style.display = 'unset';
 
-  recognition_riskfactors.stop(); document.getElementById('listeninggif').style.display = 'none';   document.getElementById('stop-consultation-btn').style.display = 'none';
+  recognition_riskfactors.stop();    document.getElementById('stop-consultation-btn').style.display = 'none';
   document.getElementById("mp4_src").src = "videos/management.mp4"; document.getElementById("myVideo").load();
   document.getElementById('myVideo').onended = function(e) {
-  recognition_treatments.start();  document.getElementById('listeninggif').style.display = 'unset';   // document.getElementById('stop-consultation-btn').style.display = 'unset';
+  recognition_treatments.start();     // document.getElementById('stop-consultation-btn').style.display = 'unset';
   document.getElementById('save-note-btn-for-treatments').style.display = 'unset';
   }
 }
@@ -350,10 +350,10 @@ function movetoQuestions_treatments(){
   document.getElementById('treatments').style.display = 'none';
   //document.getElementById('').style.display = 'unset';
 
-  recognition_treatments.stop(); document.getElementById('listeninggif').style.display = 'none';   document.getElementById('stop-consultation-btn').style.display = 'none';
+  recognition_treatments.stop();    document.getElementById('stop-consultation-btn').style.display = 'none';
   //document.getElementById("mp4_src").src = "WIN_20230328_13_59_37_Pro.mp4"; document.getElementById("myVideo").load();
   //document.getElementById('myVideo').onended = function(e) {
-  //recognition_.start();  document.getElementById('listeninggif').style.display = 'unset';   // document.getElementById('stop-consultation-btn').style.display = 'unset';
+  //recognition_.start();     // document.getElementById('stop-consultation-btn').style.display = 'unset';
   //document.getElementById('save-note-btn-for-').style.display = 'unset';
   }
 //}
@@ -414,14 +414,14 @@ pauseBtn.addEventListener("click", function() {
     pauseBtn.style.top = '50%'; pauseBtn.style.left = '50%'; pauseBtn.style.transform = 'translate(-50%, -50%)';
     pauseBtn.style.backgroundImage = "url('play-button-black-and-white.png')";
 
-    myVideo.pause(); recognition.stop(); document.getElementById('listeninggif').style.display = 'none';   document.getElementById('replayButton').style.display = 'none';   document.getElementById('stop-consultation-btn').style.display = 'none';   document.getElementById('home').style.display = 'none'; document.getElementById('executeButton').style.display = 'none'; initialpromptforpresssubmit.style.display = 'none';
+    myVideo.pause(); recognition.stop();    document.getElementById('replayButton').style.display = 'none';   document.getElementById('stop-consultation-btn').style.display = 'none';   document.getElementById('home').style.display = 'none'; document.getElementById('executeButton').style.display = 'none'; initialpromptforpresssubmit.style.display = 'none';
     pauseBtn.style.display = "unset"; //actionTriggered = true;
     silentmsg = true; document.getElementById('emptyif').style.display = 'none';
 
   } else {
     timer = setInterval(updateTimeLeft, 1000);
     pauseBtn.innerHTML = ""; pauseBtn.style.fontWeight = "normal"; pauseBtn.style.fontSize = "15px"; pauseBtn.style.height = '35px'; pauseBtn.style.padding = '10px 17px'; 
-    recognition.start(); document.getElementById('listeninggif').style.display = 'unset'; document.getElementById('stop-consultation-btn').style.display = 'unset'; document.getElementById('executeButton').style.display = 'unset';
+    recognition.start();  document.getElementById('stop-consultation-btn').style.display = 'unset'; document.getElementById('executeButton').style.display = 'unset';
     pauseBtn.style.backgroundImage = "url('pause_button_black_and_white-removebg-preview.png')";  document.getElementById('silencemessage').style.display = 'none';
 
     pauseBtn.style.top = ''; pauseBtn.style.left = ''; pauseBtn.style.transform = ''; // Reset the position property to its default value
@@ -439,7 +439,7 @@ pauseBtn.addEventListener("click", function() {
 function homeButton() {
   document.getElementById('taking-history-section').style.display = 'unset';
   document.getElementById('taking-history-section-part2').style.display = 'unset';
-  recognition.stop(); document.getElementById('listeninggif').style.display = 'none';   document.getElementById('replayButton').style.display = 'none';   document.getElementById('stop-consultation-btn').style.display = 'none'; document.getElementById('executeButton').style.display = 'none';
+  recognition.stop();    document.getElementById('replayButton').style.display = 'none';   document.getElementById('stop-consultation-btn').style.display = 'none'; document.getElementById('executeButton').style.display = 'none';
   
   document.getElementById('fullscreenvideobackground').style.display = 'unset';
   document.body.style.backgroundColor = 'rgb(233, 246, 253)';//BACKGROUND OF REVIEW SECTION!!!!!!
@@ -474,12 +474,12 @@ pauseBtn.addEventListener("click", function() {
     clearInterval(timer);
     pauseBtn.innerHTML = "Unpause consultation"; pauseBtn.style.fontWeight = "bold"; pauseBtn.style.fontSize = "45px"; pauseBtn.style.height = '85px'; pauseBtn.style.padding = '1px 50px';
     myVideo.pause(); readOutLoud.pause();
-    recognition.stop(); document.getElementById('listeninggif').style.display = 'none';   document.getElementById('stop-consultation-btn').style.display = 'none';
+    recognition.stop();    document.getElementById('stop-consultation-btn').style.display = 'none';
 
   } else {
     timer = setInterval(updateTimeLeft, 1000);
     pauseBtn.innerHTML = "Pause consultation"; pauseBtn.style.fontWeight = "normal"; pauseBtn.style.fontSize = "15px"; pauseBtn.style.height = '35px'; pauseBtn.style.padding = '1px 5px';
-    recognition.start(); document.getElementById('listeninggif').style.display = 'unset';     document.getElementById('stop-consultation-btn').style.display = 'unset';
+    recognition.start();      document.getElementById('stop-consultation-btn').style.display = 'unset';
 
   }
 });
@@ -669,7 +669,7 @@ let actionTriggered = false;
   document.getElementById("executeButton").addEventListener("click", function() {
         onesecdelaybeforestoprecog();
         actionTriggered = true; clearTimeout(silenceTimeout);
-        document.getElementById('listeninggif').style.display = 'none';    document.getElementById('stop-consultation-btn').style.display = 'none';   document.getElementById('replayButton').style.display = 'none';   document.getElementById('home').style.display = 'none'; document.getElementById('executeButton').style.display = 'none'; document.getElementById('loadingcircle').style.display = 'unset';  micisworking.style.display = 'none'; initialpromptforpresssubmit.style.display = 'none';
+            document.getElementById('stop-consultation-btn').style.display = 'none';   document.getElementById('replayButton').style.display = 'none';   document.getElementById('home').style.display = 'none'; document.getElementById('executeButton').style.display = 'none'; document.getElementById('loadingcircle').style.display = 'unset';  micisworking.style.display = 'none'; initialpromptforpresssubmit.style.display = 'none';
         });
 
 
@@ -677,7 +677,7 @@ let actionTriggered = false;
     if (event.key === "Enter" && micisworking.style.display !== 'none') {// && !actionTriggered  
        onesecdelaybeforestoprecog();
        actionTriggered = true; clearTimeout(silenceTimeout);
-       document.getElementById('listeninggif').style.display = 'none';    document.getElementById('stop-consultation-btn').style.display = 'none';   document.getElementById('replayButton').style.display = 'none';   document.getElementById('home').style.display = 'none'; document.getElementById('executeButton').style.display = 'none'; document.getElementById('loadingcircle').style.display = 'unset';  micisworking.style.display = 'none'; initialpromptforpresssubmit.style.display = 'none';
+           document.getElementById('stop-consultation-btn').style.display = 'none';   document.getElementById('replayButton').style.display = 'none';   document.getElementById('home').style.display = 'none'; document.getElementById('executeButton').style.display = 'none'; document.getElementById('loadingcircle').style.display = 'unset';  micisworking.style.display = 'none'; initialpromptforpresssubmit.style.display = 'none';
        document.getElementById("executeButton").removeEventListener("click", arguments.callee);    document.removeEventListener("keydown", handleKeyDown);
        
       }   });
@@ -786,7 +786,7 @@ var timerforsubmitting = null;
   
 
   recognition.stop();
-  document.getElementById('listeninggif').style.display = 'none';   document.getElementById('replayButton').style.display = 'none';   document.getElementById('stop-consultation-btn').style.display = 'none';  document.getElementById('home').style.display = 'none'; document.getElementById('executeButton').style.display = 'none';
+     document.getElementById('replayButton').style.display = 'none';   document.getElementById('stop-consultation-btn').style.display = 'none';  document.getElementById('home').style.display = 'none'; document.getElementById('executeButton').style.display = 'none';
 
 
 
@@ -1584,7 +1584,7 @@ var timerforsubmitting = null;
           //readOutLoud("good");
           previousquestion = noteContent;   response_question = "good";
           document.getElementById("mp4_src").src = "videos/good.mp4"; document.getElementById("myVideo").load(); document.getElementById('myVideo').onended = function(e) {
-            recognition.start();  document.getElementById('listeninggif').style.display = 'unset';    document.getElementById('stop-consultation-btn').style.display = 'unset';
+            recognition.start();      document.getElementById('stop-consultation-btn').style.display = 'unset';
             }}//I'm good thank you (in response to how are you)
 */
 
@@ -1672,7 +1672,7 @@ const handleUserInput = async (noteContent) => {
 
 
           document.getElementById("mp4_src").src = "WIN_20230328_13_59_49_Pro.mp4"; document.getElementById("myVideo").load(); document.getElementById('myVideo').onended = function(e) {
-            recognition.start();  document.getElementById('listeninggif').style.display = 'unset';    document.getElementById('stop-consultation-btn').style.display = 'unset';
+            recognition.start();      document.getElementById('stop-consultation-btn').style.display = 'unset';
           }      
     }
 */
@@ -1703,7 +1703,7 @@ const handleUserInput = async (noteContent) => {
     }, 2000);
 
     recognition.start();
-    document.getElementById('listeninggif').style.display = 'unset';
+    
     document.getElementById('stop-consultation-btn').style.display = 'unset';
   };
   synth.speak(utterance);
@@ -1733,7 +1733,7 @@ const handleUserInput = async (noteContent) => {
     gptvideo.load();
 
     gptvideo.onended =  function(e) {
-      recognition.start();  document.getElementById('listeninggif').style.display = 'unset';    document.getElementById('stop-consultation-btn').style.display = 'unset';   document.getElementById('replayButton').style.display = 'unset';   document.getElementById('home').style.display = 'unset'; document.getElementById('executeButton').style.display = 'unset'; actionTriggered = false;
+      recognition.start();      document.getElementById('stop-consultation-btn').style.display = 'unset';   document.getElementById('replayButton').style.display = 'unset';   document.getElementById('home').style.display = 'unset'; document.getElementById('executeButton').style.display = 'unset'; actionTriggered = false;
       
       document.getElementById('myVideo').style.display = 'unset';
       document.getElementById('mutedVideo').style.display = 'none';
@@ -1752,7 +1752,7 @@ const handleUserInput = async (noteContent) => {
     const gptvideo = document.getElementById('mutedVideo');
     gptvideo.pause(); // Pause the video after the speech synthesis finishes
     //gptvideo.volume = 1;
-    recognition.start();  document.getElementById('listeninggif').style.display = 'unset'; document.getElementById('stop-consultation-btn').style.display = 'unset'; document.getElementById('executeButton').style.display = 'unset';
+    recognition.start();   document.getElementById('stop-consultation-btn').style.display = 'unset'; document.getElementById('executeButton').style.display = 'unset';
     document.getElementById('myVideo').style.display = 'unset';
     document.getElementById('mutedVideo').style.display = 'none';
     
@@ -1782,7 +1782,7 @@ handleUserInput(userInput);
 
 function allifsaction(){
   document.getElementById("myVideo").load(); document.getElementById('myVideo').onended = function(e) {
-    recognition.start();  document.getElementById('listeninggif').style.display = 'unset';    
+    recognition.start();      
     document.getElementById('stop-consultation-btn').style.display = 'unset';   
     document.getElementById('replayButton').style.display = 'unset';   document.getElementById('home').style.display = 'unset'; 
     document.getElementById('executeButton').style.display = 'unset';   
@@ -2931,7 +2931,7 @@ $('#start-record-btn-for-examinations').on('click', function(e) {
 
 $('#save-note-btn-for-examinations,#move-onto-questions-btn_examinations').on('click', function(e) {
 recognition_examinations.stop();
-document.getElementById('listeninggif').style.display = 'none';
+
 
 
   setTimeout(function() {
@@ -2952,10 +2952,10 @@ document.getElementById('listeninggif').style.display = 'none';
 document.getElementById('examinations').style.display = 'none';
   document.getElementById('summary').style.display = 'unset';
 
-  recognition_examinations.stop(); document.getElementById('listeninggif').style.display = 'none';   document.getElementById('stop-consultation-btn').style.display = 'none';
+  recognition_examinations.stop();    document.getElementById('stop-consultation-btn').style.display = 'none';
   document.getElementById("mp4_src").src = "videos/summary.mp4"; document.getElementById("myVideo").load();
   document.getElementById('myVideo').onended = function(e) {
-  recognition1.start();  document.getElementById('listeninggif').style.display = 'unset';   // document.getElementById('stop-consultation-btn').style.display = 'unset';
+  recognition1.start();     // document.getElementById('stop-consultation-btn').style.display = 'unset';
   document.getElementById('save-note-btn-for-summary').style.display = 'unset';
   }
 
@@ -3060,7 +3060,7 @@ $('#start-record-btn-for-summary').on('click', function(e) {
 
 $('#save-note-btn-for-summary,#move-onto-questions-btn_summary').on('click', function(e) {
   recognition1.stop();
-  document.getElementById('listeninggif').style.display = 'none';
+  
   
 
   setTimeout(function() {
@@ -3105,10 +3105,10 @@ $('#save-note-btn-for-summary,#move-onto-questions-btn_summary').on('click', fun
 document.getElementById('summary').style.display = 'none';
   document.getElementById('differentials').style.display = 'unset';
 
-  recognition1.stop(); document.getElementById('listeninggif').style.display = 'none';   document.getElementById('stop-consultation-btn').style.display = 'none';
+  recognition1.stop();    document.getElementById('stop-consultation-btn').style.display = 'none';
   document.getElementById("mp4_src").src = "videos/differential.mp4"; document.getElementById("myVideo").load();
   document.getElementById('myVideo').onended = function(e) {
-  recognition_differentials.start();  document.getElementById('listeninggif').style.display = 'unset';   // document.getElementById('stop-consultation-btn').style.display = 'unset';
+  recognition_differentials.start();     // document.getElementById('stop-consultation-btn').style.display = 'unset';
   document.getElementById('save-note-btn-for-differentials').style.display = 'unset';
   }
 
@@ -3225,7 +3225,7 @@ $('#start-record-btn-for-differentials').on('click', function(e) {
 
 $('#save-note-btn-for-differentials,#move-onto-questions-btn_differentials').on('click', function(e) {
 recognition_differentials.stop();
-document.getElementById('listeninggif').style.display = 'none';
+
 
 
   setTimeout(function() {
@@ -3247,10 +3247,10 @@ document.getElementById('listeninggif').style.display = 'none';
  document.getElementById('differentials').style.display = 'none';
   document.getElementById('investigations').style.display = 'unset';
 
-  recognition_differentials.stop(); document.getElementById('listeninggif').style.display = 'none';   document.getElementById('stop-consultation-btn').style.display = 'none';
+  recognition_differentials.stop();    document.getElementById('stop-consultation-btn').style.display = 'none';
   document.getElementById("mp4_src").src = "videos/investigations.mp4"; document.getElementById("myVideo").load();
   document.getElementById('myVideo').onended = function(e) {
-  recognition_investigations.start();  document.getElementById('listeninggif').style.display = 'unset';   // document.getElementById('stop-consultation-btn').style.display = 'unset';
+  recognition_investigations.start();     // document.getElementById('stop-consultation-btn').style.display = 'unset';
   document.getElementById('save-note-btn-for-investigations').style.display = 'unset';
   }
 
@@ -3364,7 +3364,7 @@ $('#start-record-btn-for-investigation').on('click', function(e) {
 
 $('#save-note-btn-for-investigations,#move-onto-questions-btn_investigations').on('click', function(e) {
 recognition_investigations.stop();
-document.getElementById('listeninggif').style.display = 'none';
+
 
 
   setTimeout(function() {
@@ -3384,10 +3384,10 @@ document.getElementById('listeninggif').style.display = 'none';
  document.getElementById('investigations').style.display = 'none';
   document.getElementById('riskfactors').style.display = 'unset';
 
-  recognition_investigations.stop(); document.getElementById('listeninggif').style.display = 'none';   document.getElementById('stop-consultation-btn').style.display = 'none';
+  recognition_investigations.stop();    document.getElementById('stop-consultation-btn').style.display = 'none';
   document.getElementById("mp4_src").src = "videos/riskfactors.mp4"; document.getElementById("myVideo").load();
   document.getElementById('myVideo').onended = function(e) {
-  recognition_riskfactors.start();  document.getElementById('listeninggif').style.display = 'unset';   // document.getElementById('stop-consultation-btn').style.display = 'unset';
+  recognition_riskfactors.start();     // document.getElementById('stop-consultation-btn').style.display = 'unset';
   document.getElementById('save-note-btn-for-riskfactors').style.display = 'unset';
   }
 
@@ -3500,7 +3500,7 @@ $('#start-record-btn-for-riskfactors').on('click', function(e) {
   
 $('#save-note-btn-for-riskfactors,#move-onto-questions-btn_riskfactors').on('click', function(e) {
 recognition_riskfactors.stop();
-document.getElementById('listeninggif').style.display = 'none';
+
 
 
   setTimeout(function() {
@@ -3522,10 +3522,10 @@ document.getElementById('listeninggif').style.display = 'none';
  document.getElementById('riskfactors').style.display = 'none';
   document.getElementById('treatments').style.display = 'unset';
 
-  recognition_riskfactors.stop(); document.getElementById('listeninggif').style.display = 'none';   document.getElementById('stop-consultation-btn').style.display = 'none';
+  recognition_riskfactors.stop();    document.getElementById('stop-consultation-btn').style.display = 'none';
   document.getElementById("mp4_src").src = "videos/management.mp4"; document.getElementById("myVideo").load();
   document.getElementById('myVideo').onended = function(e) {
-  recognition_treatments.start();  document.getElementById('listeninggif').style.display = 'unset';   // document.getElementById('stop-consultation-btn').style.display = 'unset';
+  recognition_treatments.start();     // document.getElementById('stop-consultation-btn').style.display = 'unset';
   document.getElementById('save-note-btn-for-treatments').style.display = 'unset';
   }
 
@@ -3644,7 +3644,7 @@ $('#start-record-btn-for-treatments').on('click', function(e) {
 
 $('#save-note-btn-for-treatments').on('click', function(e) {
 recognition_treatments.stop();
-document.getElementById('listeninggif').style.display = 'none';
+
 
   setTimeout(function() {
 
@@ -3974,7 +3974,7 @@ noteSummary2 = $(this).val();
 
 $('#save-note-btn-for-blood').on('click', function(e) {
 recognition2.stop();
-document.getElementById('listeninggif').style.display = 'none';
+
 
 if(!noteSummary2.length) {
   recordinginstructionsforsummary2.text('Could not save empty note. Please add a message to your note.');
