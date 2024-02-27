@@ -362,11 +362,38 @@ li {
   margin-right: 10px;
 }
 
+@media only screen and (max-width: 1100px){
+  #slider {
+    width: 135px;
+      }}
+
+      
+@media only screen and (max-width: 900px){
+  #slider {
+    width: 100px;
+      }}
+
+      @media only screen and (max-width: 650px){
+        #slider {
+          width: 150px;
+            }}
+
+
 #slider-value {
   font-size: 15px;
   margin-bottom: -2.5px;
   font-family: LTSoul;
 }
+
+@media only screen and (max-width: 720px){
+  #slider-value {
+    display: none;
+      }}
+
+      @media only screen and (max-width: 650px){
+        #slider-value {
+          display: unset;
+            }}    
 
 input[type=range] {
   width: 100%;
@@ -375,6 +402,8 @@ input[type=range] {
   outline: none;
   border-radius: 15px;
 }
+
+
 
 input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
@@ -433,7 +462,8 @@ bottom: 20px;
 
 
 
-
+@media only screen and (max-width: 900px){
+  .linebreakremove {display: none;}}
 
 
 
@@ -856,6 +886,32 @@ text-align: center;
   margin-right: -30px;
 }
 
+@media only screen and (max-width: 1150px){
+  .vidthatsfake {
+    width: 450px;
+  }}
+
+@media only screen and (max-width: 1050px){
+    .vidthatsfake {
+      width: 420px
+    }}
+
+
+    @media only screen and (max-width: 800px){
+      .vidthatsfake {
+        width: 375px
+      }}
+    
+@media only screen and (max-width: 750px){
+  .vidthatsfake {
+    width: 350px
+  }}
+
+@media only screen and (max-width: 650px){
+  .vidthatsfake {
+    width: 100%;
+  }
+}
 
 
 
@@ -897,7 +953,6 @@ text-align: center;
   height: 400px;
   opacity: 1.9;
   z-index: 1;
-
   
 }
 
@@ -1281,10 +1336,42 @@ margin-top: 40px;
 
 #fakeVideo {
   border-radius: 5px 5px 0 0;
-  height: 370px;
+  height: 330px;
   object-fit: cover;
 
 }
+
+
+#placementofpage {
+  width: 46%;
+}
+
+
+
+@media only screen and (max-width: 850px){
+  #placementofpage {
+    width: 43%;
+  }}
+
+  @media only screen and (max-width: 750px){
+    #placementofpage {
+      width: 42%;
+    }}
+
+    
+  @media only screen and (max-width: 700px){
+    #placementofpage {
+      width: 41%;
+    }}
+
+    
+  
+
+  @media only screen and (max-width: 650px){
+    #placementofpage {
+      width: 100%;
+    }}
+
 
 .groupedvid {
   padding: 2px 16px;
@@ -1572,6 +1659,16 @@ div.scroll-container img {
   display: block;
   /*font-family: Cheflat;*/
 }
+
+
+
+
+
+
+
+
+
+
 
 
 .note {
