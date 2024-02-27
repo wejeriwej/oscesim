@@ -447,6 +447,26 @@ input[type=range]::-webkit-slider-thumb:hover {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #executeButton{
   
   position: absolute;
@@ -937,6 +957,21 @@ text-align: center;
 
 }
 
+@media screen and (max-width: 700px) {
+  #pause-countdown{
+    right: 18px;
+  }
+  #countdown-value {
+    right: 10px;
+    }
+  #replayButton{
+    right: 55px;
+  }
+  #home {
+    right: 180px;
+  }
+}
+
 #listeninggif{
   /*
   position: absolute;
@@ -971,18 +1006,49 @@ text-align: center;
   position: absolute;
   right: 280px;
   top: 27.5px;
-  opacity: 0.6;
+  opacity: 0.4;
   z-index: 1;
   width: 50px;
   height: 50px;
 
-  background-color:transparent;
+  /*background-color:transparent;*/
+  background-color: white;
+  
   
 
   background-image: url("home-icon.png");
   background-repeat: no-repeat;
   background-size: contain;
 }
+
+
+
+
+@media screen and (max-width: 700px) {
+  #pause-countdown{
+    right: 18px;
+  }
+  #countdown-value {
+    right: 10px;
+    }
+  #replayButton{
+    right: 55px;
+  }
+  #home {
+    right: 180px;
+  }
+  #stop-consultation-btn{
+    left: 20px;
+  }
+  #executeButton{
+    right: 20px;
+  }
+}
+
+
+
+
+
 
 
 
