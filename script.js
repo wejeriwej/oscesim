@@ -65,7 +65,8 @@ function startFunction() {
 
   document.getElementById('myVideo').style.display = 'unset';
   document.getElementById("mp4_src").src = "videos/openinghiya.mp4"; document.getElementById("myVideo").load();
-  document.getElementById('tutorial').style.display = 'none';
+  document.getElementById('tutorial').style.display = 'none'; document.querySelector('other-cases').style.display = 'none'; document.querySelector('special-footer').style.display = 'none';
+
 
   document.getElementById('myVideo').onended = function(e) {
     //readOutLoud("Go");
