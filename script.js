@@ -421,7 +421,7 @@ pauseBtn.addEventListener("click", function() {
   } else {
     timer = setInterval(updateTimeLeft, 1000);
     pauseBtn.innerHTML = ""; pauseBtn.style.fontWeight = "normal"; pauseBtn.style.fontSize = "15px"; pauseBtn.style.height = '35px'; pauseBtn.style.padding = '10px 17px'; 
-    recognition.start();  document.getElementById('stop-consultation-btn').style.display = 'unset'; document.getElementById('executeButton').style.display = 'unset';
+    recognition.start();  document.getElementById('stop-consultation-btn').style.display = 'unset'; document.getElementById('executeButton').style.display = 'unset'; document.getElementById('replayButton').style.display = 'unset';document.getElementById('home').style.display = 'unset';
     pauseBtn.style.backgroundImage = "url('pause_button_black_and_white-removebg-preview.png')";  document.getElementById('silencemessage').style.display = 'none';
 
     pauseBtn.style.top = ''; pauseBtn.style.left = ''; pauseBtn.style.transform = ''; // Reset the position property to its default value
@@ -2630,6 +2630,10 @@ span.onclick = function() {
 
 
  
+
+
+
+
 
 
 
