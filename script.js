@@ -2515,8 +2515,7 @@ recognition.onend= function () {
 
 
 
-
-
+/*
 let slideIndex1 = 0;
 showSlides1();
 
@@ -2535,7 +2534,7 @@ function showSlides1() {
   slides1[slideIndex1-1].style.display = "block";  
   dots1[slideIndex1-1].className += " active";
   setTimeout(showSlides1, 2000); // Change image every 2 seconds
-}
+}*/
  //#endregion
 
 
