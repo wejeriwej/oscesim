@@ -1,14 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
 class SpecialHeader extends HTMLElement {
     connectedCallback(){
         this.innerHTML = `
@@ -30,9 +19,11 @@ class SpecialHeader extends HTMLElement {
         <nav class="nav-area">
           <div id="topbanner"></div>
           
-                      <div class = "logoplacement">
-                        <input type="image" id=logo src="logoupdated1.png" name="saveForm" class="btTxt submit" id="saveForm" />
-                      </div> 
+                    <div class="logoplacement">
+                    <a href="home.html">
+                        <input type="image" id="logo" src="logoupdated1.png" name="saveForm" class="btTxt submit" id="saveForm" />
+                    </a>
+                </div>
           
           
           <ul id = "navigationtings">
@@ -128,12 +119,17 @@ class SpecialHeader extends HTMLElement {
             </a>
           </li>
         
+
+
+
         
             <div id="myLinks" style="display: none;">
-              <a href="#news">News</a>
-              <a href="#contact">Contact</a>
-              <a href="#about">About</a>
-            </div>
+    <a href="home.html">Home</a>
+    <a href="#Aboutus">About</a>
+    <a href="#Contactus">Contact us</a>
+    <a href="homepage.html">Cases by topic ᵕ</a>
+    
+</div>
             
             
           </ul>
@@ -149,7 +145,7 @@ class SpecialHeader extends HTMLElement {
 
 
 
-<p>hbfvjfbvjs</p>
+
 
 
 
@@ -160,8 +156,72 @@ class SpecialHeader extends HTMLElement {
     }
 }
 
-customElements.define('special-header', SpecialHeader)
 
+
+
+
+
+ 
+
+
+class OtherCases extends HTMLElement {
+    connectedCallback(){
+        this.innerHTML = `
+
+        <h2 style="font-family: LTSoul;">Other cases:</h2>
+        <div class="scroll-container">
+              <div class="image-container">
+                <img src="logo.png" alt="Cinque Terre" width="600" height="400">
+                <div class="image-caption">Caption for Cinque Terre</div>
+            </div>
+            <div class="image-container">
+                <img src="logo.png" alt="Forest" width="600" height="400">
+                <div class="image-caption">Caption for Forest</div>
+            </div>
+            <div class="image-container">
+                <img src="logo.png" alt="Northern Lights" width="600" height="400">
+                <div class="image-caption">Caption for Northern Lights</div>
+            </div>
+            <div class="image-container">
+                <img src="logo.png" alt="Mountains" width="600" height="400">
+                <div class="image-caption">Caption for Mountains</div>
+            </div>
+        </div>
+
+        
+        `
+    }
+}
+
+
+
+
+
+
+
+class SpecialFooter extends HTMLElement {
+    connectedCallback(){
+        this.innerHTML = `
+
+        <footer>
+        <p>Author: Zak Francillon<br>
+        <a href="mailto:hege@example.com">hege@example.com</a></p>
+      </footer>
+
+        
+        `
+    }
+}
+
+
+
+
+
+
+
+customElements.define('special-header', SpecialHeader)
+customElements.define('other-cases', OtherCases)
+customElements.define('special-footer', SpecialFooter)
 
 
 
