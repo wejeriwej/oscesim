@@ -1502,15 +1502,31 @@ div.scroll-container {
   overflow: auto;
   white-space: nowrap;
   padding: 10px;
+  display: block;
 }
 
 div.scroll-container img {
   padding: 10px;
+  padding-bottom: 70px;
 }
 
 
 
+.image-container {
+  position: relative;
+  display: inline-block;
+  margin: 10px;
+}
 
+.image-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  padding: 10px;
+  text-align: center;
+}
 
 
 
