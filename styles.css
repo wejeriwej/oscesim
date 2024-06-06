@@ -1226,7 +1226,7 @@ box-shadow: 0px 0px 9px 4px #747DE8;
 
 /*----------------------------------SLIDESHOW IN REVIEW SECTION----------------------------------*/
 * {box-sizing: border-box; }
-body {font-family: Verdana, sans-serif; margin:0}
+body {font-family: Verdana, sans-serif; margin:0;background-image: url(so-white.png)}
 .mySlides {display: none}
 img {vertical-align: middle;}
 
@@ -1236,6 +1236,8 @@ img {vertical-align: middle;}
   position: relative;
   margin: auto;
 }
+
+
 
 /* Next & previous buttons */
 .prev, .next, #executeButton, #stop-consultation-btn, #move-onto-questions-btn, #end-consultation-btn, #start-consultation-btn {
@@ -1283,10 +1285,10 @@ transition: background-color 1.5s ease, color 0.5s ease;
 #start-consultation-btn {
   font-size: 30px;
   padding: 20px;
-  margin-top: 10px;
+  margin-top: 0px;
   background: #fbf2e5; /* Fallback color */
-  background: -webkit-linear-gradient(top, #fff7ef 0%, #fff1e3 44%, #ffe8cc 100%);
-  background: linear-gradient(to bottom, #fff7ef 0%, #fff1e3 44%, #ffe8cc 100%);
+  background: -webkit-linear-gradient(top, #fff7ef 0%, #fff1e3 44%, #faecdb 100%);
+  background: linear-gradient(to bottom, #fff7ef 0%, #fff1e3 44%, #faecdb 100%);
   border: 0px solid #4CAF50;
   border-color: #3a4f64;
   border-radius: 30px;
@@ -1365,7 +1367,7 @@ margin-top: 40px;
   transition: background-color 0.6s ease;
 }
 
-.active, .dot:hover {
+.active, .dot:hover, #hoverthedot {
   background-color: #717171;
 }
 
@@ -1450,6 +1452,54 @@ margin-top: 40px;
 .groupedvid {
   padding: 2px 16px;
 }
+
+
+
+
+
+
+
+
+.cardforchecklist {
+  background: white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  max-width: 500px;
+  padding: 20px;
+  text-align: left;
+  font-family: LTSoul;
+  font-size: larger;
+  float: right;
+  margin-right: 200px;
+  margin-top: 30px;
+}
+.cardforchecklist h2 {
+  margin-top: 0;
+  font-size: 32px;
+  color: #333;
+}
+.cardforchecklist ul {
+  list-style-type: none;
+  padding: 0;
+}
+.cardforchecklist li {
+  background: #e0f7fa;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  font-size: 22px;
+}
+.cardforchecklist li::before {
+  content: "✔";
+  color: #00796b;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+
+
 
 
 
@@ -1732,10 +1782,14 @@ div.scroll-container img {
   .container {
   margin-left: 7.5%;
   margin-right: 7.5%;
+
+    max-width: 1100px;
+    margin: auto;
+  
+  
   }
 
-
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 1200px) {
     .container {margin-right: 1.5%; margin-left: 1.5%;}
   }
   @media screen and (max-width: 600px) {
@@ -2450,10 +2504,26 @@ a {
 .nav-area {
 	/*background: #262626;*/
   /*background:rgb(237, 250, 255);*//*  background:rgb(248, 253, 255); background:rgb(237, 250, 255); */
-  background: rgb(237, 250, 255);
+
+
+
+
+  
+
+/*
+background: rgb(237, 250, 255);
 background: -webkit-linear-gradient(top, rgb(252, 254, 255) 0%,rgb(243, 252, 255) 44%,rgb(237, 250, 255) 66%, rgb(233, 249, 255) 100%);
 background: linear-gradient(to bottom, rgb(252, 254, 255) 0%,rgb(243, 252, 255) 44%,rgb(237, 250, 255) 66%, rgb(233, 249, 255) 100%);
-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.5), inset 0px 0px 2px rgba(154, 147, 113, 0.95)
+box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.5), inset 0px 0px 2px rgba(154, 147, 113, 0.95);
+*/
+
+background-color: rgba(236, 236, 236, 0.5); /* Transparent background */
+background: -webkit-linear-gradient(top, rgb(252, 254, 255) 0%,rgba(249, 249, 249, 0.5) 44%,rgba(232, 232, 232, 0.5) 66%, rgba(208, 208, 208, 0.5) 100%);
+background: linear-gradient(to bottom, rgb(252, 254, 255) 0%,rgb(249, 249, 249, 0.5) 44%,rgba(233, 232, 232, 0.5) 66%, rgb(208, 208, 208, 0.5) 100%);
+    
+
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+
 
 }
 .nav-area:after {
@@ -2613,6 +2683,15 @@ legend {
   #r1,#r1s {
     display: none;}
 }
+
+
+
+
+
+
+
+
+
 
 
 
