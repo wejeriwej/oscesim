@@ -34,17 +34,20 @@
 
 
 
-<div id="title3" class="hidden">Practice taking histories now 
+
+<div style="background-color: #eeeeee; padding-top: 25px; padding-bottom: 20px;">
+
+<center><div id="title3" class="hidden">Practice taking histories now 
   <svg class="w-10 h-10" style="width: 50px;" viewBox="0 0 254 107" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M3 103.824C45.3292 106.086 85.2951 90.8282 118.182 63.953C129.508 54.6969 140.763 42.4172 147.387 29.1688C150.391 23.1616 154.398 11.338 149.274 5.78786C140.768 -3.42746 129.585 13.6307 125.893 19.9805C119.22 31.4586 124.234 53.8078 136.148 60.2613C158.264 72.2407 191.043 69.3799 215.315 68.3011C225.006 67.8703 234.869 65.4297 244.439 65.4297C248.152 65.4297 239.179 60.7699 237.794 59.5229C229.618 52.165 229.186 52.3018 239.27 58.7846C240.667 59.6823 250.92 65.2052 250.92 66.168C250.92 66.84 233.48 79.6822 231.887 81.6733" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
   </svg>
+</div></center>
 </div>
 
 
-
 <div id="middlecomment"><center>
-<p style="font-size: 52.5px;">No partner to practice histories?</p>
-<p style="font-size: 20px; max-width: 600px; margin-top: 30px;">Osce Sims uses AI to generate a real life patient for you to practice taking histories, and then tests you with realistic questions that you will encounter in your OSCE exams</p>
+<p id="middlecommentfontsize" >No partner to practice histories?</p>
+<p style="font-size: 20px; max-width: 600px; margin-top: 40px;">Osce Sims uses AI to generate a real life patient for you to practice taking histories, and then tests you with realistic questions that you will encounter in your OSCE exams</p>
 </center>
 
 <center>
@@ -410,10 +413,11 @@ Unlock your potential!
             animation-delay: 2s; font-weight: 590;
 }
 
+
 #title3 {
-            color:rgb(255, 255, 255); font-size: 29px; padding: 8px 12px; position: absolute; width: 100%; text-align: center; font-family: LTSoul;
+            color:rgb(0, 0, 0); font-size: 29px; padding: 8px 12px;  width: 100%; text-align: center; font-family: LTSoul;
             bottom: 100px;
-            animation-delay: 3.5s; font-weight: 590;
+            animation-delay: 0s; font-weight: 590;
 
             cursor: pointer;
             border: 0.5px solid #000000;
@@ -421,8 +425,10 @@ Unlock your potential!
             max-width: fit-content;
             padding-left: 20px;
             padding-right: 20px;
-            left: 50%;
-    transform: translateX(-50%);
+            
+             /*left: 50%;
+             position: absolute; transform: translateX(-50%);*/
+
 }
 #title3:hover{
   filter: brightness(0.8);
@@ -433,6 +439,77 @@ Unlock your potential!
   background: -webkit-linear-gradient(top, #b8b4b4 0%, #817c7c 44%, #565252 100%);
   background: linear-gradient(to bottom, #b8b4b4 0%, #817c7c 44%, #565252 100%);
 }
+
+#middlecomment{
+    padding: 170px;
+  }
+
+
+  
+
+
+  @media only screen and (max-width: 1440px) {
+  #title {bottom: 580px;}}
+
+@media only screen and (max-width: 1440px) {
+  #title1 {bottom: 480px;}}
+
+@media only screen and (max-width: 1440px) {
+    #title2 {bottom: 380px;}}
+
+@media only screen and (max-width: 1440px) {
+    #title3 {bottom: 225px; padding: 15px;}}
+
+
+
+@media only screen and (max-width: 1200px) {
+      #title3 {bottom: 275px; padding: 15px;}}
+
+
+      #middlecommentfontsize {font-size: 52.2px;}
+
+@media only screen and (max-width: 1050px) {
+      #title3 {bottom: 180px; padding: 15px; color: #000000; font-size: 25px;}
+      #middlecommentfontsize {font-size: 37.5px;}}
+
+
+
+
+@media only screen and (max-width: 920px) {
+      #title3 {bottom: 230px; padding: 10px; font-size: 22.5px; animation-delay: 0.5s;}}
+
+
+
+
+
+
+@media only screen and (max-width: 800px) {
+  #title {font-size: 27.5px; bottom: 625px;}}
+
+@media only screen and (max-width: 800px) {
+  #title1 {font-size: 40px; bottom: 535px;}}
+
+@media only screen and (max-width: 800px) {
+    #title2 {font-size: 47.5px; bottom: 450px;}}
+
+@media only screen and (max-width: 800px) {
+    #title3 {font-size: 20px; bottom: 300px; padding: 15px; color: #000000;}}
+
+@media only screen and (max-width: 800px) {
+      #middlecomment {padding: 100px}}
+
+
+      @media only screen and (max-width: 600px) {
+        #title {bottom: 650px;}
+        #title1 {bottom: 573.5px;}
+        #title2 {bottom: 510px;}
+        #title3 {bottom: 340px;}
+      }
+
+        
+
+
+
 
 
 #booklesson{
@@ -483,10 +560,7 @@ Unlock your potential!
   transform: translateX(-50%);
   }
 
-  #middlecomment{
-    
-    padding: 100px;
-  }
+  
 
 </style>
 
