@@ -1473,6 +1473,12 @@ margin-top: 40px;
   margin-right: 200px;
   margin-top: 30px;
 }
+
+@media only screen and (max-width: 650px){
+  .cardforchecklist {
+    width: 100%;    margin-right: 0px;
+  }}
+
 .cardforchecklist h2 {
   margin-top: 0;
   font-size: 32px;
@@ -1712,8 +1718,9 @@ div.scroll-container img {
   background-color: rgb(254, 226, 216);
   text-align: center;
   font-size:20px;
-  float:left;
+  
   border-radius: 10px;
+  font-family: LTSoul;
 
 }
 @media screen and (max-width: 600px) {
@@ -2662,6 +2669,7 @@ legend {
     #myLinks a {
       display: block; /* Display links as blocks (vertically) */
       padding: 5px 0; /* Add padding for better spacing */
+      
       }
 
       #myLinks a:hover {
