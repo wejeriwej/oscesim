@@ -65,8 +65,9 @@ function startFunction() {
 
   document.getElementById('myVideo').style.display = 'unset';
   document.getElementById("mp4_src").src = "videos/openinghiya.mp4"; document.getElementById("myVideo").load();
-  document.getElementById('tutorial').style.display = 'none'; document.querySelector('other-cases').style.display = 'none'; document.querySelector('special-footer').style.display = 'none';
+  document.getElementById('tutorial').style.display = 'none'; document.querySelector('other-cases').style.display = 'none'; document.querySelector('special-footer').style.display = 'none'; document.getElementById('difficultycolor').style.display = 'none'; document.getElementById('backgroundofstartbtn').style.display = 'none';document.getElementById('executeButton').style.display = 'none';
 
+  
 
   document.getElementById('myVideo').onended = function(e) {
     //readOutLoud("Go");
@@ -92,6 +93,10 @@ function startFunction() {
   document.getElementById('introstatement').style.display = 'none';
   document.getElementById('fullscreenvideobackground').style.display = 'none';
   document.body.style.backgroundColor = 'black';
+  document.body.style.backgroundImage = 'none';
+  document.getElementById('toptipmain').style.display = 'none';
+
+  
   document.getElementById('logoduringconsultation').style.display = 'unset';
   document.getElementById('fakeVideo').style.display = 'none';
   document.getElementById('page-description').style.display = 'none';document.getElementById('casename').style.display = 'none';
@@ -565,7 +570,8 @@ weightx = false;
 oedemax = false;
 
 
-
+/*Examinations*/
+cardioexamx = false;
 
 
 
@@ -689,7 +695,7 @@ let actionTriggered = false;
 var onesecdelay = null;
   function onesecdelaybeforestoprecog() {
     onesecdelay = setTimeout(function () {
-      recognition.stop(); executeActionAfterDelay(); clearTimeout(silenceTimeout);
+      recognition.stop();executeActionAfterDelay(); clearTimeout(silenceTimeout);
     }, 1000);
   }
 //////
@@ -698,9 +704,10 @@ var onesecdelay = null;
 var timerforsubmitting = null;
 
 
-  function executeActionAfterDelay() {
+    function executeActionAfterDelay() {
     timerforsubmitting = setTimeout(function () {
-      submitquestion(); clearTimeout(silenceTimeout); document.getElementById('loadingcircle').style.display = 'none';
+      clearTimeout(silenceTimeout); document.getElementById('loadingcircle').style.display = 'none';submitquestion();
+      document.getElementById('executeButton').style.display = 'none';      
     }, 1500);
   }
 
@@ -970,7 +977,7 @@ var timerforsubmitting = null;
       
     //pain
     
-    else if (noteContent.includes("where")&&(noteContent.includes("pain")||noteContent.includes("discomfort")||noteContent.includes("hurt"))&&!noteContent.includes("else")&&!noteContent.includes("somewhere")
+    else if (noteContent.includes("where")&&(noteContent.includes("pain")||noteContent.includes("discomfort")||noteContent.includes("hurt"))&&!noteContent.includes("else")&&!noteContent.includes("somewhere")&&!noteContent.includes("anywhere")
     ) {
       //readOutLoud("The pain is in the middle of my chest"); - DON'T REMOVE THE SPACE BEFORE 'WHERE' AS CAN BE 'ANYWHERE (ELSE)'FOR RADIATION OF PAIN
       previousquestion = noteContent;   response_question = "The pain's in the middle of my chest";
@@ -1844,6 +1851,209 @@ if (onsetx === true){
 redstyles(onsetreal1); greenstyles(onsetreal2);
 }
 
+var characterreal1 = $('#characterreal1'); var characterreal2 = $('#characterreal2');
+if (characterx === true){
+redstyles(characterreal1); greenstyles(characterreal2);
+}
+
+var radiatereal1 = $('#radiatereal1'); var radiatereal2 = $('#radiatereal2');
+if (radiatex === true){
+redstyles(radiatereal1); greenstyles(radiatereal2);
+}
+
+var associatedsymptomsreal1 = $('#associatedsymptomsreal1'); var associatedsymptomsreal2 = $('#associatedsymptomsreal2');
+if (associatedsymptomsx === true){
+redstyles(associatedsymptomsreal1); greenstyles(associatedsymptomsreal2);
+}
+
+var timecoursereal1 = $('#timecoursereal1'); var timecoursereal2 = $('#timecoursereal2');
+if (timecoursex === true){
+redstyles(timecoursereal1); greenstyles(timecoursereal2);
+}
+
+var makeitbetterreal1 = $('#makeitbetterreal1'); var makeitbetterreal2 = $('#makeitbetterreal2');
+if (makeitbetterx === true){
+redstyles(makeitbetterreal1); greenstyles(makeitbetterreal2);
+}
+
+var ratepainreal1 = $('#ratepainreal1'); var ratepainreal2 = $('#ratepainreal2');
+if (ratepainx === true){
+redstyles(ratepainreal1); greenstyles(ratepainreal2);
+}
+
+var makeitworsereal1 = $('#makeitworsereal1'); var makeitworsereal2 = $('#makeitworsereal2');
+if (makeitworsex === true){
+redstyles(makeitworsereal1); greenstyles(makeitworsereal2);
+}
+
+var happenbeforereal1 = $('#happenbeforereal1'); var happenbeforereal2 = $('#happenbeforereal2');
+if (happenbeforex === true){
+redstyles(happenbeforereal1); greenstyles(happenbeforereal2);
+}
+
+
+
+
+
+var ideasreal1 = $('#ideasreal1'); var ideasreal2 = $('#ideasreal2');
+if (ideasx === true){
+redstyles(ideasreal1); greenstyles(ideasreal2);
+}
+
+var concernsreal1 = $('#concernsreal1'); var concernsreal2 = $('#concernsreal2');
+if (concernsx === true){
+redstyles(concernsreal1); greenstyles(concernsreal2);
+}
+
+var expectationsreal1 = $('#expectationsreal1'); var expectationsreal2 = $('#expectationsreal2');
+if (expectationsx === true){
+redstyles(expectationsreal1); greenstyles(expectationsreal2);
+}
+
+var familyhistoryreal1 = $('#familyhistoryreal1'); var familyhistoryreal2 = $('#familyhistoryreal2');
+if (familyhistoryx === true){
+redstyles(familyhistoryreal1); greenstyles(familyhistoryreal2);
+}
+
+var pmhreal1 = $('#pmhreal1'); var pmhreal2 = $('#pmhreal2');
+if (pmhx === true){
+redstyles(pmhreal1); greenstyles(pmhreal2);
+}
+
+var surgicalreal1 = $('#surgicalreal1'); var surgicalreal2 = $('#surgicalreal2');
+if (surgicalx === true){
+redstyles(surgicalreal1); greenstyles(surgicalreal2);
+}
+
+var medsreal1 = $('#medsreal1'); var medsreal2 = $('#medsreal2');
+if (medsx === true){
+redstyles(medsreal1); greenstyles(medsreal2);
+}
+
+var allergiesreal1 = $('#allergiesreal1'); var allergiesreal2 = $('#allergiesreal2');
+if (allergiesx === true){
+redstyles(allergiesreal1); greenstyles(allergiesreal2);
+}
+
+var jobreal1 = $('#jobreal1'); var jobreal2 = $('#jobreal2');
+if (jobx === true){
+redstyles(jobreal1); greenstyles(jobreal2);
+}
+
+var walkdistancereal1 = $('#walkdistancereal1'); var walkdistancereal2 = $('#walkdistancereal2');
+if (walkdistancex === true){
+redstyles(walkdistancereal1); greenstyles(walkdistancereal2);
+}
+
+var homesituationreal1 = $('#homesituationreal1'); var homesituationreal2 = $('#homesituationreal2');
+if (homesituationx === true){
+redstyles(homesituationreal1); greenstyles(homesituationreal2);
+}
+
+var smokingreal1 = $('#smokingreal1'); var smokingreal2 = $('#smokingreal2');
+if (smokingx === true){
+redstyles(smokingreal1); greenstyles(smokingreal2);
+}
+
+var alcoholreal1 = $('#alcoholreal1'); var alcoholreal2 = $('#alcoholreal2');
+if (alcoholx === true){
+redstyles(alcoholreal1); greenstyles(alcoholreal2);
+}
+
+
+/*Final year questions:*/
+
+var dyspnoeareal1 = $('#dyspnoeareal1'); var dyspnoeareal2 = $('#dyspnoeareal2');
+if (dyspnoeax === true){
+redstyles(dyspnoeareal1); greenstyles(dyspnoeareal2);
+}
+
+var orthopnoeareal1 = $('#orthopnoeareal1'); var orthopnoeareal2 = $('#orthopnoeareal2');
+if (orthopnoeax === true){
+redstyles(orthopnoeareal1); greenstyles(orthopnoeareal2);
+}
+
+var pndreal1 = $('#pndreal1'); var pndreal2 = $('#pndreal2');
+if (pndx === true){
+redstyles(pndreal1); greenstyles(pndreal2);
+}
+
+var coughreal1 = $('#coughreal1'); var coughreal2 = $('#coughreal2');
+if (coughx === true){
+redstyles(coughreal1); greenstyles(coughreal2);
+}
+
+var FHheartconditionsreal1 = $('#FHheartconditionsreal1'); var FHheartconditionsreal2 = $('#FHheartconditionsreal2');
+if (FHheartconditionsx === true){
+redstyles(FHheartconditionsreal1); greenstyles(FHheartconditionsreal2);
+}
+
+var diabetesreal1 = $('#diabetesreal1'); var diabetesreal2 = $('#diabetesreal2');
+if (diabetesx === true){
+redstyles(diabetesreal1); greenstyles(diabetesreal2);
+}
+
+var hypertensionreal1 = $('#hypertensionreal1'); var hypertensionreal2 = $('#hypertensionreal2');
+if (hypertensionx === true){
+redstyles(hypertensionreal1); greenstyles(hypertensionreal2);
+}
+
+var heartattacksreal1 = $('#heartattacksreal1'); var heartattacksreal2 = $('#heartattacksreal2');
+if (heartattacksx === true){
+redstyles(heartattacksreal1); greenstyles(heartattacksreal2);
+}
+
+var dizzinessreal1 = $('#dizzinessreal1'); var dizzinessreal2 = $('#dizzinessreal2');
+if (dizzinessx === true){
+redstyles(dizzinessreal1); greenstyles(dizzinessreal2);
+}
+
+var physicalactivityreal1 = $('#physicalactivityreal1'); var physicalactivityreal2 = $('#physicalactivityreal2');
+if (physicalactivityx === true){
+redstyles(physicalactivityreal1); greenstyles(physicalactivityreal2);
+}
+
+var palpitationsreal1 = $('#palpitationsreal1'); var palpitationsreal2 = $('#palpitationsreal2');
+if (palpitationsx === true){
+redstyles(palpitationsreal1); greenstyles(palpitationsreal2);
+}
+
+var sleepapnoeareal1 = $('#sleepapnoeareal1'); var sleepapnoeareal2 = $('#sleepapnoeareal2');
+if (sleepapnoeax === true){
+redstyles(sleepapnoeareal1); greenstyles(sleepapnoeareal2);
+}
+
+var padreal1 = $('#padreal1'); var padreal2 = $('#padreal2');
+if (padx === true){
+redstyles(padreal1); greenstyles(padreal2);
+}
+
+var feverreal1 = $('#feverreal1'); var feverreal2 = $('#feverreal2');
+if (feverx === true){
+redstyles(feverreal1); greenstyles(feverreal2);
+}
+
+var weightreal1 = $('#weightreal1'); var weightreal2 = $('#weightreal2');
+if (weightx === true){
+redstyles(weightreal1); greenstyles(weightreal2);
+}
+
+var oedemareal1 = $('#oedemareal1'); var oedemareal2 = $('#oedemareal2');
+if (oedemax === true){
+redstyles(oedemareal1); greenstyles(oedemareal2);
+}
+
+
+
+
+
+
+
+
+/*var cardioexamreal1 = $('#cardioexamreal1'); var cardioexamreal2 = $('#cardioexamreal2');
+if (cardioexamx === true){
+redstyles(cardioexamreal1); greenstyles(cardioexamreal2);
+}*/
 
 
 
@@ -1861,6 +2071,23 @@ function greenstyles(element){
 //var painlocationreal1 = document.querySelectorAll('#customers #painlocationreal td:nth-child(2)');
 //var painlocationreal2 = document.querySelectorAll('#customers #painlocationreal td:nth-child(3)');
 //painlocationreal1.css('display: none');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
        
@@ -2544,10 +2771,19 @@ function showSlides1() {
 
  function myFunction() {
   var x = document.getElementById("myLinks");
+  
   if (x.style.display === "block") {
     x.style.display = "none";
+    
+    document.getElementById("title").style.display = "block";
+    document.getElementById("title1").style.display = "block";
+    document.getElementById("title2").style.display = "block";
   } else {
     x.style.display = "block";
+    
+  document.getElementById("title").style.display = "none";
+  document.getElementById("title1").style.display = "none";
+  document.getElementById("title2").style.display = "none";
   }
 }
 
@@ -2949,6 +3185,34 @@ recognition_examinations.stop();
 
   var examinationsfinal = $('#examinationsfinal');
   examinationsfinal.text(noteexaminations);
+
+
+
+
+
+
+//mark your examination
+if(noteexaminations.includes("cardi")||examinationsfinal.includes("heart")||examinationsfinal.includes("chest")){ 
+  cardioexamx = true;
+}
+
+
+var cardioexamreal1 = $('#cardioexamreal1'); var cardioexamreal2 = $('#cardioexamreal2');
+if (cardioexamx === true){
+redstyles(cardioexamreal1); greenstyles(cardioexamreal2);
+}
+
+
+
+function redstyles(element){
+  element.css({'visibility': 'hidden'});}
+
+function greenstyles(element){
+  element.css({'visibility': 'visible','border-bottom':'1px solid rgb(190, 188, 188)','border-top':'1px solid rgb(190, 188, 188)'});}
+
+
+
+
 
 }, 2000);
 
