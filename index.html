@@ -255,7 +255,7 @@
 
                 </div>
 
-                <center><div>
+                <center><div id="difficultycolor">
 
                   <div style=" font-size: 22.5px; font-family: LTSoul;">
                     Difficulty: 
@@ -282,7 +282,7 @@
                     
 
 
-                </div></center>
+                </div></div></center>
 
               </div>
                <!-- <input type="image" id=logo src="logo.png" name="saveForm" class="btTxt submit" id="saveForm" />-->
@@ -302,7 +302,7 @@
 
 
 
-<center><div style="background-image: url(cork-wallet.webp); padding: 23px; margin-left: -220px; margin-right: -220px; font-size: 22.5px; font-family: LTSoul;">
+<center><div id="backgroundofstartbtn" style="background-image: url(cork-wallet.webp); padding: 23px; margin-left: -220px; margin-right: -220px; font-size: 22.5px; font-family: LTSoul;">
 
 <center><button id="start-consultation-btn" onclick="style.display = 'none', startFunction()" type="button">Start Consultation</button></center>
 
@@ -365,7 +365,7 @@
 
 
 
-<div style="margin-top: 60px;border: 20px solid transparent; border-image: url('beige-tiles.webp'); border-color: beige;
+<div id="toptipmain" style="margin-top: 60px;border: 20px solid transparent; border-image: url('beige-tiles.webp'); border-color: beige;
 
 
 
@@ -672,28 +672,166 @@
                               <ul class="j1"><li class = "explanationparagraph">How did the pain start?</li></ul></td>
                         </tr>
                         
-                        <tr id="onsetreal">
+                        <tr id="characterreal">
                           <td></td>
-                          <td id="onsetreal1"style="border-bottom: 4px solid;  border-color:rgb(190, 188, 188);"><ul><li><b style="font-weight: 900;">O</b>nset</li></ul>
-                              <ul class="j1"><li class = "explanationparagraph">How did the pain start?</li></ul></td>
-                          <td id="onsetreal2"style="border-bottom: 4px solid;  border-color:rgb(190, 188, 188);"><ul><li><b style="font-weight: 900;">O</b>nset</li></ul>
-                              <ul class="j1"><li class = "explanationparagraph">How did the pain start?</li></ul></td>
+                          <td id="characterreal1"><ul><li><b style="font-weight: 900;">C</b>haracter</li></ul>
+                              <ul class="j1"><li class = "explanationparagraph">Describe the pain? Is it sharp? dull? burning sensation? etc</li></ul></td>
+                          <td id="characterreal2"><ul><li><b style="font-weight: 900;">C</b>haracter</li></ul>
+                              <ul class="j1"><li class = "explanationparagraph">Describe the pain? Is it sharp? dull? burning sensation? etc</li></ul></td>
                         </tr>
                         
-                        
-                        
-                        <tr>
-                          <td id="leftsidebox" class="special-cell" style=" border: 2px solid; border-top: 2.7px solid; background-color: #f0f0f0; 
-                          text-align: center; font-size: 20px; font-weight: bold; z-index: 1000; position: relative; font-family: LTSoul;">ICE + other History</td>
-                          <td>Maria Anders things I didnt know abiut are very frustsr=ationg and did you knwo that there are things that happen like</td>
-                          <td>Maria Anders things I didnt know abiut are very frustsr=ationg and did you knwo that there are things that happen like</td>
+                        <tr id="radiatereal">
+                          <td></td>
+                          <td id="radiatereal1"><ul><li><b style="font-weight: 900;">R</b>adiation</li></ul>
+                              <ul class="j1"><li class = "explanationparagraph">Does the pain radiate to anywhere? the neck? the left arm? etc</li></ul></td>
+                          <td id="radiatereal2"><ul><li><b style="font-weight: 900;">R</b>adiation</li></ul>
+                              <ul class="j1"><li class = "explanationparagraph">Does the pain radiate to anywhere? the neck? the left arm? etc</li></ul></td>
                         </tr>
 
-                        <tr>
-                          <td></td>    <!-- style="border-bottom: 2px;"-->
-                          <td>Christina Berglund</td>
-                          <td>Sweden</td>
+                        <tr id="associatedsymptomsreal">
+                          <td></td>
+                          <td id="associatedsymptomsreal1"><ul><li><b style="font-weight: 900;">A</b>ssociated symptoms</li></ul>
+                              <ul class="j1"><li class = "explanationparagraph">Were there any other symptoms that came along with the pain</li></ul></td>
+                          <td id="associatedsymptomsreal2"><ul><li><b style="font-weight: 900;">A</b>ssociatedsymptoms</li></ul>
+                              <ul class="j1"><li class = "explanationparagraph">Were there any other symptoms that came along with the pain</li></ul></td>
                         </tr>
+
+                        <tr id="timecoursereal">
+                          <td></td>
+                          <td id="timecoursereal1"><ul><li><b style="font-weight: 900;">T</b>ime course</li></ul>
+                              <ul class="j1"><li class = "explanationparagraph">How has the pain changed over time? Is it constant? Does it come and go?</li></ul></td>
+                          <td id="timecoursereal2"><ul><li><b style="font-weight: 900;">T</b>imecourse</li></ul>
+                              <ul class="j1"><li class = "explanationparagraph">How has the pain changed over time? Is it constant? Does it come and go?</li></ul></td>
+                        </tr>
+
+                        <tr id="makeitbetterreal">
+                          <td></td>
+                          <td id="makeitbetterreal1"><ul><li><b style="font-weight: 900;">E</b>xacerbating factors</li></ul>
+                              <ul class="j1"><li class = "explanationparagraph">What makes the pain worse?</li></ul></td>
+                          <td id="makeitbetterreal2"><ul><li><b style="font-weight: 900;">E</b>xacerbating factors</li></ul>
+                              <ul class="j1"><li class = "explanationparagraph">What makes the pain worse?</li></ul></td>
+                        </tr>
+
+                        <tr id="ratepainreal">
+                          <td></td>
+                          <td id="ratepainreal1"><ul><li><b style="font-weight: 900;">S</b>everity</li></ul>
+                              <ul class="j1"><li class = "explanationparagraph">On a scale of 1-10 how'd you rate the pain, with 10 being the worst pain?</li></ul></td>
+                          <td id="ratepainreal2"><ul><li><b style="font-weight: 900;">S</b>everity</li></ul>
+                              <ul class="j1"><li class = "explanationparagraph">On a scale of 1-10 how'd you rate the pain, with 10 being the worst pain?</li></ul></td>
+                        </tr>
+
+                        <tr id="makeitworsereal">
+                          <td></td>
+                          <td id="makeitworsereal1"><ul><li>Relieving factors</li></ul>
+                              <ul class="j1"><li class = "explanationparagraph">What makes the pain better?</li></ul></td>
+                          <td id="makeitworsereal2"><ul><li>Relieving factors</li></ul>
+                              <ul class="j1"><li class = "explanationparagraph">What makes the pain better?</li></ul></td>
+                        </tr>
+
+                        <tr id="happenbeforereal">
+                          <td></td>
+                          <td id="happenbeforereal1"style="border-bottom: 4px solid;  border-color:rgb(190, 188, 188);"><ul><li>Has this happened before?</li></ul>
+                              <ul class="j1"><li class = "explanationparagraph">Important to know as you want to know if their symptoms have happened in the past</li></ul></td>
+                          <td id="happenbeforereal2"style="border-bottom: 4px solid;  border-color:rgb(190, 188, 188);"><ul><li>Has this happened before?</li></ul>
+                              <ul class="j1"><li class = "explanationparagraph">Important to know as you want to know if their symptoms have happened in the past</li></ul></td>
+                        </tr>
+
+<!--ICE-->
+
+                        <tr id="ideasreal">
+                          <td id="leftsidebox" class="special-cell" style=" border: 2px solid; border-top: 2.7px solid; background-color: #f0f0f0; 
+                          text-align: center; font-size: 20px; font-weight: bold; z-index: 1000; position: relative; font-family: LTSoul;">ICE + other History</td>
+                          <td id="ideasreal1"><ul><li>Pt's <b style="font-weight: 900;">I</b>deas</li></ul>
+                              <ul class="j1"><li class = "explanationparagraph">What does the patient think/feel is going on?</li></ul></td>
+                          <td id="ideasreal2"><ul><li>Pt's <b style="font-weight: 900;">I</b>deas</li></ul>
+                              <ul class="j1"><li class = "explanationparagraph">What does the patient think/feel is going on?</li></ul></td>
+                        </tr>
+
+                        <tr id="concernsreal">
+                          <td></td>
+                          <td id="concernsreal1"><ul><li>Pt's <b style="font-weight: 900;">C</b>oncerns</li></ul>
+                              <ul class="j1"><li class = "explanationparagraph">What are they worried about?</li></ul></td>
+                          <td id="concernsreal2"><ul><li>Pt's <b style="font-weight: 900;">C</b>oncerns</li></ul>
+                              <ul class="j1"><li class = "explanationparagraph">What are they worried about?</li></ul></td>
+                        </tr>
+
+                        <tr id="expectationsreal">
+                          <td></td>
+                          <td id="expectationsreal1"><ul><li>Pt's <b style="font-weight: 900;">E</b>xpectations</li></ul>
+                              <ul class="j1"><li class = "explanationparagraph">What does the patient want to get out of the consultation with you? is it a particular drug/treatment? a firm diagnosis? some investigations? etc</li></ul></td>
+                          <td id="expectationsreal2"><ul><li>Pt's <b style="font-weight: 900;">E</b>xpectations</li></ul>
+                              <ul class="j1"><li class = "explanationparagraph">What does the patient want to get out of the consultation with you? is it a particular drug/treatment? a firm diagnosis? some investigations? etc</li></ul></td>
+                        </tr>
+
+                        <tr id="familyhistoryreal">
+                          <td></td>
+                          <td id="familyhistoryreal1"><ul><li>Family Hx</li></ul>
+                          <td id="familyhistoryreal2"><ul><li>Family Hx</li></ul>
+                        </tr>
+
+                        <tr id="pmhreal">
+                          <td></td>
+                          <td id="pmhreal1"><ul><li>Past medical Hx</li></ul>
+                          <td id="pmhreal2"><ul><li>Past medical Hx</li></ul>
+                        </tr>
+                        
+                        <tr id="surgicalreal">
+                          <td></td>
+                          <td id="surgicalreal1"><ul><li>Past surgical Hx</li></ul>
+                          <td id="surgicalreal2"><ul><li>Past surgical Hx</li></ul>
+                        </tr>
+                        
+                        <tr id="medsreal">
+                          <td></td>
+                          <td id="medsreal1"><ul><li>Pts medications</li></ul>
+                          <td id="medsreal2"><ul><li>Pts medications</li></ul>
+                        </tr>
+
+                        <tr id="allergiesreal">
+                          <td></td>
+                          <td id="allergiesreal1"style="border-bottom: 4px solid;  border-color:rgb(190, 188, 188);"><ul><li>Allergies</li></ul>
+                          <td id="allergiesreal2"style="border-bottom: 4px solid;  border-color:rgb(190, 188, 188);"><ul><li>Allergies</li></ul>
+                        </tr>
+
+<!--Social Hx-->
+
+
+                        <tr id="jobreal">
+                          <td id="leftsidebox" class="special-cell" style=" border: 2px solid; border-top: 2.7px solid; background-color: #f0f0f0; 
+                          text-align: center; font-size: 20px; font-weight: bold; z-index: 1000; position: relative; font-family: LTSoul;">Social History</td>
+                          <td id="jobreal1"><ul><li>Pt's job</li></ul>
+                          <td id="jobreal2"><ul><li>Pt's job</li></ul>
+                        </tr>
+
+                        <tr id="walkdistancereal">
+                          <td></td>
+                          <td id="walkdistancereal1"><ul><li>How far they can walk</li></ul>
+                          <td id="walkdistancereal2"><ul><li>How far they can walk</li></ul>
+                        </tr>
+
+                        <tr id="homesituationreal">
+                          <td></td>
+                          <td id="homesituationreal1"><ul><li>Pt's home situation</li></ul>
+                              <ul class="j1"><li class = "explanationparagraph">You want to know who they are living with, where do they live (in a bungalo? a flat? etc), do they need help with mobilising at home? do they have the support at home?</li></ul></td>
+                          <td id="homesituationreal2"><ul><li>Pt's home situation</li></ul>
+                              <ul class="j1"><li class = "explanationparagraph">You want to know who they are living with, where do they live (in a bungalo? a flat? etc), do they need help with mobilising at home? do they have the support at home?</li></ul></td>
+                        </tr>
+
+                        <tr id="smokingreal">
+                          <td></td>
+                          <td id="smokingreal1"><ul><li>Smoking Hx</li></ul>
+                          <td id="smokingreal2"><ul><li>Smoking Hx</li></ul>
+                        </tr>
+
+                        <tr id="alcoholreal">
+                          <td></td>
+                          <td id="alcoholreal1"style="border-bottom: 4px solid;  border-color:rgb(190, 188, 188);"><ul><li>Alcohol Hx</li></ul>
+                          <td id="alcoholreal2"style="border-bottom: 4px solid;  border-color:rgb(190, 188, 188);"><ul><li>Alcohol Hx</li></ul>
+                        </tr>
+
+
+ 
+                  
 
                       </table>
 
@@ -755,51 +893,178 @@
             <!--<img src="logo.png" style="width:100%">-->
             <table id="customers">
               <tr>
-                <th>Presenting complaint</th><!--General Information gathering-->
+                <th>Important not to miss:</th><!--General Information gathering-->
                 <th>❌</th>
                 <th>✔️</th>
               </tr>
           
-          
-          
-              <tr id="painlocationreal">
-                <td></td>
-                <td id="painlocationreal1"><ul><li><b style="font-weight: 900;">S</b>ite</li></ul>
-                    <ul class="j1"><li class = "explanationparagraph">The location of the pain</li></ul></td>
-                <td id="painlocationreal2"><ul><li><b style="font-weight: 900;">S</b>ite</li></ul>
-                    <ul class="j1"><li class = "explanationparagraph">The location of the pain</li></ul></td>
-              </tr>
-              
-              <tr id="onsetreal">
-                <td></td>
-                <td id="onsetreal1"><ul><li><b style="font-weight: 900;">O</b>nset</li></ul>
-                    <ul class="j1"><li class = "explanationparagraph">How did the pain start?</li></ul></td>
-                <td id="onsetreal2"><ul><li><b style="font-weight: 900;">O</b>nset</li></ul>
-                    <ul class="j1"><li class = "explanationparagraph">How did the pain start?</li></ul></td>
-              </tr>
-              
-              <tr id="onsetreal">
-                <td></td>
-                <td id="onsetreal1"style="border-bottom: 4px solid;  border-color:rgb(190, 188, 188);"><ul><li><b style="font-weight: 900;">O</b>nset</li></ul>
-                    <ul class="j1"><li class = "explanationparagraph">How did the pain start?</li></ul></td>
-                <td id="onsetreal2"style="border-bottom: 4px solid;  border-color:rgb(190, 188, 188);"><ul><li><b style="font-weight: 900;">O</b>nset</li></ul>
-                    <ul class="j1"><li class = "explanationparagraph">How did the pain start?</li></ul></td>
-              </tr>
-              
-              
-              
               <tr>
+                <td></td>
+                <td style="background-color:blanchedalmond;   border: solid black 2px; border-right: 0px; font-size:larger; font-stretch:ultra-expanded"><center>Specific symptoms to ask for:</center></td>
+                <td style="background-color:blanchedalmond;   border: solid black 2px; border-left: 0px; visibility: visible;"></td>
+              </tr>
+          
+              <tr id="dyspnoeareal">
+                <td></td>
+                <td id="dyspnoeareal1"><ul><li>Dyspnoea</li></ul>
+                    <ul class="j1"><li class = "explanationparagraph">Shortness of breath is a symptom of heart failure, Cardiovascular disease, heart valve disorders and many other cardiac causes. It is also present in pulmonary causes like COPD, asthma, PE, and pneumonia. You can also get it in anaemia, oesity, anxiety attacks and musculoskeletal issues.</li></ul></td>
+                <td id="dyspnoeareal2"><ul><li><b style="font-weight: 900;">Dyspnoea</li></ul>
+                    <ul class="j1"><li class = "explanationparagraph">Shortness of breath is a symptom of heart failure, Cardiovascular disease, heart valve disorders and many other cardiac causes. It is also present in pulmonary causes like COPD, asthma, PE, and pneumonia. You can also get it in anaemia, oesity, anxiety attacks and musculoskeletal issues.</li></ul></td>
+              </tr>
+              
+              <tr id="orthopnoeareal">
+                <td></td>
+                <td id="orthopnoeareal1"><ul><li>Orthopnoea</li></ul>
+                    <ul class="j1"><li class = "explanationparagraph">This is when you get SOB when lying flat, so patients would normally sleep in an upright position. A good question to ask for would be to ask how many pillows they sleep with at night. Make sure to clarify that it is because of SOB and not because of pain or anything else.</li></ul></td>
+                <td id="orthopnoeareal2"><ul><li><b style="font-weight: 900;">Orthopnoea</li></ul>
+                    <ul class="j1"><li class = "explanationparagraph">This is when you get SOB when lying flat, so patients would normally sleep in an upright position. A good question to ask for would be to ask how many pillows they sleep with at night. Make sure to clarify that it is because of SOB and not because of pain or anything else.</li></ul></td>
+              </tr>
+
+              <tr id="pndreal">
+                <td></td>
+                <td id="pndreal1"><ul><li>Paroxysmal nocturnal dyspnoea (PND)</li></ul>
+                    <ul class="j1"><li class = "explanationparagraph">This is when you wake up in the middle of the night short of breath/gasping for air.</li></ul></td>
+                <td id="pndreal2"><ul><li><b style="font-weight: 900;">Paroxysmal nocturnal dyspnoea (PND)</li></ul>
+                    <ul class="j1"><li class = "explanationparagraph">This is when you wake up in the middle of the night short of breath/gasping for air.</li></ul></td>
+              </tr>
+
+              <tr id="coughreal">
+                <td></td>
+                <td id="coughreal1"><ul><li>Any cough?</li></ul>
+                    <ul class="j1"><li class = "explanationparagraph">Good to ask as you can get a cough in conditions such as pneumonia, heart failure, pulmonary embolism and many others. Also important to ask if there's any sputum and it's consistency/colour if sputum is present.</li></ul></td>
+                <td id="coughreal2"><ul><li><b style="font-weight: 900;">Any cough?</li></ul>
+                    <ul class="j1"><li class = "explanationparagraph">Good to ask as you can get a cough in conditions such as pneumonia, heart failure, pulmonary embolism and many others. Also important to ask if there's any sputum and it's consistency/colour if sputum is present.</li></ul></td>
+              </tr>
+
+              
+              <tr id="dizzinessreal">
+                <td></td>
+                <td id="dizzinessreal1"><ul><li>Dizziness/fainting/lightheadedness</li></ul>
+                    <ul class="j1"><li class = "explanationparagraph">Can point towards arrhythmias or reduced blood flow to the brain.</li></ul></td>
+                <td id="dizzinessreal2"><ul><li><b style="font-weight: 900;">Dizziness/fainting/lightheadedness</li></ul>
+                    <ul class="j1"><li class = "explanationparagraph">Can point towards arrhythmias or reduced blood flow to the brain.</li></ul></td>
+              </tr>
+
+              <tr id="palpitationsreal">
+                <td></td>
+                <td id="palpitationsreal1"style="border-bottom: 4px solid;  border-color:rgb(190, 188, 188);"><ul><li>Palpitations/irregular heart beats</li></ul>
+                    <ul class="j1"><li class = "explanationparagraph">Can point towards arrhythmias/abnormal heart beats</li></ul></td>
+                <td id="palpitationsreal2"style="border-bottom: 4px solid;  border-color:rgb(190, 188, 188);"><ul><li><b style="font-weight: 900;">Palpitations/irregular heart beats</li></ul>
+                    <ul class="j1"><li class = "explanationparagraph">Can point towards arrhythmias/abnormal heart beats</li></ul></td>
+              </tr>
+
+              <tr id="sleepapnoeareal">
                 <td id="leftsidebox" class="special-cell" style=" border: 2px solid; border-top: 2.7px solid; background-color: #f0f0f0; 
-                text-align: center; font-size: 20px; font-weight: bold; z-index: 1000; position: relative; font-family: LTSoul;">ICE + other History</td>
-                <td>Maria Anders things I didnt know abiut are very frustsr=ationg and did you knwo that there are things that happen like</td>
-                <td>Maria Anders things I didnt know abiut are very frustsr=ationg and did you knwo that there are things that happen like</td>
+                          text-align: center; font-size: 20px; font-weight: bold; z-index: 1000; position: relative; font-family: LTSoul;">Stand out questions</td>
+                <td id="sleepapnoeareal1"><ul><li>Sleep apnoea/snoring</li></ul>
+                    <ul class="j1"><li class = "explanationparagraph">Sleep apnoea is linked to an increased risk of CVD</li></ul></td>
+                <td id="sleepapnoeareal2"><ul><li><b style="font-weight: 900;">Sleep apnoea/snoring</li></ul>
+                    <ul class="j1"><li class = "explanationparagraph">Sleep apnoea is linked to an increased risk of CVD</li></ul></td>
+              </tr>
+
+              <tr id="feverreal">
+                <td></td>
+                <td id="feverreal1"><ul><li>Fever</li></ul>
+                    <ul class="j1"><li class = "explanationparagraph">Can be associated with things such as endocarditis, pneumonia</li></ul></td>
+                <td id="feverreal2"><ul><li><b style="font-weight: 900;">Fever</li></ul>
+                    <ul class="j1"><li class = "explanationparagraph">Can be associated with things such as endocarditis, pneumonia</li></ul></td>
+              </tr>
+
+              <tr id="weightreal">
+                <td></td>
+                <td id="weightreal1"><ul><li>Changes in weight</li></ul>
+                    <ul class="j1"><li class = "explanationparagraph">You can get wt gain from oedema/fluid retention, wt loss in atrial myxoma (tumour in the atria)</li></ul></td>
+                <td id="weightreal2"><ul><li><b style="font-weight: 900;">Changes in weight</li></ul>
+                    <ul class="j1"><li class = "explanationparagraph">You can get wt gain from oedema/fluid retention, wt loss in atrial myxoma (tumour in the atria)</li></ul></td>
+              </tr>
+
+              <tr id="oedemareal">
+                <td></td>
+                <td id="oedemareal1"style="border-bottom: 4px solid;  border-color:rgb(190, 188, 188);"><ul><li>Peripheral oedema</li></ul>
+                    <ul class="j1"><li class = "explanationparagraph">Important to ask about any swelling in the ankles as it is a sign of right sided heart failure, which could be one of the differentials in this case.</li></ul></td>
+                <td id="oedemareal2"style="border-bottom: 4px solid;  border-color:rgb(190, 188, 188);"><ul><li><b style="font-weight: 900;">Peripheral oedema</li></ul>
+                    <ul class="j1"><li class = "explanationparagraph">Important to ask about any swelling in the ankles as it is a sign of right sided heart failure, which could be one of the differentials in this case.</li></ul></td>
               </tr>
 
               <tr>
-                <td></td>    <!-- style="border-bottom: 2px;"-->
-                <td>Christina Berglund</td>
-                <td>Sweden</td>
+                <td></td>
+                <td style="background-color:blanchedalmond;   border: solid black 2px; border-right: 0px; font-size:larger; font-stretch:ultra-expanded"><center>Specific questions about PMHx</center></td>
+                <td style="background-color:blanchedalmond;   border: solid black 2px; border-left: 0px; visibility: visible;"></td>
               </tr>
+
+              <tr id="heartattacksreal">
+                <td></td>
+                <td id="heartattacksreal1"><ul><li>Any previous heart attacks</li></ul>
+                    <ul class="j1"><li class = "explanationparagraph">Important risk factor</li></ul></td>
+                <td id="heartattacksreal2"><ul><li><b style="font-weight: 900;">Any previous heart attacks</li></ul>
+                    <ul class="j1"><li class = "explanationparagraph">Important risk factor</li></ul></td>
+              </tr>
+
+              <tr id="diabetesreal">
+                <td></td>
+                <td id="diabetesreal1"><ul><li>PMHx of diabetes</li></ul>
+                    <ul class="j1"><li class = "explanationparagraph">Having diabetes increases the risk of developing CVD by more than 2-4 times, so is an important risk factor to ask about</li></ul></td>
+                <td id="diabetesreal2"><ul><li><b style="font-weight: 900;">PMHx of diabetes</li></ul>
+                    <ul class="j1"><li class = "explanationparagraph">Having diabetes increases the risk of developing CVD by more than 2-4 times, so is an important risk factor to ask about</li></ul></td>
+              </tr>
+
+              <tr id="hypertensionreal">
+                <td></td>
+                <td id="hypertensionreal1"><ul><li>PMHx of hypertension</li></ul>
+                    <ul class="j1"><li class = "explanationparagraph">Is an important risk factor</li></ul></td>
+                <td id="hypertensionreal2"><ul><li><b style="font-weight: 900;">PMHx of hypertension</li></ul>
+                    <ul class="j1"><li class = "explanationparagraph">Is an important risk factor</li></ul></td>
+              </tr>
+
+              <tr id="padreal">
+                <td></td>
+                <td id="padreal1"><ul><li>PMHx of Peripheral Artery Disease</li></ul>
+                    <ul class="j1"><li class = "explanationparagraph">Associated with coronary artery disease</li></ul></td>
+                <td id="padreal2"><ul><li><b style="font-weight: 900;">PMHx of Peripheral Artery Disease</li></ul>
+                    <ul class="j1"><li class = "explanationparagraph">Associated with coronary artery disease</li></ul></td>
+              </tr>
+
+              
+              <tr>
+                <td></td>
+                <td style="background-color:blanchedalmond;   border: solid black 2px; border-right: 0px; font-size:larger; font-stretch:ultra-expanded"><center>Other good questions to ask:</center></td>
+                <td style="background-color:blanchedalmond;   border: solid black 2px; border-left: 0px; visibility: visible;"></td>
+              </tr>
+              
+              <tr id="FHheartconditionsreal">
+                <td></td>
+                <td id="FHheartconditionsreal1"><ul><li>Family history of heart conditions</li></ul>
+                    <ul class="j1"><li class = "explanationparagraph">Important to ask about heart conditions specifically as it can increase risk of Cardiovascular disease. A lot of cardiomyopathies run in families, like Hypertrophiccardiomyopathy (HCM) and dilated cardiomyopathy.</li></ul></td>
+                <td id="FHheartconditionsreal2"><ul><li><b style="font-weight: 900;">Family history of heart conditions</li></ul>
+                    <ul class="j1"><li class = "explanationparagraph">Important to ask about heart conditions specifically as it can increase risk of Cardiovascular disease. A lot of cardiomyopathies run in families, like Hypertrophiccardiomyopathy (HCM) and dilated cardiomyopathy.</li></ul></td>
+              </tr>
+
+              <tr id="physicalactivityreal">
+                <td></td>
+                <td id="physicalactivityreal1"><ul><li>Physical activity</li></ul>
+                    <ul class="j1"><li class = "explanationparagraph">Understanding the level of physical activity helps assess lifestyle factors and overall cardiovascular health</li></ul></td>
+                <td id="physicalactivityreal2"><ul><li><b style="font-weight: 900;">Physical activity</li></ul>
+                    <ul class="j1"><li class = "explanationparagraph">Understanding the level of physical activity helps assess lifestyle factors and overall cardiovascular health</li></ul></td>
+              </tr>
+
+              
+             
+
+
+              
+              
+              
+
+              
+
+             
+
+
+
+
+
+
+
 
             </table>
 
@@ -853,57 +1118,68 @@
 
     <table id="customers">
       <tr>
-        <th>Presenting complaint</th><!--General Information gathering-->
+        <th>Main examination to do:</th><!--General Information gathering-->
         <th>❌</th>
         <th>✔️</th>
       </tr>
   
   
   
-      <tr id="painlocationreal">
+      <tr id="cardioexamreal">
         <td></td>
-        <td id="painlocationreal1"><ul><li><b style="font-weight: 900;">S</b>ite</li></ul>
-            <ul class="j1"><li class = "explanationparagraph">The location of the pain</li></ul></td>
-        <td id="painlocationreal2"><ul><li><b style="font-weight: 900;">S</b>ite</li></ul>
-            <ul class="j1"><li class = "explanationparagraph">The location of the pain</li></ul></td>
-      </tr>
-      
-      <tr id="onsetreal">
-        <td></td>
-        <td id="onsetreal1"><ul><li><b style="font-weight: 900;">O</b>nset</li></ul>
-            <ul class="j1"><li class = "explanationparagraph">How did the pain start?</li></ul></td>
-        <td id="onsetreal2"><ul><li><b style="font-weight: 900;">O</b>nset</li></ul>
-            <ul class="j1"><li class = "explanationparagraph">How did the pain start?</li></ul></td>
-      </tr>
-      
-      <tr id="onsetreal">
-        <td></td>
-        <td id="onsetreal1"style="border-bottom: 4px solid;  border-color:rgb(190, 188, 188);"><ul><li><b style="font-weight: 900;">O</b>nset</li></ul>
-            <ul class="j1"><li class = "explanationparagraph">How did the pain start?</li></ul></td>
-        <td id="onsetreal2"style="border-bottom: 4px solid;  border-color:rgb(190, 188, 188);"><ul><li><b style="font-weight: 900;">O</b>nset</li></ul>
-            <ul class="j1"><li class = "explanationparagraph">How did the pain start?</li></ul></td>
-      </tr>
-      
-      
-      
-      <tr>
-        <td id="leftsidebox" class="special-cell" style=" border: 2px solid; border-top: 2.7px solid; background-color: #f0f0f0; 
-        text-align: center; font-size: 20px; font-weight: bold; z-index: 1000; position: relative; font-family: LTSoul;">ICE + other History</td>
-        <td>Maria Anders things I didnt know abiut are very frustsr=ationg and did you knwo that there are things that happen like</td>
-        <td>Maria Anders things I didnt know abiut are very frustsr=ationg and did you knwo that there are things that happen like</td>
-      </tr>
+        <td id="cardioexamreal1"style="border-bottom: 4px solid;  border-color:rgb(190, 188, 188);"><ul><li><b style="font-weight: 900; display: inline-block; padding: 10px; border: 2px solid black; border-radius: 50%; text-align: center; font-size: larger;">Cardiac exam</b>  &nbsp;&nbsp;&nbsp;&nbsp; <u style=" background-color: yellow;">← Main examination!!</u></li></ul>
+            <br><ul class="j1"><li class = "explanationparagraph"><u style="text-decoration-thickness: 1px;">Reasons you could give to perform a cardiac exam:</u></li></ul>
+            <ul class="j1"><li class = "explanationparagraph">To check the pulses for rate, rhythm and strength → if irregular could be AF or another arrhythmia, if low rate or low strength could suggest heart failure</li></ul>
+            <ul class="j1"><li class = "explanationparagraph">Check capillary refill time → if high then could have cardiogenic shock</li></ul>
+            <ul class="j1"><li class = "explanationparagraph">Check for raised JVP → may suggest heart failure</li></ul>
+            <ul class="j1"><li class = "explanationparagraph">Listen to the chest → could elicit a murmur</li></ul>
+            <ul class="j1"><li class = "explanationparagraph">Listen to lung bases for pulmonary oedema → may suggest acute heart failure</li></ul>
+            <ul class="j1"><li class = "explanationparagraph">Check for peripheral oedema → may suggest heart failure</li></ul>
 
-      <tr>
-        <td></td>    <!-- style="border-bottom: 2px;"-->
-        <td>Christina Berglund</td>
-        <td>Sweden</td>
-      </tr>
+          </td>
+
+        
+          <td id="cardioexamreal2"style="border-bottom: 4px solid;  border-color:rgb(190, 188, 188);"><ul><li><b style="font-weight: 900; display: inline-block; padding: 10px; border: 2px solid black; border-radius: 50%; text-align: center; font-size: larger;">Cardiac exam ✅</b>  &nbsp;&nbsp;&nbsp;&nbsp; <u style=" background-color: yellow;">← Main examination!!</u></li></ul>
+            <br><ul class="j1"><li class = "explanationparagraph"><u style="text-decoration-thickness: 1px;">Reasons you could give to perform a cardiac exam:</u></li></ul>
+            <ul class="j1"><li class = "explanationparagraph">To check the pulses for rate, rhythm and strength → if irregular could be AF or another arrhythmia, if low rate or low strength could suggest heart failure</li></ul>
+            <ul class="j1"><li class = "explanationparagraph">Check capillary refill time → if high then could have cardiogenic shock</li></ul>
+            <ul class="j1"><li class = "explanationparagraph">Check for raised JVP → may suggest heart failure</li></ul>
+            <ul class="j1"><li class = "explanationparagraph">Listen to the chest → could elicit a murmur</li></ul>
+            <ul class="j1"><li class = "explanationparagraph">Listen to lung bases for pulmonary oedema → may suggest acute heart failure</li></ul>
+            <ul class="j1"><li class = "explanationparagraph">Check for peripheral oedema → may suggest heart failure</li></ul>
+
+          </td>
+        
+        
+             </tr>
+      
+      
 
     </table>
 
+
+    <center><div class="videxam">
+      <b><a href="https://www.youtube.com/watch?v=XU_xeUMJ3Zc" target=”_blank” style="color: black; font-style: LTSoul; background-image: url('https://upload.wikimedia.org/wikipedia/commons/2/21/Love_heart_uidaodjsdsew.gif')">Click to watch a video of how to do a cardiac examination</a></b>
+    </div>
+  </center>
+
+    <tr><br>
+      <h5>Some other examinations you could mention:</h5><br>
+      <h6><u style="text-decoration-thickness: 1px;">Gastro exam:</u></h6>
+        <p><b>- Reffered pain</b> originating from the abdomen can sometimes be felt in the chest due to the way nerves transmit signals. Conditions such as gallbladder disease (cholecystitis), pancreatitis, or peptic ulcer disease can cause pain that radiates to the chest.<br>
+        <b>- GORD</b> can cause heart burn, a common type of chest pain <br>
+        <b>- Peptic ulcer disease</b> can cause pain that radiates to the chest.<br>
+        <b>- AAA</b> can also present with pain that radiates to the back so palpating the abdomen may detect a pulsatile mass<br>
+        <b>- Mesenteric ischaemia</b> can present with severe abdominal pain and sometimes chest pain</p><br>
+      <h6><u style="text-decoration-thickness: 1px;">Peripheral vascular exam:</u></h6>
+        <p><b>- Aortic dissection</b> can cause severe chest pain and may have associated findings such as asymmetric pulses or blood pressure differences between limbs.
+
+      </p>
+      <br>
+    </tr>
   
   
-  
+    
 
   <div style="text-align:center; top: unset;" class="numbertext">3 / 8</div><br>
     <a class="prev" id="hj" title="Final-year level history taking" onclick="plusSlides(-1)">❮</a>
@@ -954,7 +1230,7 @@
 
     <table id="customers">
       <tr>
-        <th>Presenting complaint</th><!--General Information gathering-->
+        <th>Marking your summary:</th><!--General Information gathering-->
         <th>❌</th>
         <th>✔️</th>
       </tr>
@@ -963,47 +1239,46 @@
   
       <tr id="painlocationreal">
         <td></td>
-        <td id="painlocationreal1"><ul><li><b style="font-weight: 900;">S</b>ite</li></ul>
-            <ul class="j1"><li class = "explanationparagraph">The location of the pain</li></ul></td>
-        <td id="painlocationreal2"><ul><li><b style="font-weight: 900;">S</b>ite</li></ul>
-            <ul class="j1"><li class = "explanationparagraph">The location of the pain</li></ul></td>
+        <td id="painlocationreal1"><ul><li><b style="font-weight: 900;">A</b>ge</li></ul></td>
+        <td id="painlocationreal2"><ul><li><b style="font-weight: 900;">A</b>ge</li></ul></td>
       </tr>
       
       <tr id="onsetreal">
         <td></td>
-        <td id="onsetreal1"><ul><li><b style="font-weight: 900;">O</b>nset</li></ul>
-            <ul class="j1"><li class = "explanationparagraph">How did the pain start?</li></ul></td>
-        <td id="onsetreal2"><ul><li><b style="font-weight: 900;">O</b>nset</li></ul>
-            <ul class="j1"><li class = "explanationparagraph">How did the pain start?</li></ul></td>
+        <td id="onsetreal1"><ul><li><b style="font-weight: 900;">G</b>ender</li></ul></td>
+        <td id="onsetreal2"><ul><li><b style="font-weight: 900;">G</b>ender</li></ul></td>
       </tr>
       
       <tr id="onsetreal">
         <td></td>
-        <td id="onsetreal1"style="border-bottom: 4px solid;  border-color:rgb(190, 188, 188);"><ul><li><b style="font-weight: 900;">O</b>nset</li></ul>
-            <ul class="j1"><li class = "explanationparagraph">How did the pain start?</li></ul></td>
-        <td id="onsetreal2"style="border-bottom: 4px solid;  border-color:rgb(190, 188, 188);"><ul><li><b style="font-weight: 900;">O</b>nset</li></ul>
-            <ul class="j1"><li class = "explanationparagraph">How did the pain start?</li></ul></td>
-      </tr>
-      
-      
-      
-      <tr>
-        <td id="leftsidebox" class="special-cell" style=" border: 2px solid; border-top: 2.7px solid; background-color: #f0f0f0; 
-        text-align: center; font-size: 20px; font-weight: bold; z-index: 1000; position: relative; font-family: LTSoul;">ICE + other History</td>
-        <td>Maria Anders things I didnt know abiut are very frustsr=ationg and did you knwo that there are things that happen like</td>
-        <td>Maria Anders things I didnt know abiut are very frustsr=ationg and did you knwo that there are things that happen like</td>
+        <td id="onsetreal1"><ul><li><b style="font-weight: 900;">D</b>escription of pain</li></ul></td>
+        <td id="onsetreal2"><ul><li><b style="font-weight: 900;">D</b>escription of pain</li></ul></td>
       </tr>
 
-      <tr>
-        <td></td>    <!-- style="border-bottom: 2px;"-->
-        <td>Christina Berglund</td>
-        <td>Sweden</td>
+      <tr id="onsetreal">
+        <td></td>
+        <td id="onsetreal1"><ul><li><b style="font-weight: 900;">D</b>uration of the pain/onset</li></ul></td>
+        <td id="onsetreal2"><ul><li><b style="font-weight: 900;">D</b>uration of the pain/onset</li></ul></td>
       </tr>
+
+      <tr id="onsetreal">
+        <td></td>
+        <td id="onsetreal1"><ul><li><b style="font-weight: 900;">A</b>ccompanying symptoms</li></ul></td>
+        <td id="onsetreal2"><ul><li><b style="font-weight: 900;">A</b>ccompanying symptoms</li></ul></td>
+      </tr>
+      
+      <tr id="onsetreal">
+        <td></td>
+        <td id="onsetreal1"style="border-bottom: 4px solid;  border-color:rgb(190, 188, 188);"><ul><li><b style="font-weight: 900;">W</b>hat makes it better/worse</li></ul></td>
+        <td id="onsetreal2"style="border-bottom: 4px solid;  border-color:rgb(190, 188, 188);"><ul><li><b style="font-weight: 900;">W</b>hat makes it better/worse</li></ul></td>
+      </tr>
+
+
 
     </table>
-
-  
-  
+<br><h6>Good example of a summary for this case:</h6>
+<p>Mr. Jevner is a 31-year-old male presenting with acute onset chest pain that began this morning. He rates the pain as 9/10 in intensity and describes it as feeling like "a horse hit him." The pain is accompanied by shortness of breath and worsens with mobilization. It radiates to his left arm and neck and has not been alleviated by over-the-counter medications, including paracetamol and ibuprofen.</p>
+  <br>
   
 
   <div style="text-align:center; top: unset;" class="numbertext">4 / 8</div><br>
@@ -1055,7 +1330,7 @@
 
     <table id="customers">
       <tr>
-        <th>Presenting complaint</th><!--General Information gathering-->
+        <th>Main differentials</th><!--General Information gathering-->
         <th>❌</th>
         <th>✔️</th>
       </tr>
@@ -1064,36 +1339,62 @@
   
       <tr id="painlocationreal">
         <td></td>
-        <td id="painlocationreal1"><ul><li><b style="font-weight: 900;">S</b>ite</li></ul>
-            <ul class="j1"><li class = "explanationparagraph">The location of the pain</li></ul></td>
-        <td id="painlocationreal2"><ul><li><b style="font-weight: 900;">S</b>ite</li></ul>
-            <ul class="j1"><li class = "explanationparagraph">The location of the pain</li></ul></td>
+        <td id="cardioexamreal2"style="border-bottom: 4px solid;  border-color:rgb(190, 188, 188);"><ul><li><b style="font-weight: 900; display: inline-block; padding: 10px; border: 2px solid black; border-radius: 50%; text-align: center; font-size: larger;">Acute coronary syndrome</b></li></ul>
+          <ul class="j1"><li class = "explanationparagraph" style="background-color: yellow; display: inline;">Is the main differential</li></ul>
+          <ul class="j1"><li class = "explanationparagraph">ACS is an umbrella term that encompasses a range of conditions associated with sudden, reduced blood flow to the heart. It includes unstable angina, and myocardial infarction/heart attacks (NSTEMIs and STEMIs)</li></ul>
+          <ul class="j1"><li class = "explanationparagraph">This case is likely to be ACS due to the location and severity of the pain, as well as the timing of symptom onset and the pattern of pain distribution (the neck and the left arm).</li></ul>
+          <ul class="j1"><li class = "explanationparagraph">Differentiating between unstable angina, NSTEMI, and STEMI is crucial as each requires distinct treatment approaches</li></ul>
+        </td>
+        <td id="cardioexamreal2"style="border-bottom: 4px solid;  border-color:rgb(190, 188, 188);"><ul><li><b style="font-weight: 900; display: inline-block; padding: 10px; border: 2px solid black; border-radius: 50%; text-align: center; font-size: larger;">Acute coronary syndrome ✅</b></li></ul>
+          <ul class="j1"><li class = "explanationparagraph" style="background-color: yellow; display: inline;">Is the main differential</li></ul>
+          <ul class="j1"><li class = "explanationparagraph">ACS is an umbrella term that encompasses a range of conditions associated with sudden, reduced blood flow to the heart. It includes unstable angina, and myocardial infarction/heart attacks (NSTEMIs and STEMIs)</li></ul>
+          <ul class="j1"><li class = "explanationparagraph">This case is likely to be ACS due to the location and severity of the pain, as well as the timing of symptom onset and the pattern of pain distribution (the neck and the left arm).</li></ul>
+          <ul class="j1"><li class = "explanationparagraph">Differentiating between unstable angina, NSTEMI, and STEMI is crucial as each requires distinct treatment approaches</li></ul>
+        </td>
+     </tr>
+      
+
+
+      
+      
+
+      <tr id="onsetreal">
+        <td></td>
+        <td id="onsetreal1"style="border-bottom: 4px solid;  border-color:rgb(190, 188, 188);"><ul><li><b style="font-weight: 900;">Stable angina</b></li></ul>
+            <ul class="j1"><li class = "explanationparagraph">Is a good differential as the onset of the pain was specifically on exersion (when he was walking to the shops)</li></ul>
+            <ul class="j1"><li class = "explanationparagraph">However, you would often get symptom resolvement once rested, which is not the case for this patient. Therefore ACS is more likely (unstable angina or myocardial infarction)</li></ul></td>
+
+        <td id="onsetreal1"style="border-bottom: 4px solid;  border-color:rgb(190, 188, 188);"><ul><li><b style="font-weight: 900;">Stable angina</b></li></ul>
+              <ul class="j1"><li class = "explanationparagraph">Is a good differential as the onset of the pain was specifically on exersion (when he was walking to the shops)</li></ul>
+              <ul class="j1"><li class = "explanationparagraph">However, you would often get symptom resolvement once rested, which is not the case for this patient. Therefore ACS is more likely (unstable angina or myocardial infarction).</li></ul></td>
+  
       </tr>
+      
       
       <tr id="onsetreal">
         <td></td>
-        <td id="onsetreal1"><ul><li><b style="font-weight: 900;">O</b>nset</li></ul>
-            <ul class="j1"><li class = "explanationparagraph">How did the pain start?</li></ul></td>
-        <td id="onsetreal2"><ul><li><b style="font-weight: 900;">O</b>nset</li></ul>
-            <ul class="j1"><li class = "explanationparagraph">How did the pain start?</li></ul></td>
-      </tr>
-      
-      <tr id="onsetreal">
-        <td></td>
-        <td id="onsetreal1"style="border-bottom: 4px solid;  border-color:rgb(190, 188, 188);"><ul><li><b style="font-weight: 900;">O</b>nset</li></ul>
-            <ul class="j1"><li class = "explanationparagraph">How did the pain start?</li></ul></td>
-        <td id="onsetreal2"style="border-bottom: 4px solid;  border-color:rgb(190, 188, 188);"><ul><li><b style="font-weight: 900;">O</b>nset</li></ul>
-            <ul class="j1"><li class = "explanationparagraph">How did the pain start?</li></ul></td>
-      </tr>
-      
-      
+        <td id="onsetreal1"><ul><li><b style="font-weight: 900;">Panic attack/anxiety disorder</b></li></ul>
+            <ul class="j1"><li class = "explanationparagraph">Is also a good differential due to the age of the patient and accompanying shortness of breath. Those suffering from panic attacks often complain of severe chest pain.</li></ul>
+            <ul class="j1"><li class = "explanationparagraph">However it would not explain the fact that the pain radiates to the arm and neck</li></ul></td>
+
+            <td id="onsetreal1"><ul><li><b style="font-weight: 900;">Panic attack/anxiety disorder</b></li></ul>
+              <ul class="j1"><li class = "explanationparagraph">Is also a good differential due to the age of the patient and accompanying shortness of breath. Those suffering from panic attacks often complain of severe chest pain.</li></ul>
+              <ul class="j1"><li class = "explanationparagraph">However it would not explain the fact that the pain radiates to the arm and neck</li></ul></td>
+     </tr>
+
+
       
       <tr>
         <td id="leftsidebox" class="special-cell" style=" border: 2px solid; border-top: 2.7px solid; background-color: #f0f0f0; 
-        text-align: center; font-size: 20px; font-weight: bold; z-index: 1000; position: relative; font-family: LTSoul;">ICE + other History</td>
-        <td>Maria Anders things I didnt know abiut are very frustsr=ationg and did you knwo that there are things that happen like</td>
-        <td>Maria Anders things I didnt know abiut are very frustsr=ationg and did you knwo that there are things that happen like</td>
-      </tr>
+        text-align: center; font-size: 20px; font-weight: bold; z-index: 1000; position: relative; font-family: LTSoul;">Other differentials:</td>
+        <td id="onsetreal1"><ul><li><b style="font-weight: 900;">Acute heart failure</b></li></ul>
+          <ul class="j1"><li class = "explanationparagraph">Although often a result of a <b>complication</b> from another heart condition, such as myocardial infarction (MI) or acute coronary syndrome (ACS), acute heart failure commonly presents with shortness of breath as one of its symptoms, which is one of the symptoms experienced by the patient.</li></ul>
+          <ul class="j1"><li class = "explanationparagraph">However, while chest pain can occur with acute heart failure, it is not always present and is unlikely to be the primary cause of this patient's presenting complaint. Having said this, it is important to investigate for it as it is a common complication of ACS</li></ul></td>
+
+          <td id="onsetreal1"><ul><li><b style="font-weight: 900;">Acute heart failure</b></li></ul>
+            <ul class="j1"><li class = "explanationparagraph">Although often a result of a <b>complication</b> from another heart condition, such as myocardial infarction (MI) or acute coronary syndrome (ACS), acute heart failure commonly presents with shortness of breath as one of its symptoms, which is one of the symptoms experienced by the patient.</li></ul>
+            <ul class="j1"><li class = "explanationparagraph">However, while chest pain can occur with acute heart failure, it is not always present and is unlikely to be the primary cause of this patient's presenting complaint. Having said this, it is important to investigate for it as it is a common complication of ACS</li></ul></td>
+            </tr>
 
       <tr>
         <td></td>    <!-- style="border-bottom: 2px;"-->
@@ -1102,9 +1403,16 @@
       </tr>
 
     </table>
-
-  
-  
+<br>
+  <h4>Top tips:</h4><br>
+  <p>When presenting your differentials, try and categorise by different systems. For example:
+    <br><b>- Cardiac causes</b> (ACS, stable angina, acute heart failure, aortic dissection, pulmmonary embolism), 
+    <br><b>- Respiratory causes</b> (pleuritis/pleurisy, pneumothorax), 
+    <br><b>- Musculoskeletal</b> (costochondritis, muscle strain), 
+    <br><b>- Psychological causes</b> (panic attack, anxiety disorders),
+    <br><b>- Gastrointestinal causes</b> (GORD, cholecystitis)</p><br>
+    <p>Try and show off your knowledge on this question by saying as many differentials as you can, but make sure to justify each one with reasons why they could be a possibility, but also reasons why they may be more <b style="background-color: yellow;">unlikely</b> compared to other differentials.</p>
+    <br>
   
 
   <div style="text-align:center; top: unset;" class="numbertext">5 / 8</div><br>
@@ -1158,39 +1466,119 @@
 
     <table id="customers">
       <tr>
-        <th>Presenting complaint</th><!--General Information gathering-->
+        <th>Bedside investigations:</th><!--General Information gathering-->
         <th>❌</th>
         <th>✔️</th>
       </tr>
   
-  
+  <tr>
+    <td></td>
+    <td style="background-color:blanchedalmond;   border: solid black 2px; border-right: 0px; font-size:larger; font-stretch:ultra-expanded"><center>Bedside investigations:</center></td>
+    <td style="background-color:blanchedalmond;   border: solid black 2px; border-left: 0px; visibility: visible;"></td>
+  </tr>
   
       <tr id="painlocationreal">
         <td></td>
-        <td id="painlocationreal1"><ul><li><b style="font-weight: 900;">S</b>ite</li></ul>
-            <ul class="j1"><li class = "explanationparagraph">The location of the pain</li></ul></td>
-        <td id="painlocationreal2"><ul><li><b style="font-weight: 900;">S</b>ite</li></ul>
-            <ul class="j1"><li class = "explanationparagraph">The location of the pain</li></ul></td>
+        <td id="painlocationreal1"><ul><li><b style="font-weight: 900;">E</b>CG</li></ul>
+            <ul class="j1"><li class = "explanationparagraph"><b style="background-color: yellow;">Important!</b> Will ellicit if there is an ST elevation myocardial infarction   present</li></ul></td>
+        <td id="painlocationreal2"><ul><li><b style="font-weight: 900;">E</b>CG</li></ul>
+            <ul class="j1"><li class = "explanationparagraph"><b style="background-color: yellow;">Important!</b>Will ellicit if there is an ST elevation myocardial infarction present</li></ul></td>
       </tr>
       
       <tr id="onsetreal">
         <td></td>
-        <td id="onsetreal1"><ul><li><b style="font-weight: 900;">O</b>nset</li></ul>
-            <ul class="j1"><li class = "explanationparagraph">How did the pain start?</li></ul></td>
-        <td id="onsetreal2"><ul><li><b style="font-weight: 900;">O</b>nset</li></ul>
-            <ul class="j1"><li class = "explanationparagraph">How did the pain start?</li></ul></td>
+        <td id="onsetreal1"><ul><li><b style="font-weight: 900;">C</b>hest X-ray</li></ul>
+            <ul class="j1"><li class = "explanationparagraph">Due to the shortness of breath, there may be a possiblity of pneumonia or pneumothorax, which would be picked up by CXR. It may also pick up cardiomegaly and pleural effusions which could be caused by heart failure secondary to a possible MI. It would also pick up any rib fracture that may be causing the chest pain</li></ul></td>
+        <td id="onsetreal2"><ul><li><b style="font-weight: 900;">C</b>hest X-ray</li></ul>
+          <ul class="j1"><li class = "explanationparagraph">Due to the shortness of breath, there may be a possiblity of pneumonia or pneumothorax, which would be picked up by CXR. It may also pick up cardiomegaly and pleural effusions which could be caused by heart failure secondary to a possible MI. It would also pick up any rib fracture that may be causing the chest pain</li></ul></td>
+        </tr>
+      
+      <tr id="onsetreal">
+        <td></td>
+        <td id="onsetreal1"style="border-bottom: 4px solid;  border-color:rgb(190, 188, 188);"><ul><li><b style="font-weight: 900;">B</b>edside obs</li></ul>
+            <ul class="j1"><li class = "explanationparagraph">Check for any <b>temperature</b> - fever may suggest pneumonia, infective endocarditis etc</li></ul>
+            <ul class="j1"><li class = "explanationparagraph">Check <b>RR and HR</b>: tachycardia +/- tachypnoea may suggest pulmonary embolism, acute heart failure, pneumonia etc</li></ul>
+            <ul class="j1"><li class = "explanationparagraph">Check <b>glucose levels</b> - You can get abdominal pain in Diabetic Keto acidosis, which may be communicated/manifested as chest pain by the patient</li></ul>
+            <ul class="j1"><li class = "explanationparagraph">Check <b>BP levels</b> - Low blood pressure may suggest cardiogenic shock secondary to heart failure or hypovolaemic shock due to pneumonia</li></ul>
+          </td>
+        <td id="onsetreal2"style="border-bottom: 4px solid;  border-color:rgb(190, 188, 188);"><ul><li><b style="font-weight: 900;">B</b>edside obs</li></ul>
+            <ul class="j1"><li class = "explanationparagraph">Check for any <b>temperature</b> - fever may suggest pneumonia, infective endocarditis etc</li></ul>
+            <ul class="j1"><li class = "explanationparagraph">Check <b>RR and HR</b>: tachycardia +/- tachypnoea may suggest pulmonary embolism, acute heart failure, pneumonia etc</li></ul>
+            <ul class="j1"><li class = "explanationparagraph">Check <b>glucose levels</b> - You can get abdominal pain in Diabetic Keto acidosis, which may be communicated/manifested as chest pain by the patient</li></ul>
+            <ul class="j1"><li class = "explanationparagraph">Check <b>BP levels</b> - Low blood pressure may suggest cardiogenic shock secondary to heart failure or hypovolaemic shock due to pneumonia</li></ul>
+          </td>      
+        </tr>
+      
+      <tr>
+        <td></td>
+        <td style="background-color:blanchedalmond;   border: solid black 2px; border-right: 0px; font-size:larger; font-stretch:ultra-expanded"><center>Bloods to order:</center></td>
+        <td style="background-color:blanchedalmond;   border: solid black 2px; border-left: 0px; visibility: visible;"></td>
       </tr>
       
       <tr id="onsetreal">
         <td></td>
-        <td id="onsetreal1"style="border-bottom: 4px solid;  border-color:rgb(190, 188, 188);"><ul><li><b style="font-weight: 900;">O</b>nset</li></ul>
-            <ul class="j1"><li class = "explanationparagraph">How did the pain start?</li></ul></td>
-        <td id="onsetreal2"style="border-bottom: 4px solid;  border-color:rgb(190, 188, 188);"><ul><li><b style="font-weight: 900;">O</b>nset</li></ul>
-            <ul class="j1"><li class = "explanationparagraph">How did the pain start?</li></ul></td>
+        <td id="onsetreal1"style="border-bottom: 4px solid;  border-color:rgb(190, 188, 188);"><ul><li><b style="font-weight: 900;">Troponins</li></ul>
+            <ul class="j1"><li class = "explanationparagraph"><b style="background-color: yellow;">Important!</b> Repeat it again in 3 hours time as well to see if there is an increase, which would suggest a myocardial infarction</li></ul></td>
+        <td id="onsetreal2"style="border-bottom: 4px solid;  border-color:rgb(190, 188, 188);"><ul><li><b style="font-weight: 900;">Troponins</li></ul>
+            <ul class="j1"><li class = "explanationparagraph"><b style="background-color: yellow;">Important!</b> Repeat it again in 3 hours time as well to see if there is an increase, which would suggest a myocardial infarction</li></ul></td>
       </tr>
-      
-      
-      
+
+      <tr id="onsetreal">
+        <td></td>
+        <td id="onsetreal1"><ul><li><b style="font-weight: 900;">B</b>lood gas (ABG/VBG)</li></ul>
+            <ul class="j1"><li class = "explanationparagraph">A high lactate level may suggest ischaemia secondary to a myocardial infarction or pulmonary embolism. Would also be elevated in sepsis secondary to pneumonia.</li></ul></td>
+        <td id="onsetreal2"><ul><li><b style="font-weight: 900;">B</b>lood gas (ABG/VBG)</li></ul>
+          <ul class="j1"><li class = "explanationparagraph">A high lactate level may suggest ischaemia secondary to a myocardial infarction or pulmonary embolism. Would also be elevated in sepsis secondary to pneumonia.</li></ul></td>
+        </tr>
+
+        <tr id="onsetreal">
+          <td></td>
+          <td id="onsetreal1"><ul><li><b style="font-weight: 900;">BNP</b></li></ul>
+              <ul class="j1"><li class = "explanationparagraph">An elevated BNP may indicate heart failure</li></ul></td>
+          <td id="onsetreal2"><ul><li><b style="font-weight: 900;">BNP</b></li></ul>
+            <ul class="j1"><li class = "explanationparagraph">An elevated BNP may indicate heart failure</li></ul></td>
+          </tr>
+
+          <tr id="onsetreal">
+            <td></td>
+            <td id="onsetreal1"><ul><li><b style="font-weight: 900;">Normal bloods</b></li></ul>
+                <ul class="j1"><li class = "explanationparagraph"></li></ul></td>
+            <td id="onsetreal2"><ul><li><b style="font-weight: 900;">Normal bloods</b></li></ul>
+              <ul class="j1"><li class = "explanationparagraph"></li></ul></td>
+            </tr>
+
+
+            <tr>
+              <td></td>
+              <td style="background-color:blanchedalmond;   border: solid black 2px; border-right: 0px; font-size:larger; font-stretch:ultra-expanded"><center>Other investigations:</center></td>
+              <td style="background-color:blanchedalmond;   border: solid black 2px; border-left: 0px; visibility: visible;"></td>
+            </tr>
+
+            <tr id="onsetreal">
+              <td></td>
+              <td id="onsetreal1"><ul><li><b style="font-weight: 900;">ECHO cardiogram</b></li></ul>
+                  <ul class="j1"><li class = "explanationparagraph">To see if there is any heart failure or murmurs that have developed secondary to a myocardial infarction</li></ul></td>
+              <td id="onsetreal2"><ul><li><b style="font-weight: 900;">ECHO cardiogram</b></li></ul>
+                <ul class="j1"><li class = "explanationparagraph">To see if there is any heart failure or murmurs that have developed secondary to a myocardial infarction</li></ul></td>
+              </tr>
+
+              <tr id="onsetreal">
+                <td></td>
+                <td id="onsetreal1"><ul><li><b style="font-weight: 900;">Stress test</b></li></ul>
+                    <ul class="j1"><li class = "explanationparagraph">If there is no myocardial infarction and you are leaning more towards stable angina, a stress test could be considered</li></ul></td>
+                <td id="onsetreal2"><ul><li><b style="font-weight: 900;">Stress test</b></li></ul>
+                  <ul class="j1"><li class = "explanationparagraph">If there is no myocardial infarction and you are leaning more towards stable angina, a stress test could be considered</li></ul></td>
+                </tr>
+
+                <tr id="onsetreal">
+                  <td></td>
+                  <td id="onsetreal1"><ul><li><b style="font-weight: 900;">Wells score/Ddimer/CTPA</b></li></ul>
+                      <ul class="j1"><li class = "explanationparagraph">If there is no myocardial infarction and you are leaning more towards pulmonary embolism, then a Wells score can be performed and if high then a Ddimer or CTPA can be done based on the Wells score</li></ul></td>
+                  <td id="onsetreal2"><ul><li><b style="font-weight: 900;">Stress test</b></li></ul>
+                    <ul class="j1"><li class = "explanationparagraph">If there is no myocardial infarction and you are leaning more towards stable angina, a stress test could be considered</li></ul></td>
+                  </tr>
+
+
       <tr>
         <td id="leftsidebox" class="special-cell" style=" border: 2px solid; border-top: 2.7px solid; background-color: #f0f0f0; 
         text-align: center; font-size: 20px; font-weight: bold; z-index: 1000; position: relative; font-family: LTSoul;">ICE + other History</td>
@@ -1407,8 +1795,9 @@
 
     </table>
 
-  
-  
+  <h4>Top tip:</h4>
+  <p>Try and show-off as much knowledge as you can in this question. Try and <b>expand on your answer</b> as much as you can to show the examiner that you know everything about the topic.</p>
+  <p>E.g. if the examiner asks you about the treatment of an ST elevation MI, answer the question and then expand on your answer by saying what you would do if it was a non-STEMI or if it was unstable angina etc.</p>
   
 
   <div style="text-align:center; top: unset;" class="numbertext">8 / 8</div><br>
@@ -1441,7 +1830,7 @@
 
 
                   </div>  
-                    </div>
+                    
                     <br>
                     
                     
