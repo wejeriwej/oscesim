@@ -40,8 +40,13 @@ class SpecialHeader extends HTMLElement {
         
             <li class = "secondheaderbtn" id="r1s">
               
-              <a href="#" style="border-bottom-left-radius: 0%; border-bottom-right-radius: 0%;">Cases by Topic ᵕ</a>
+              <a href="searchbarr.html" style="border-bottom-left-radius: 0%; border-bottom-right-radius: 0%;">Cases by Topic ᵕ</a>
               <ul id = "casebytopiclayout">
+                
+              <li>
+                  <a href="searchbarr.html" style="border-radius: 0%; border-radius: 0%;">All cases</a>
+
+                </li>
                 <li>
                   <a href="cardiohome.html" style="border-radius: 0%; border-radius: 0%;">Cardiology</a>
                   
@@ -109,10 +114,10 @@ class SpecialHeader extends HTMLElement {
             </li>
             
             <li class = "searchbtn">
-              <a href="#" style="font-size: 30px; margin-top: -13px;" >⌕</a>
+              <a href="searchbarr.html" style="font-size: 30px; margin-top: -13px;" >⌕</a>
             </li>
         
-            
+                  
             
             <li class="mobilenavarea"><a href="javascript:void(0);" class="icon" onclick="myFunction()">
               <i class="fa fa-bars"></i>
@@ -206,6 +211,8 @@ class SpecialFooter extends HTMLElement {
         <footer>
         <p>Author: Zak Francillon<br>
         <a href="mailto:hege@example.com">hege@example.com</a></p>
+        🍉اللهُمَّ إِنَّهُمْ مَغْلُوبُونَ فَانْتَصِرْ لَهُمْ. <!--O Allah! They are helpless, so help them.-->
+
       </footer>
 
         
