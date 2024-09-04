@@ -533,6 +533,8 @@ bottom: 20px;
     opacity: 1;
 }
 
+
+
 #move-onto-questions-btn, #move-onto-questions-btn_examinations, #move-onto-questions-btn_summary, #move-onto-questions-btn_differentials, 
 #move-onto-questions-btn_investigations, #move-onto-questions-btn_riskfactors, #move-onto-questions-btn_treatments{
   top: 88%;
@@ -561,8 +563,8 @@ bottom: 20px;
   display:none;
 }
 
-#review-section, #examinations, #summary, #differentials, #investigations, #end-consultation-btn, 
-#move-onto-questions-btn,#stop-consultation-btn,#listeninggif, #loadingcircle, #riskfactors, #treatments, #replayButton, #home, #executeButton{
+#review-section, #examinations, #summary, #differentials, #investigations, #end-consultation-btn,
+#move-onto-questions-btn,#stop-consultation-btn, #loadingcircle, #riskfactors, #treatments, #replayButton, #home, #executeButton{
   display:none;
 }
 
@@ -972,25 +974,6 @@ text-align: center;
   }
 }
 
-#listeninggif{
-  /*
-  position: absolute;
-  top: 0;
-  left: 0;  
-  */
-  
-  /*top: 450px;
-  left: 700px;*/
-  top: 55%;
-  left: 52.5%;
-  transform: translate(-50%, -50%);  
-  position: absolute;
-  width: 400px;
-  height: 400px;
-  opacity: 1.9;
-  z-index: 1;
-  
-}
 
 #loadingcircle{
   position: absolute;
@@ -1155,16 +1138,23 @@ text-align: center;
   width: 300px;
   border: solid black 1px;
   font-size: 35px;
+  font-family: LTSoul;
 
 
-  background-color: rgb(249, 191, 191);
   color:black;
   position: absolute;
   z-index: 1;
 
-  top: 70%;
+  top: 80%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  border-radius: 9px 9px 9px 9px;
+  transition: box-shadow 0.3s;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  background-color: rgba(196, 195, 195, 0.95);
+  transition: 0.6s ease;
+
 
 
   /*margin-left: 10px;
@@ -1176,6 +1166,8 @@ text-align: center;
 #save-note-btn-for-summary:hover,#save-note-btn-for-blood:hover,#save-note-btn-for-investigations:hover,
 #save-note-btn-for-riskfactors:hover,#save-note-btn-for-treatments:hover,#save-note-btn-for-differentials:hover,#save-note-btn-for-examinations:hover {
 box-shadow: 0px 0px 9px 4px #747DE8;
+background-color: rgba(255, 255, 255, 0.8);
+
 }
 
 
@@ -1240,7 +1232,11 @@ img {vertical-align: middle;}
 
 
 /* Next & previous buttons */
-.prev, .next, #executeButton, #stop-consultation-btn, #move-onto-questions-btn, #end-consultation-btn, #start-consultation-btn {
+.prev, .next, #executeButton, #stop-consultation-btn, #move-onto-questions-btn, #end-consultation-btn, #end-consultation-btn1, #start-consultation-btn,
+#move-onto-questions-btn_examinations, #move-onto-questions-btn_summary, #move-onto-questions-btn_differentials, 
+#move-onto-questions-btn_investigations, #move-onto-questions-btn_riskfactors, #move-onto-questions-btn_treatments
+
+{
   cursor: pointer;
   /*position: absolute;*/
   /*top: 50%;*/
@@ -1265,15 +1261,19 @@ img {vertical-align: middle;}
 .prev, .next {
     position: absolute;
     transition: box-shadow 0.3s;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.01);
     margin-top: 5px;
     transition: background-color 1.5s ease, color 0.5s ease;
+    background: rgba(19, 19, 19, 0.8);
 
 }
 
 
 
-#executeButton, #stop-consultation-btn, #move-onto-questions-btn, #end-consultation-btn, #start-consultation-btn{
+#executeButton, #stop-consultation-btn, #move-onto-questions-btn, #end-consultation-btn, #end-consultation-btn1, #start-consultation-btn,
+#move-onto-questions-btn_examinations, #move-onto-questions-btn_summary, #move-onto-questions-btn_differentials, 
+#move-onto-questions-btn_investigations, #move-onto-questions-btn_riskfactors, #move-onto-questions-btn_treatments
+{
   margin-top: 0px;
 height:auto;
 padding-top: 5px;
@@ -1324,7 +1324,7 @@ transition: background-color 1.5s ease, color 0.5s ease;
 
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover, #executeButton:hover, #start-consultation-btn:hover {
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(105, 105, 105, 0.8);
   color: #ffffff;
   text-decoration: none;
 
@@ -1515,7 +1515,7 @@ margin-top: 40px;
 
 
 
-#messagebeforeacceptingmic{
+#messagebeforeacceptingmic, #messagebeforeacceptingmic_examinations, #messagebeforeacceptingmic_summary, #messagebeforeacceptingmic_differentials, #messagebeforeacceptingmic_investigations, #messagebeforeacceptingmic_riskfactors, #messagebeforeacceptingmic_treatments{
   
   
   width: 300px;
@@ -1532,7 +1532,7 @@ margin-top: 40px;
   
 }
 
-#micisworking {
+#micisworking, #micisworkingexaminations, #micisworkingsummary, #micisworkingdifferentials, #micisworkinginvestigations, #micisworkingriskfactors, #micisworkingtreatments {
   width: 150px;
   position: absolute;
   top: 0;
@@ -2329,10 +2329,10 @@ div.scroll-container img {
 #titleforquestions{
   content: "Q"counter(apples)":";
   counter-increment: apples;
-  font-family: sans-serif;
+  font-family: LTSoul;
   color: rgb(25, 3, 134);
   font-weight: bold;
-  font-size: 38px;
+  font-size: 22.5px;
   margin-right: 10px;
   position: absolute;
   z-index: 1;
