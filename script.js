@@ -128,6 +128,8 @@ function initialstopConsultation(){
   document.getElementById('pause-countdown').style.display = 'none';
   document.getElementById('countdown-value').style.display = 'none';
   silentmsg = true;
+  messagebeforeacceptingmic.style.display = 'none';
+
 
 
  
@@ -277,8 +279,9 @@ function movetoQuestions(){
   document.getElementById('myVideo').style.display = 'unset'; document.getElementById("mp4_src").src = "videos/examinations.mp4"; document.getElementById("myVideo").load();
   
   document.getElementById('myVideo').onended = function(e) {
-  recognition_examinations.start();     // document.getElementById('stop-consultation-btn').style.display = 'unset';
-  document.getElementById('save-note-btn-for-examinations').style.display = 'unset';
+    //messagebeforeacceptingmic.style.display = 'unset'; micisworking.style.display = 'unset';
+  recognition_examinations.start();     document.getElementById('messagebeforeacceptingmic_examinations').style.display = 'unset';
+  document.getElementById('save-note-btn-for-examinations').style.display = 'unset';    
 
   }
 }
@@ -1795,6 +1798,7 @@ function allifsaction(){
     document.getElementById('replayButton').style.display = 'unset';   document.getElementById('home').style.display = 'unset'; 
     document.getElementById('executeButton').style.display = 'unset';   
     actionTriggered = false;
+    messagebeforeacceptingmic.style.display = 'unset';
   }
 }
 
@@ -2694,7 +2698,7 @@ var painlocationtest = $('#painlocationtest'); var painlocationtest1 = $('#painl
 
 /*--------------------Is for bringing up the 'listening icon/microphone icon once the user accepts the use of the mic-------------- */
 
-  let micisworking = document.getElementById('micisworking');
+  let micisworking = document.getElementById('micisworking');//THIS IS NOT NEEDED FOR THE MIC TO WORK!!!!!!!!!!!
 
   
 recognition.onstart = function() {
@@ -3161,6 +3165,22 @@ $('#start-record-btn-for-examinations').on('click', function(e) {
     examinationsContent += ' ';
   }
   recognition_examinations.start();
+
+  
+
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
   });
 
   examinationstextarea.on('input', function() {
@@ -3171,6 +3191,15 @@ $('#start-record-btn-for-examinations').on('click', function(e) {
 
 $('#save-note-btn-for-examinations,#move-onto-questions-btn_examinations').on('click', function(e) {
 recognition_examinations.stop();
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3223,38 +3252,36 @@ document.getElementById('examinations').style.display = 'none';
   recognition_examinations.stop();    document.getElementById('stop-consultation-btn').style.display = 'none';
   document.getElementById("mp4_src").src = "videos/summary.mp4"; document.getElementById("myVideo").load();
   document.getElementById('myVideo').onended = function(e) {
-  recognition1.start();     // document.getElementById('stop-consultation-btn').style.display = 'unset';
-  document.getElementById('save-note-btn-for-summary').style.display = 'unset';
+  recognition1.start();     document.getElementById('messagebeforeacceptingmic_summary').style.display = 'unset'; 
+  document.getElementById('save-note-btn-for-summary').style.display = 'unset';     
   }
+  
 
 }
 )
 
+/*--------------------Is for bringing up the 'listening icon/microphone icon once the user accepts the use of the mic-------------- */
+
+let micisworkingexaminations = document.getElementById('micisworkingexaminations');//THIS IS NOT NEEDED FOR THE MIC TO WORK!!!!!!!!!!!
+recognition_examinations.onstart = function() {
+    micisworkingexaminations.style.display = 'unset';
+    document.getElementById('messagebeforeacceptingmic_examinations').style.display = 'none';
+  }
+
+
+
+
+/*------enterkey     !!!!!!!!!!!!!THESE NEXT 2 PARAGRAPHS DO NOTHING!!!!!!!*/
+let greg_examinations = 0;
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Enter" && micisworkingexaminations.style.display === 'unset' && greg_examinations==0) {//&& myVideo.ended  
+    document.getElementById("save-note-btn-for-examinations").click(); greg_examinations++;
+    }   });
 
 
 
 
 
-
-
-
-/*------enterkey*/
-
-var input = document.getElementById("start-record-btn-for-examinations");
-input.addEventListener("keypress", function(event) {
-if (event.key === "Enter") {
-  event.preventDefault();
-  document.getElementById("save-note-btn-for-examinations").click();
-}
-});
-
-var input = document.getElementById("examinations-textarea");
-input.addEventListener("keypress", function(event) {
-if (event.key === "Enter") {
-  event.preventDefault();
-  document.getElementById("save-note-btn-for-examinations").click();
-}
-});
 
 //this following part makes you write down straight onto the textbox rather than having to click on the textbox.
 $(function() {
@@ -3285,7 +3312,6 @@ catch(e) {
 var noteSummary = '';
 var summaryContent = '';
 var summarytextarea = $('#summary-textarea');
-
   
 recognition1.continuous = true;
 var silenceTimer1 = null;
@@ -3374,10 +3400,10 @@ document.getElementById('summary').style.display = 'none';
   document.getElementById('differentials').style.display = 'unset';
 
   recognition1.stop();    document.getElementById('stop-consultation-btn').style.display = 'none';
-  document.getElementById("mp4_src").src = "videos/differential.mp4"; document.getElementById("myVideo").load();
+   document.getElementById("mp4_src").src = "videos/differential.mp4"; document.getElementById("myVideo").load();
   document.getElementById('myVideo').onended = function(e) {
-  recognition_differentials.start();     // document.getElementById('stop-consultation-btn').style.display = 'unset';
-  document.getElementById('save-note-btn-for-differentials').style.display = 'unset';
+    recognition_differentials.start();     document.getElementById('messagebeforeacceptingmic_differentials').style.display = 'unset';
+  document.getElementById('save-note-btn-for-differentials').style.display = 'unset'; 
   }
 
 
@@ -3387,25 +3413,21 @@ document.getElementById('summary').style.display = 'none';
 
 
 
-
+let micisworkingsummary = document.getElementById('micisworkingsummary');//THIS IS NOT NEEDED FOR THE MIC TO WORK!!!!!!!!!!!
+recognition1.onstart = function() {
+    micisworkingsummary.style.display = 'unset';
+    document.getElementById('messagebeforeacceptingmic_summary').style.display = 'none';
+  
+  
+  }
 
 /*------enterkey*/
+let greg_summary = 0;
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Enter" && micisworkingsummary.style.display === 'unset' && greg_summary==0) {  
+    document.getElementById("save-note-btn-for-summary").click(); greg_summary++;
+    }   });
 
-var input = document.getElementById("start-record-btn-for-summary");
-input.addEventListener("keypress", function(event) {
-if (event.key === "Enter") {
-  event.preventDefault();
-  document.getElementById("save-note-btn-for-summary").click();
-}
-});
-
-var input = document.getElementById("summary-textarea");
-input.addEventListener("keypress", function(event) {
-if (event.key === "Enter") {
-  event.preventDefault();
-  document.getElementById("save-note-btn-for-summary").click();
-}
-});
 
 //this following part makes you write down straight onto the textbox rather than having to click on the textbox.
 $(function() {
@@ -3518,7 +3540,7 @@ recognition_differentials.stop();
   recognition_differentials.stop();    document.getElementById('stop-consultation-btn').style.display = 'none';
   document.getElementById("mp4_src").src = "videos/investigations.mp4"; document.getElementById("myVideo").load();
   document.getElementById('myVideo').onended = function(e) {
-  recognition_investigations.start();     // document.getElementById('stop-consultation-btn').style.display = 'unset';
+  recognition_investigations.start();     document.getElementById('messagebeforeacceptingmic_investigations').style.display = 'unset';
   document.getElementById('save-note-btn-for-investigations').style.display = 'unset';
   }
 
@@ -3531,25 +3553,19 @@ recognition_differentials.stop();
 
 
 
+let micisworkingdifferentials = document.getElementById('micisworkingdifferentials');//THIS IS NOT NEEDED FOR THE MIC TO WORK!!!!!!!!!!!
+recognition_differentials.onstart = function() {
+    micisworkingdifferentials.style.display = 'unset';
+    document.getElementById('messagebeforeacceptingmic_differentials').style.display = 'none';
+  }
 
 
 /*------enterkey*/
-
-var input = document.getElementById("start-record-btn-for-differentials");
-input.addEventListener("keypress", function(event) {
-if (event.key === "Enter") {
-  event.preventDefault();
-  document.getElementById("save-note-btn-for-differentials").click();
-}
-});
-
-var input = document.getElementById("differentials-textarea");
-input.addEventListener("keypress", function(event) {
-if (event.key === "Enter") {
-  event.preventDefault();
-  document.getElementById("save-note-btn-for-differentials").click();
-}
-});
+let greg_differentials = 0;
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Enter" && micisworkingdifferentials.style.display == 'unset' && greg_differentials==0) {  
+    document.getElementById("save-note-btn-for-differentials").click(); greg_differentials++;
+    }   });
 
 //this following part makes you write down straight onto the textbox rather than having to click on the textbox.
 $(function() {
@@ -3655,7 +3671,7 @@ recognition_investigations.stop();
   recognition_investigations.stop();    document.getElementById('stop-consultation-btn').style.display = 'none';
   document.getElementById("mp4_src").src = "videos/riskfactors.mp4"; document.getElementById("myVideo").load();
   document.getElementById('myVideo').onended = function(e) {
-  recognition_riskfactors.start();     // document.getElementById('stop-consultation-btn').style.display = 'unset';
+  recognition_riskfactors.start();     document.getElementById('messagebeforeacceptingmic_riskfactors').style.display = 'unset';
   document.getElementById('save-note-btn-for-riskfactors').style.display = 'unset';
   }
 
@@ -3668,25 +3684,18 @@ recognition_investigations.stop();
 
 
 
-
+let micisworkinginvestigations = document.getElementById('micisworkinginvestigations');//THIS IS NOT NEEDED FOR THE MIC TO WORK!!!!!!!!!!!
+recognition_investigations.onstart = function() {
+    micisworkinginvestigations.style.display = 'unset';
+    document.getElementById('messagebeforeacceptingmic_investigations').style.display = 'none';
+  }
 
 /*------enterkey*/
-
-var input = document.getElementById("start-record-btn-for-investigations");
-input.addEventListener("keypress", function(event) {
-if (event.key === "Enter") {
-  event.preventDefault();
-  document.getElementById("save-note-btn-for-investigations").click();
-}
-});
-
-var input = document.getElementById("investigations-textarea");
-input.addEventListener("keypress", function(event) {
-if (event.key === "Enter") {
-  event.preventDefault();
-  document.getElementById("save-note-btn-for-investigations").click();
-}
-});
+let greg_investigations = 0;
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Enter" && micisworkinginvestigations.style.display == 'unset' && greg_investigations==0) {  
+    document.getElementById("save-note-btn-for-investigations").click(); greg_investigations++;
+    }   });
 
 //this following part makes you write down straight onto the textbox rather than having to click on the textbox.
 $(function() {
@@ -3793,7 +3802,7 @@ recognition_riskfactors.stop();
   recognition_riskfactors.stop();    document.getElementById('stop-consultation-btn').style.display = 'none';
   document.getElementById("mp4_src").src = "videos/management.mp4"; document.getElementById("myVideo").load();
   document.getElementById('myVideo').onended = function(e) {
-  recognition_treatments.start();     // document.getElementById('stop-consultation-btn').style.display = 'unset';
+  recognition_treatments.start();     document.getElementById('messagebeforeacceptingmic_treatments').style.display = 'unset';
   document.getElementById('save-note-btn-for-treatments').style.display = 'unset';
   }
 
@@ -3810,25 +3819,18 @@ recognition_riskfactors.stop();
 
 
 
-
+let micisworkingriskfactors = document.getElementById('micisworkingriskfactors');//THIS IS NOT NEEDED FOR THE MIC TO WORK!!!!!!!!!!!
+recognition_riskfactors.onstart = function() {
+    micisworkingriskfactors.style.display = 'unset';
+    document.getElementById('messagebeforeacceptingmic_riskfactors').style.display = 'none';
+  }
 
 /*------enterkey*/
-
-var input = document.getElementById("start-record-btn-for-riskfactors");
-input.addEventListener("keypress", function(event) {
-if (event.key === "Enter") {
-  event.preventDefault();
-  document.getElementById("save-note-btn-for-riskfactors").click();
-}
-});
-
-var input = document.getElementById("riskfactors-textarea");
-input.addEventListener("keypress", function(event) {
-if (event.key === "Enter") {
-  event.preventDefault();
-  document.getElementById("save-note-btn-for-riskfactors").click();
-}
-});
+let greg_riskfactors = 0;
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Enter" && micisworkingriskfactors.style.display == 'unset' && greg_riskfactors==0) {  
+    document.getElementById("save-note-btn-for-riskfactors").click(); greg_riskfactors++;
+    }   });
 
 //this following part makes you write down straight onto the textbox rather than having to click on the textbox.
 $(function() {
@@ -3952,23 +3954,18 @@ document.getElementById('review-section').style.display = 'unset';
 
 
 
+let micisworkingtreatments = document.getElementById('micisworkingtreatments');//THIS IS NOT NEEDED FOR THE MIC TO WORK!!!!!!!!!!!
+recognition_treatments.onstart = function() {
+    micisworkingtreatments.style.display = 'unset';
+    document.getElementById('messagebeforeacceptingmic_treatments').style.display = 'none';
+  }
+
 /*------enterkey*/
-
-var input = document.getElementById("start-record-btn-for-treatments");
-input.addEventListener("keypress", function(event) {
-if (event.key === "Enter") {
-  event.preventDefault();
-  document.getElementById("save-note-btn-for-treatments").click();
-}
-});
-
-var input = document.getElementById("treatments-textarea");
-input.addEventListener("keypress", function(event) {
-if (event.key === "Enter") {
-  event.preventDefault();
-  document.getElementById("save-note-btn-for-treatments").click();
-}
-});
+let greg_treatments = 0;
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Enter" && micisworkingtreatments.style.display == 'unset' && greg_treatments==0) {  
+    document.getElementById("save-note-btn-for-treatments").click(); greg_treatments++;
+    }   });
 
 //this following part makes you write down straight onto the textbox rather than having to click on the textbox.
 $(function() {
