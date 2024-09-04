@@ -57,7 +57,7 @@
               Your browser does not support HTML5 video.
             </video>
 
-            <img id="listeninggif" src="finallisteninggif.gif">
+
             <img id="loadingcircle" src="loadingcircle.gif">
 
             <button id="replayButton">Replay previous response</button>
@@ -139,8 +139,8 @@
             <li>If the above doesn't work, then try the same thing but on a different browser. If it then works, then open OSCESIMULATIONS on that same browser.</li>
             <li>Remember that the microphone will automatically stop following a prolonged period of silence</li>
             <li>Remember to press the ENTER key/press the submit button after you've asked your question</li>
-            <li>Make sure there is no background noise</li>
-            <li>Finally, try simply speaking louder into the mic and ask your question again</li>
+            <li>Make sure there is absolutely no background noise around you</li>
+            <li>Finally, try simply speaking louder into the mic and ask your question again, making sure you speak clearly</li>
           
           </ul>
             <center><button id="comebacktonormal" onclick="pauseBtn.click(); silentmsg = false;">Return to consultation</button></center>
@@ -255,30 +255,10 @@
 
                 </div>
 
-                <center><div id="difficultycolor">
+                <center><div id="difficultycolor" style="margin-top: 40px;">
 
                   <div style=" font-size: 22.5px; font-family: LTSoul;">
-                    Difficulty: 
-                    
-                    <svg viewBox="0 0 400 400" style="width: 20px; margin-top: 30px;" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <g clip-path="url(#clip0_2_105)">
-                        <g opacity="0.5" filter="url(#filter0_f_2_105)">
-                          <path d="M128.6 0H0V322.2L307 109L128.6 0Z" fill="#00FF19"/>
-                          <path d="M0 322.2V400H240H400L307 109L0 322.2Z" fill="#00C2FF"/>
-                          <path d="M400 0H128.6L307 109L400 400V0Z" fill="#03C3FF"/>
-                        </g>
-                      </g>
-                      <defs>
-                        <filter id="filter0_f_2_105" x="-159.933" y="-159.933" width="719.867" height="719.867" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                          <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-                          <feGaussianBlur stdDeviation="79.9667" result="effect1_foregroundBlur_2_105"/>
-                        </filter>
-                        <clipPath id="clip0_2_105">
-                          <rect width="400" height="400" rx="200" fill="white"/>
-                        </clipPath>
-                      </defs>
-                    </svg>
+                    Difficulty: 🟢
                     
 
 
@@ -302,7 +282,7 @@
 
 
 
-<center><div id="backgroundofstartbtn" style="background-image: url(cork-wallet.webp); padding: 23px; margin-left: -220px; margin-right: -220px; font-size: 22.5px; font-family: LTSoul;">
+<center><div id="backgroundofstartbtn" style="background-image: url(cork-wallet.webp); padding: 23px; padding-top: 20px; margin-left: -220px; margin-right: -220px; margin-top: 10px; font-size: 22.5px; font-family: LTSoul;">
 
 <center><button id="start-consultation-btn" onclick="style.display = 'none', startFunction()" type="button">Start Consultation</button></center>
 
@@ -481,10 +461,12 @@
 
 
         <div id="examinations">
-                  <h4 id="titleforquestions">Examinations</h4>
+                  <h4 id="titleforquestions">Question 1</h4>
                   <button id="save-note-btn-for-examinations" title="Save examinations">Submit answer</button>
                   <button id="move-onto-questions-btn_examinations" onclick="style.display = 'none', movetoQuestions_examinations()" type="button" title="Skip/next question">Skip/next question</button>
                   <button id="end-consultation-btn1" onclick="style.display = 'none', endConsultation()" type="button" title="End consultation completely">End the questioning to review your consultation</button>
+                  <img id="micisworkingexaminations" src="micfinal.gif" style="display: none; z-index: 1;"></img>
+                  <img id="messagebeforeacceptingmic_examinations" src="permissionformic.png" style=" display : none; z-index: 1000;"></img>
 
 
               <div id="allthiscango">
@@ -497,10 +479,13 @@
 
       
         <div id="summary">
-                  <h4 id="titleforquestions">Summary</h4>
+                  <h4 id="titleforquestions">Question 2</h4>
                   <button id="save-note-btn-for-summary" title="Save summary">Submit Summary</button>
                   <button id="move-onto-questions-btn_summary" onclick="style.display = 'none', movetoQuestions_summary()" type="button" title="Skip/next question">Skip/next question</button>
                   <button id="end-consultation-btn1" onclick="style.display = 'none', endConsultation()" type="button" title="End consultation completely">End the questioning to review your consultation</button>
+                  <img id="micisworkingsummary" src="micfinal.gif" style="display: none; z-index: 1;"></img>
+                  <img id="messagebeforeacceptingmic_summary" src="permissionformic.png" style=" display : none; z-index: 1000;"></img>
+
 
           <div id="allthiscango">
            <!-- <h4>Please give us a brief summary of the history and the examination (1-2 minutes)</h4> -->
@@ -514,10 +499,13 @@
 
         
         <div id="differentials">
-          <h4 id="titleforquestions">Differentials</h4>
+          <h4 id="titleforquestions">Question 3</h4>
           <button id="save-note-btn-for-differentials" title="Save differentials">Submit answer</button>
           <button id="move-onto-questions-btn_differentials" onclick="style.display = 'none', movetoQuestions_differentials()" type="button" title="Skip/next question">Skip/next question</button>
           <button id="end-consultation-btn1" onclick="style.display = 'none', endConsultation()" type="button" title="End consultation completely">End the questioning to review your consultation</button>
+          <img id="micisworkingdifferentials" src="micfinal.gif" style="display: none; z-index: 1;"></img>
+          <img id="messagebeforeacceptingmic_differentials" src="permissionformic.png" style=" display : none; z-index: 1000;"></img>
+
 
           <div id="allthiscango">
            <!-- <h4>What are your top 3 differentials?</h4> -->
@@ -532,11 +520,14 @@
 
 
         <div id="investigations">
-          <h4 id="titleforquestions">Investigations</h4>
+          <h4 id="titleforquestions">Question 4</h4>
           <button id="save-note-btn-for-investigations" title="Save investigations">Submit answer</button>
           <button id="move-onto-questions-btn_investigations" onclick="style.display = 'none', movetoQuestions_investigations()" type="button" title="Skip/next question">Skip/next question</button>
           <button id="end-consultation-btn1" onclick="style.display = 'none', endConsultation()" type="button" title="End consultation completely">End the questioning to review your consultation</button>
-         
+          <img id="micisworkinginvestigations" src="micfinal.gif" style="display: none; z-index: 1;"></img>
+          <img id="messagebeforeacceptingmic_investigations" src="permissionformic.png" style=" display : none; z-index: 1000;"></img>
+
+
           <div id="allthiscango">
            <!-- <h4>What are your investigations?</h4> -->
            <p id="recording-instructions-for-investigations">Press the <strong>Microphone</strong> button and start speaking to record your summary. Then press <strong>Submit answer</strong> to get a response</p>
@@ -548,11 +539,13 @@
 
 
         <div id="riskfactors">
-          <h4 id="titleforquestions">Risk Factors</h4>
+          <h4 id="titleforquestions">Question 5</h4>
           <button id="save-note-btn-for-riskfactors" title="Save riskfactors">Submit answer</button>
           <button id="move-onto-questions-btn_riskfactors" onclick="style.display = 'none', movetoQuestions_riskfactors()" type="button" title="Skip/next question">Skip/next question</button>
           <button id="end-consultation-btn1" onclick="style.display = 'none', endConsultation()" type="button" title="End consultation completely">End the questioning to review your consultation</button>
-         
+          <img id="micisworkingriskfactors" src="micfinal.gif" style="display: none; z-index: 1;"></img>
+          <img id="messagebeforeacceptingmic_riskfactors" src="permissionformic.png" style=" display : none; z-index: 1000;"></img>
+
           <div id="allthiscango">
            <!-- <h4>What are your riskfactors?</h4> -->
            <p id="recording-instructions-for-riskfactors">Press the <strong>Microphone</strong> button and start speaking to record your summary. Then press <strong>Submit answer</strong> to get a response</p>
@@ -562,11 +555,13 @@
         </div>
 
         <div id="treatments">
-          <h4 id="titleforquestions">Treatments</h4>
+          <h4 id="titleforquestions">Question 6</h4>
           <button id="save-note-btn-for-treatments" title="Save treatments">Submit answer</button>
           <!--<button id="move-onto-questions-btn_treatments" onclick="style.display = 'none', movetoQuestions_treatments()" type="button" title="Skip/next question">Skip/next question</button> -->
           <button id="end-consultation-btn1" onclick="style.display = 'none', endConsultation()" type="button" title="End consultation completely">End the questioning to review your consultation</button>
-         
+          <img id="micisworkingtreatments" src="micfinal.gif" style="display: none; z-index: 1;"></img>
+          <img id="messagebeforeacceptingmic_treatments" src="permissionformic.png" style=" display : none; z-index: 1000;"></img>
+
           <div id="allthiscango">
            <!-- <h4>What are your treatments?</h4> -->
            <p id="recording-instructions-for-treatments">Press the <strong>Microphone</strong> button and start speaking to record your summary. Then press <strong>Submit answer</strong> to get a response</p>
