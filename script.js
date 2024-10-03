@@ -70,7 +70,7 @@ function startFunction() {
   
 
   document.getElementById('myVideo').onended = function(e) {
-    //readOutLoud("Go");
+    readOutLoud("Go the consultation has started");
     messagebeforeacceptingmic.style.display = 'unset';
 
   //readOutLoud("Enable the microphone and then start speaking, and once you've asked your question double press the ENTER key");
@@ -3017,6 +3017,60 @@ notesList.on('click', function(e) {
  
  
  
+
+
+//ELEVENLABS////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+function speak() {         //https://github.com/bh679/ElevenLabs-Javascript-Example/blob/main/FrontEndOnly/index.html
+    
+  const text11L = "free";
+  const voiceId = 'nsQAxyXwUKBvqtEK9MfK';
+  const apiKey = 'sk_73b9a592b470fa693c1898d26d215b18e01feb864b3d31ae';
+
+
+  const headers = new Headers();
+  headers.append('Accept', 'audio/mpeg');
+  headers.append('xi-api-key', apiKey);
+  headers.append('Content-Type', 'application/json');
+
+  const body = JSON.stringify({
+      text: text11L,
+      model_id: 'eleven_monolingual_v1',
+      voice_settings: {
+          stability: 0.5,
+          similarity_boost: 0.5
+      }
+  });
+
+  fetch(`https://api.elevenlabs.io/v1/text-to-speech/${voiceId}/stream`, {
+      method: 'POST',
+      headers: headers,
+      body: body
+  })
+  .then(response => {
+      if (response.ok) {
+          return response.blob();
+      } 
+  })
+  .then(blob => {
+      const url = window.URL.createObjectURL(blob);
+      const audio = new Audio(url);
+      audio.play();        //audio.onended = () => { status.innerText += '\nAudio has finished playing!';  };
+  })
+}
+
+//END OF ELEVENLABS//////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
 /*-----------------------------
       Speech Synthesis
 ------------------------------*/
