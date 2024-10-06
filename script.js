@@ -70,7 +70,7 @@ function startFunction() {
   
 
   document.getElementById('myVideo').onended = function(e) {
-    readOutLoud("Go the consultation has started");
+    readOutLoud("Go");
     messagebeforeacceptingmic.style.display = 'unset';
 
   //readOutLoud("Enable the microphone and then start speaking, and once you've asked your question double press the ENTER key");
@@ -1622,12 +1622,13 @@ else if (noteContent === ""){
     //require('dotenv').config();
 
     const generateResponse = async (input) => {
-      const response = await fetch('https://api.openai.com/v1/engines/text-davinci-003/completions', { //babbage davinci-3
+      const response = await fetch('https://api.openai.com/v1/engines/gpt-3.5-turbo-instruct/completions', { //babbage davinci-3
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           //'Authorization': `Bearer ${process.env['API_KEY']}`
           'Authorization': `Bearer `
+  
         },
         body: JSON.stringify({
           prompt: prompt + '\n' + 'Previous question: ' + previousquestion + '\n' + 'Response to previous question:' + response_question + '\n' + 'question: ' + input + '\n' + 'answer: ', //'\n' + 'output: '
@@ -1655,7 +1656,7 @@ else if (noteContent === ""){
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer YOUR_API_KEY_HERE`
+        'Authorization': `Bearer `
       },
       body: JSON.stringify({
         prompt: prompt + '\n' + 'Previous question: ' + previousquestion + '\n' + 'Response to previous question:' + response_question + '\n' + 'question: ' + input + '\n' + 'answer: ' + generatedText,
@@ -1739,8 +1740,8 @@ const handleUserInput = async (noteContent) => {
       resolve();
 
     };
-    //gptvideo.src = 'vid-whatsbroughtyouin.mp4';
-    document.getElementById("mutedmp4_src").src = "videos/inlondon.mp4";
+    ////////////////////is for playing the muted video///////////////////
+    document.getElementById("mutedmp4_src").src = "videos/bitmore.mp4";
     gptvideo.load();
 
     gptvideo.onended =  function(e) {
@@ -1754,10 +1755,70 @@ const handleUserInput = async (noteContent) => {
   });
   await Promise.all([responsePromise, videoPromise]);
   const response = await responsePromise;
+  document.getElementById('chatgpt-response').innerText = response; // Update the content of the element with ID 'chatgpt-response' REMOVE THIS!!!!
+
+  /*
   const synth = window.speechSynthesis;
   const utterance = new SpeechSynthesisUtterance(response);
+*/
 
 
+const text11L = response; // Use the response from your API call
+const voiceId = 'nsQAxyXwUKBvqtEK9MfK';
+const apiKey = 'sk_73b9a592b470fa693c1898d26d215b18e01feb864b3d31ae';
+
+const headers = new Headers();
+headers.append('Accept', 'audio/mpeg');
+headers.append('xi-api-key', apiKey);
+headers.append('Content-Type', 'application/json');
+
+const body = JSON.stringify({
+    text: text11L,
+    model_id: 'eleven_monolingual_v1',
+    voice_settings: {
+        stability: 0.5,
+        similarity_boost: 0.5
+    }
+});
+
+// Call the Eleven Labs API for text-to-speech
+fetch(`https://api.elevenlabs.io/v1/text-to-speech/${voiceId}/stream`, {
+    method: 'POST',
+    headers: headers,
+    body: body
+})
+.then(response => {
+    if (response.ok) {
+        return response.blob();
+    } else {
+        throw new Error('Failed to synthesize speech');
+    }
+})
+.then(blob => {
+    const url = window.URL.createObjectURL(blob);
+    const audio = new Audio(url);
+
+    audio.onended = () => {
+        const gptvideo = document.getElementById('mutedVideo');
+        gptvideo.pause(); // Pause the video after the audio finishes
+        recognition.start();   
+        document.getElementById('stop-consultation-btn').style.display = 'unset'; 
+        document.getElementById('executeButton').style.display = 'unset';
+        document.getElementById('myVideo').style.display = 'unset';
+        document.getElementById('mutedVideo').style.display = 'none';
+
+        // Reset action trigger flag
+        actionTriggered = false;
+    };
+
+    audio.play(); // Play the audio
+})
+
+
+
+
+
+/*
   utterance.onend = () => {
 
     const gptvideo = document.getElementById('mutedVideo');
@@ -1772,7 +1833,7 @@ const handleUserInput = async (noteContent) => {
 
   };
   synth.speak(utterance);
-
+*/
 
 
 
@@ -3019,6 +3080,9 @@ notesList.on('click', function(e) {
  
 
 
+
+
+/*
 //ELEVENLABS////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 function speak() {         //https://github.com/bh679/ElevenLabs-Javascript-Example/blob/main/FrontEndOnly/index.html
@@ -3060,8 +3124,7 @@ function speak() {         //https://github.com/bh679/ElevenLabs-Javascript-Exam
 }
 
 //END OF ELEVENLABS//////////////////////////////////////////////////////////////////////////////////////
-
-
+*/
 
 
 
