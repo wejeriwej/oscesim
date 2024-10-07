@@ -936,7 +936,7 @@ var timerforsubmitting = null;
       previousquestion = noteContent;   response_question = "I don't have any pain in my right arm";
       document.getElementById("mp4_src").src = "videos/rightarm.mp4"; allifsaction();}//tell me a bit more
     
-    else if (noteContent.includes("arm")) {
+    else if (noteContent.includes("arm")&&!noteContent.includes("warm")) {
       //readOutLoud("The pain in my left arm just came on with the chest pain, and it was the same sort of pain as the pain in my chest.");
       previousquestion = noteContent;   response_question = "The pain in my left arm came on with the chest pain and is the same kind of pain";
       document.getElementById("mp4_src").src = "videos/leftarm.mp4"; allifsaction();}//tell me a bit more
@@ -1742,6 +1742,7 @@ const handleUserInput = async (noteContent) => {
     };
     ////////////////////is for playing the muted video///////////////////
     document.getElementById('loadingcircle').style.display = 'unset';
+    document.getElementById('errormsg').style.display = 'unset';
 
     document.getElementById("mutedmp4_src").src = "videos/bitmore.mp4";
     setTimeout(() => {
@@ -1749,7 +1750,8 @@ const handleUserInput = async (noteContent) => {
     gptvideo.load();
     document.getElementById('loadingcircle').style.display = 'none';
 
-  }, 3500);
+
+  }, 4000);
 
 
 
@@ -1759,6 +1761,8 @@ const handleUserInput = async (noteContent) => {
       
       document.getElementById('myVideo').style.display = 'unset';
       document.getElementById('mutedVideo').style.display = 'none';
+      document.getElementById('errormsg').style.display = 'none';
+
     };
   
 
@@ -1817,6 +1821,8 @@ fetch(`https://api.elevenlabs.io/v1/text-to-speech/${voiceId}/stream`, {
         document.getElementById('myVideo').style.display = 'unset';
         document.getElementById('mutedVideo').style.display = 'none';
         messagebeforeacceptingmic.style.display = 'unset';
+        document.getElementById('errormsg').style.display = 'none';
+
 
         // Reset action trigger flag
         actionTriggered = false;
