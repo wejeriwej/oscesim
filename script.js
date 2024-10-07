@@ -1633,7 +1633,7 @@ else if (noteContent === ""){
         body: JSON.stringify({
           prompt: prompt + '\n' + 'Previous question: ' + previousquestion + '\n' + 'Response to previous question:' + response_question + '\n' + 'question: ' + input + '\n' + 'answer: ', //'\n' + 'output: '
           temperature: 0.1,
-          max_tokens: 25,
+          max_tokens: 45,
           top_p: 1,
           frequency_penalty: 0,
           presence_penalty: 0
@@ -1736,14 +1736,23 @@ const handleUserInput = async (noteContent) => {
     gptvideo.onloadedmetadata = () => {
       gptvideo.muted = true;
 
-      
       gptvideo.play();
       resolve();
 
     };
     ////////////////////is for playing the muted video///////////////////
+    document.getElementById('loadingcircle').style.display = 'unset';
+
     document.getElementById("mutedmp4_src").src = "videos/bitmore.mp4";
+    setTimeout(() => {
+
     gptvideo.load();
+    document.getElementById('loadingcircle').style.display = 'none';
+
+  }, 3500);
+
+
+
 
     gptvideo.onended =  function(e) {
       recognition.start();      document.getElementById('stop-consultation-btn').style.display = 'unset';   document.getElementById('replayButton').style.display = 'unset';   document.getElementById('home').style.display = 'unset'; document.getElementById('executeButton').style.display = 'unset'; actionTriggered = false;
