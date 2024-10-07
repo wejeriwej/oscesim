@@ -1736,6 +1736,7 @@ const handleUserInput = async (noteContent) => {
     gptvideo.onloadedmetadata = () => {
       gptvideo.muted = true;
 
+      
       gptvideo.play();
       resolve();
 
@@ -1806,6 +1807,7 @@ fetch(`https://api.elevenlabs.io/v1/text-to-speech/${voiceId}/stream`, {
         document.getElementById('executeButton').style.display = 'unset';
         document.getElementById('myVideo').style.display = 'unset';
         document.getElementById('mutedVideo').style.display = 'none';
+        messagebeforeacceptingmic.style.display = 'unset';
 
         // Reset action trigger flag
         actionTriggered = false;
