@@ -36,18 +36,18 @@ let emptyif = document.getElementById('emptyif');
 //For the replay video Button!!
 document.getElementById('replayButton').addEventListener('click', function() {
   replayVideo();
-  document.getElementById('replayButton').style.display = 'none'; recognition.stop();      document.getElementById('stop-consultation-btn').style.display = 'none';  document.getElementById('home').style.display = 'none'; document.getElementById('executeButton').style.display = 'none';
+  document.getElementById('replayButton').style.display = 'none'; recognition.stop();      document.getElementById('stop-consultation-btn').style.display = 'none';  document.getElementById('home').style.display = 'none'; document.getElementById('executeButton').style.display = 'none'; document.getElementById('messagebeforeacceptingmic').style.display = 'none';
     
 });
 
 function replayVideo() {
-  var videoElement = document.getElementById('myVideo');
+  var videoElement = document.getElementById('myVideo'); actionTriggered = true;
   videoElement.pause(); // Pause the video
   videoElement.currentTime = 0; // Set the current time of the video to the beginning
   videoElement.play(); // Start playing the video
   document.getElementById('myVideo').onended = function(e) {
     recognition.start();      document.getElementById('stop-consultation-btn').style.display = 'unset';    document.getElementById('home').style.display = 'unset';
-    document.getElementById('replayButton').style.display = 'unset';  document.getElementById('executeButton').style.display = 'unset';
+    document.getElementById('replayButton').style.display = 'unset';  document.getElementById('executeButton').style.display = 'unset';  document.getElementById('messagebeforeacceptingmic').style.display = 'unset';
   }}
 
 
@@ -193,7 +193,7 @@ THIS NEXT PART IS JUST TO MAKE THE ENDCONSULTATION BUTTON STILL SUBMIT THE ANSWE
     summaryfinal.text(noteSummary.toLowerCase());
     summaryreview = noteSummary.toLowerCase();
 
-
+/*
     var summaryage =  $('#summaryage'); var summaryage1 = $('#summaryage1');
         if (summaryreview.includes("3")||summaryreview.includes("thirty")){
         summaryage.css('background-color', 'rgb(249, 221, 221)').css('color', 'rgb(249, 221, 221)'); 
@@ -203,7 +203,7 @@ THIS NEXT PART IS JUST TO MAKE THE ENDCONSULTATION BUTTON STILL SUBMIT THE ANSWE
         if (summaryreview.includes("male")||summaryreview.includes("man")||summaryreview.includes("bloke")){
         summarygender.text(""); summarygender1.text("● sGender");
         summarygender1.css('color', 'rgb(0, 0, 0)');
-  }
+  }*/
   }, 2000);
    
   
@@ -370,6 +370,12 @@ function movetoQuestions_treatments(){
 
 
 
+window.addEventListener("load", function() {
+  setTimeout(function() {
+    window.scrollTo(0, 0);
+  }, 100); // 100 ms delay
+});
+
 
 
 const slider = document.getElementById("slider");
@@ -447,11 +453,16 @@ pauseBtn.addEventListener("click", function() {
 
 function homeButton() {
   document.getElementById('taking-history-section').style.display = 'unset';
-  document.getElementById('taking-history-section-part2').style.display = 'unset';
-  recognition.stop();    document.getElementById('replayButton').style.display = 'none';   document.getElementById('stop-consultation-btn').style.display = 'none'; document.getElementById('executeButton').style.display = 'none';
+  document.getElementById('taking-history-section-part2').style.display = 'unset'; actionTriggered = true;
+  recognition.stop();      document.getElementById('replayButton').style.display = 'none';   
+  document.getElementById('stop-consultation-btn').style.display = 'none'; 
+  document.getElementById('executeButton').style.display = 'none';
+  document.getElementById('messagebeforeacceptingmic').style.display = 'none';
+  document.getElementById('start-consultation-btn').style.display = 'unset';
+  document.getElementById('tutorial').style.display = 'unset';
   
   document.getElementById('fullscreenvideobackground').style.display = 'unset';
-  document.body.style.backgroundColor = 'rgb(233, 246, 253)';//BACKGROUND OF REVIEW SECTION!!!!!!
+  document.body.style.backgroundColor = 'rgb(255, 255, 255)';//BACKGROUND OF REVIEW SECTION!!!!!!
   document.getElementById('logoduringconsultation').style.display = 'none';
   document.getElementById('myVideo').style.display = 'none';
 
@@ -461,11 +472,20 @@ function homeButton() {
   document.getElementById('countdown-updated').style.display = 'unset';
   document.getElementById('slider-value').style.display = 'unset';
   document.getElementById('slider').style.display = 'unset';
+  document.getElementById('initialpromptforpresssubmit').style.display = 'none';
+
 
   document.getElementById('fakeVideo').style.display = 'unset';
   document.getElementById('introstatement').style.display = 'unset';
   document.getElementById('page-description').style.display = 'unset';document.getElementById('casename').style.display = 'unset';
   document.getElementById('start-consultation-btn').style.display = 'unset';
+  document.getElementById('backgroundofstartbtn').style.display = 'unset';
+  document.getElementById('difficultycolor').style.visibility = 'hidden';
+  document.getElementById('formatstartbtn').style.display = 'unset';
+  document.getElementById('backgroundofstartbtn').style.backgroundImage = 'none';
+
+
+
 
   
 }
@@ -1083,7 +1103,7 @@ var timerforsubmitting = null;
       previousquestion = noteContent;   response_question = "Yes it does, especially when you touch the middle of my chest";
       document.getElementById("mp4_src").src = "videos/yesitdoesespeciallywhenyoutouchmiddlechest.mp4"; allifsaction();}//tenderness
     
-    else if (noteContent.includes("heart attack")&& noteContent.includes("past")) {
+    else if (noteContent.includes("heart")&& noteContent.includes("past")||noteContent.includes("prev")) {
       //readOutLoud("No I haven't had a heart attack in the past");
       previousquestion = noteContent;   response_question = "No I haven't had a heart attack in the past";
       heartattacksx = true;
@@ -1751,7 +1771,7 @@ const handleUserInput = async (noteContent) => {
     document.getElementById('loadingcircle').style.display = 'none';
 
 
-  }, 4000);
+  }, 4500);
 
 
 
@@ -1965,8 +1985,8 @@ redstyles(ratepainreal1); greenstyles(ratepainreal2);
 
 var makeitworsereal1 = $('#makeitworsereal1'); var makeitworsereal2 = $('#makeitworsereal2');
 if (makeitworsex === true){
-redstyles(makeitworsereal1); greenstyles(makeitworsereal2);
-}
+redstyles_aboveline(makeitworsereal1); greenstyles_aboveline(makeitworsereal2);
+}//aboveline
 
 var happenbeforereal1 = $('#happenbeforereal1'); var happenbeforereal2 = $('#happenbeforereal2');
 if (happenbeforex === true){
@@ -2014,8 +2034,8 @@ redstyles(medsreal1); greenstyles(medsreal2);
 
 var allergiesreal1 = $('#allergiesreal1'); var allergiesreal2 = $('#allergiesreal2');
 if (allergiesx === true){
-redstyles(allergiesreal1); greenstyles(allergiesreal2);
-}
+redstyles_aboveline(allergiesreal1); greenstyles_aboveline(allergiesreal2);
+}//aboveline
 
 var jobreal1 = $('#jobreal1'); var jobreal2 = $('#jobreal2');
 if (jobx === true){
@@ -2039,8 +2059,8 @@ redstyles(smokingreal1); greenstyles(smokingreal2);
 
 var alcoholreal1 = $('#alcoholreal1'); var alcoholreal2 = $('#alcoholreal2');
 if (alcoholx === true){
-redstyles(alcoholreal1); greenstyles(alcoholreal2);
-}
+redstyles_aboveline(alcoholreal1); greenstyles_aboveline(alcoholreal2);
+}//aboveline
 
 
 /*Final year questions:*/
@@ -2145,11 +2165,17 @@ redstyles(cardioexamreal1); greenstyles(cardioexamreal2);
 
 
 function redstyles(element){
-  element.css({'visibility': 'hidden'});}
+  element.css({'visibility': 'hidden','border-bottom':'none','border-top':'none'});}
 
 function greenstyles(element){
   element.css({'visibility': 'visible','border-bottom':'1px solid rgb(190, 188, 188)','border-top':'1px solid rgb(190, 188, 188)'});}
 
+
+function redstyles_aboveline(element){
+  element.css({'visibility': 'hidden','border-bottom':'4px solid rgb(190, 188, 188)','border-top':'none'});}
+  
+function greenstyles_aboveline(element){
+  element.css({'visibility': 'visible','border-bottom':'4px solid rgb(190, 188, 188)','border-top':'1px solid rgb(190, 188, 188)'});}
 //var painlocationreal1 = document.querySelectorAll('#customers #painlocationreal td:nth-child(2)');
 //var painlocationreal2 = document.querySelectorAll('#customers #painlocationreal td:nth-child(3)');
 //painlocationreal1.css('display: none');
@@ -2880,10 +2906,18 @@ showSlides(slideIndex);
 
 function plusSlides(n) {
   showSlides(slideIndex += n);
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth' // Optional: makes the scroll smooth
+          });
 }
 
 function currentSlide(n) {
   showSlides(slideIndex = n);
+            window.scrollTo({
+              top: 0,
+              behavior: 'smooth' // Optional: makes the scroll smooth
+            });
 }
 
 function showSlides(n) {
@@ -3362,7 +3396,7 @@ if(noteexaminations.includes("cardi")||examinationsfinal.includes("heart")||exam
 
 var cardioexamreal1 = $('#cardioexamreal1'); var cardioexamreal2 = $('#cardioexamreal2');
 if (cardioexamx === true){
-redstyles(cardioexamreal1); greenstyles(cardioexamreal2);
+redstyles_aboveline(cardioexamreal1); greenstyles_aboveline(cardioexamreal2);
 }
 
 
@@ -3373,7 +3407,12 @@ function redstyles(element){
 function greenstyles(element){
   element.css({'visibility': 'visible','border-bottom':'1px solid rgb(190, 188, 188)','border-top':'1px solid rgb(190, 188, 188)'});}
 
-
+  function redstyles_aboveline(element){
+    element.css({'visibility': 'hidden','border-bottom':'4px solid rgb(190, 188, 188)','border-top':'none'});}
+    
+  function greenstyles_aboveline(element){
+    element.css({'visibility': 'visible','border-bottom':'4px solid rgb(190, 188, 188)','border-top':'1px solid rgb(190, 188, 188)'});}
+  
 
 
 
@@ -3507,26 +3546,95 @@ $('#save-note-btn-for-summary,#move-onto-questions-btn_summary').on('click', fun
 
   
 
+  
 
 
 
 
 
-  var summaryage =  $('#summaryage'); var summaryage1 = $('#summaryage1');
-  if (summaryreview.includes("3")||summaryreview.includes("thirty")){
-    summaryage.css('background-color', 'rgb(249, 221, 221)').css('color', 'rgb(249, 221, 221)'); 
-    summaryage1.css('color', 'rgb(0, 0, 0)'); 
-  }  
-
-
-  var summarygender =  $('#summarygender'); var summarygender1 = $('#summarygender1');
-  if (summaryreview.includes("male")||summaryreview.includes("man")||summaryreview.includes("bloke")){
-    summarygender.text(""); summarygender1.text("● Gender");
-    //summarygender.css('background-color', 'rgb(249, 221, 221)').css('color', 'rgb(249, 221, 221)'); 
-    summarygender1.css('color', 'rgb(0, 0, 0)');
+  age_summaryx = false;
+  if(summaryreview.includes("old")||summaryreview.includes("year")||summaryreview.includes("thirty")||summaryreview.includes("3")||summaryreview.includes("thirty")){ 
+    age_summaryx = true;
   }
 
+  gender_summaryx = false;
+  if(summaryreview.includes("male")||summaryreview.includes("man")||summaryreview.includes("boy")){ 
+    gender_summaryx = true;
+  }
+
+  description_summaryx = false;
+  if(summaryreview.includes("elephant")||summaryreview.includes("heavy")||summaryreview.includes("press")||summaryreview.includes("intense")){ 
+    description_summaryx = true;
+  }
+
+  duration_summaryx = false;
+  if(summaryreview.includes("day")||summaryreview.includes("morning")||summaryreview.includes("recent")||summaryreview.includes("week")||summaryreview.includes("month")||summaryreview.includes("hour")||summaryreview.includes("min")||summaryreview.includes("second")){ 
+    duration_summaryx = true;
+  }
+
+  accompanyingSx_summaryx = false;
+  if(summaryreview.includes("associate")||summaryreview.includes("cough")||summaryreview.includes("palpitation")||summaryreview.includes("vomi")||summaryreview.includes("sick")||summaryreview.includes("naus")||summaryreview.includes("short")||summaryreview.includes("sympto")||summaryreview.includes("heart")||summaryreview.includes("weight")){ 
+    accompanyingSx_summaryx = true;
+  }
+
+  betterworse_summaryx = false;
+  if(summaryreview.includes("better")||summaryreview.includes("worse")||summaryreview.includes("improve")||summaryreview.includes("paracetamol")||summaryreview.includes("pain relief")||summaryreview.includes("analgesia")){ 
+    betterworse_summaryx = true;
+  }
+
+//////////////////////////////////////////////////////
+
+
+  var age_summaryreal1 = $('#age_summaryreal1'); var age_summaryreal2 = $('#age_summaryreal2');
+if (age_summaryx === true){
+redstyles(age_summaryreal1); greenstyles(age_summaryreal2);
+}
+
+var gender_summaryreal1 = $('#gender_summaryreal1'); var gender_summaryreal2 = $('#gender_summaryreal2');
+if (gender_summaryx === true){
+redstyles(gender_summaryreal1); greenstyles(gender_summaryreal2);
+}
+
+var description_summaryreal1 = $('#description_summaryreal1'); var description_summaryreal2 = $('#description_summaryreal2');
+if (description_summaryx === true){
+redstyles(description_summaryreal1); greenstyles(description_summaryreal2);
+}
+
+var duration_summaryreal1 = $('#duration_summaryreal1'); var duration_summaryreal2 = $('#duration_summaryreal2');
+if (duration_summaryx === true){
+redstyles(duration_summaryreal1); greenstyles(duration_summaryreal2);
+}
+
+var accompanyingSx_summaryreal1 = $('#accompanyingSx_summaryreal1'); var accompanyingSx_summaryreal2 = $('#accompanyingSx_summaryreal2');
+if (accompanyingSx_summaryx === true){
+redstyles(accompanyingSx_summaryreal1); greenstyles(accompanyingSx_summaryreal2);
+}
+
+var betterworse_summaryreal1 = $('#betterworse_summaryreal1'); var betterworse_summaryreal2 = $('#betterworse_summaryreal2');
+if (betterworse_summaryx === true){
+redstyles_aboveline(betterworse_summaryreal1); greenstyles_aboveline(betterworse_summaryreal2);
+}//aboveline
+
+
+
+
+function redstyles(element){
+  element.css({'visibility': 'hidden','border-bottom':'none','border-top':'none'});}
+
+function greenstyles(element){
+  element.css({'visibility': 'visible','border-bottom':'1px solid rgb(190, 188, 188)','border-top':'1px solid rgb(190, 188, 188)'});}
+
+  function redstyles_aboveline(element){
+    element.css({'visibility': 'hidden','border-bottom':'4px solid rgb(190, 188, 188)','border-top':'none'});}
+    
+  function greenstyles_aboveline(element){
+    element.css({'visibility': 'visible','border-bottom':'4px solid rgb(190, 188, 188)','border-top':'1px solid rgb(190, 188, 188)'});}
   
+
+
+
+
+
 }, 2000);
 
 
@@ -3664,6 +3772,96 @@ recognition_differentials.stop();
 
   var differentialsfinal = $('#differentialsfinal');
   differentialsfinal.text(noteDifferentials);
+  differentialsfinal = noteDifferentials.toLowerCase();
+
+
+
+
+
+
+
+  angina_differentialsx = false;
+  if(differentialsfinal.includes("angina")){ 
+    angina_differentialsx = true;
+
+  }
+
+  panic_differentialsx = false;
+  if(differentialsfinal.includes("panic")||differentialsfinal.includes("anxiety")||differentialsfinal.includes("anx")||differentialsfinal.includes("acute stress")){ 
+    panic_differentialsx = true;
+  }
+
+  acs_differentialsx = false;
+  if(differentialsfinal.includes("heart attack")||differentialsfinal.includes("mi")||differentialsfinal.includes("myocardial")||differentialsfinal.includes("infarction")||differentialsfinal.includes("coronary")||differentialsfinal.includes("syndrome")){ 
+    acs_differentialsx = true;
+  }
+  
+  HF_differentialsx = false;
+  if(differentialsfinal.includes("failure")||differentialsfinal.includes("insufficiency")||differentialsfinal.includes("dysfunction")||differentialsfinal.includes("decompensation")){ 
+    HF_differentialsx = true;
+  }
+
+  costochondritis_differentialsx = false;
+  if(differentialsfinal.includes("costochondritis")||differentialsfinal.includes("cost")||differentialsfinal.includes("sternum")||differentialsfinal.includes("chon")||differentialsfinal.includes("con")||differentialsfinal.includes("itis")){ 
+    costochondritis_differentialsx = true;
+  }
+  
+  PE_differentialsx = false;
+  if(differentialsfinal.includes(" pe")||differentialsfinal.includes("pulmonary")||differentialsfinal.includes("embolism")||differentialsfinal.includes("pe ")||differentialsfinal.includes("vte")||differentialsfinal.includes("venous throm")){ 
+    PE_differentialsx = true;
+  }
+
+  
+//////////////////////////////////////////////////////
+
+var acs_differentialsreal1 = $('#acs_differentialsreal1'); var acs_differentialsreal2 = $('#acs_differentialsreal2');
+if (acs_differentialsx === true){
+redstyles(acs_differentialsreal1); greenstyles(acs_differentialsreal2);
+}
+
+var angina_differentialsreal1 = $('#angina_differentialsreal1'); var angina_differentialsreal2 = $('#angina_differentialsreal2');
+if (angina_differentialsx === true){
+redstyles(angina_differentialsreal1); greenstyles(angina_differentialsreal2);
+}
+
+var panic_differentialsreal1 = $('#panic_differentialsreal1'); var panic_differentialsreal2 = $('#panic_differentialsreal2');
+if (panic_differentialsx === true){
+redstyles_aboveline(panic_differentialsreal1); greenstyles_aboveline(panic_differentialsreal2);
+}//aboveline
+
+var HF_differentialsreal1 = $('#HF_differentialsreal1'); var HF_differentialsreal2 = $('#HF_differentialsreal2');
+if (HF_differentialsx === true){
+redstyles(HF_differentialsreal1); greenstyles(HF_differentialsreal2);
+}
+
+var costochondritis_differentialsreal1 = $('#costochondritis_differentialsreal1'); var costochondritis_differentialsreal2 = $('#costochondritis_differentialsreal2');
+if (costochondritis_differentialsx === true){
+redstyles(costochondritis_differentialsreal1); greenstyles(costochondritis_differentialsreal2);
+}
+
+var PE_differentialsreal1 = $('#PE_differentialsreal1'); var PE_differentialsreal2 = $('#PE_differentialsreal2');
+if (PE_differentialsx === true){
+redstyles_aboveline(PE_differentialsreal1); greenstyles_aboveline(PE_differentialsreal2);
+}//aboveline
+
+
+
+
+
+function redstyles(element){
+  element.css({'visibility': 'hidden'});}
+
+function greenstyles(element){
+  element.css({'visibility': 'visible','border-bottom':'1px solid rgb(190, 188, 188)','border-top':'1px solid rgb(190, 188, 188)'});}
+
+function redstyles_aboveline(element){
+  element.css({'visibility': 'hidden','border-bottom':'4px solid rgb(190, 188, 188)','border-top':'none'});}
+  
+function greenstyles_aboveline(element){
+  element.css({'visibility': 'visible','border-bottom':'4px solid rgb(190, 188, 188)','border-top':'1px solid rgb(190, 188, 188)'});}
+
+
+
 
 }, 2000);
 
@@ -3795,6 +3993,121 @@ recognition_investigations.stop();
   
   var investigationsfinal = $('#investigationsfinal');
   investigationsfinal.text(noteinvestigations);
+  investigationsfinal = noteinvestigations.toLowerCase();
+
+
+
+
+
+
+
+  if(investigationsfinal.includes("electro")||investigationsfinal.includes("ecg")||investigationsfinal.includes("gram")||investigationsfinal.includes("cardio")){ 
+    ecg_investigationsx = true;
+  }
+
+  if(investigationsfinal.includes("ray")||investigationsfinal.includes("plain")){ 
+    xray_investigationsx = true;
+  }
+
+  if(investigationsfinal.includes("temp")||investigationsfinal.includes("bed")||investigationsfinal.includes("side")||investigationsfinal.includes("obs")||investigationsfinal.includes("respiratory")||investigationsfinal.includes("rate")||investigationsfinal.includes("glucose")||investigationsfinal.includes("blood pressure")){ 
+    bedsideobs_investigationsx = true;
+  }
+
+  if(investigationsfinal.includes("trop")||investigationsfinal.includes("chop")||investigationsfinal.includes("proponent")||investigationsfinal.includes("proper")||investigationsfinal.includes("opening")){ 
+    troponins_investigationsx = true;
+  }
+
+  if(investigationsfinal.includes("gas")||investigationsfinal.includes("venous")||investigationsfinal.includes("arter")){ 
+    vbg_investigationsx = true;
+  }
+  
+  if(investigationsfinal.includes("bnp")||investigationsfinal.includes("pro")||investigationsfinal.includes("type")||investigationsfinal.includes("peptide")||investigationsfinal.includes("nature")||investigationsfinal.includes("natriuretic")){ 
+    bnp_investigationsx = true;
+  }
+
+  if(investigationsfinal.includes("blood")||investigationsfinal.includes("fbc")||investigationsfinal.includes("full")||investigationsfinal.includes("urea")||investigationsfinal.includes("liver")||investigationsfinal.includes("crp")||investigationsfinal.includes("lft")){ 
+    normalbloods_investigationsx = true;
+  }
+
+  if(investigationsfinal.includes("echo")||investigationsfinal.includes("cardiogram")){ 
+    echo_investigationsx = true;
+  }
+
+  if(investigationsfinal.includes("stress")){ 
+    stresstest_investigationsx = true;
+  }
+
+  if(investigationsfinal.includes("dime")||investigationsfinal.includes("well")||investigationsfinal.includes("score")||investigationsfinal.includes("pulmonary")||investigationsfinal.includes("angiogram")||investigationsfinal.includes("ctpa")){ 
+    ddimer_investigationsx = true;
+  }
+//////////////////////////////////////////////////////
+
+var ecg_investigationsreal1 = $('#ecg_investigationsreal1'); var ecg_investigationsreal2 = $('#ecg_investigationsreal2');
+if (ecg_investigationsx === true){
+redstyles(ecg_investigationsreal1); greenstyles(ecg_investigationsreal2);
+}
+
+var xray_investigationsreal1 = $('#xray_investigationsreal1'); var xray_investigationsreal2 = $('#xray_investigationsreal2');
+if (xray_investigationsx === true){
+redstyles(xray_investigationsreal1); greenstyles(xray_investigationsreal2);
+}
+
+var bedsideobs_investigationsreal1 = $('#bedsideobs_investigationsreal1'); var bedsideobs_investigationsreal2 = $('#bedsideobs_investigationsreal2');
+if (bedsideobs_investigationsx === true){
+redstyles(bedsideobs_investigationsreal1); greenstyles(bedsideobs_investigationsreal2);
+}
+
+var troponins_investigationsreal1 = $('#troponins_investigationsreal1'); var troponins_investigationsreal2 = $('#troponins_investigationsreal2');
+if (troponins_investigationsx === true){
+redstyles(troponins_investigationsreal1); greenstyles(troponins_investigationsreal2);
+}
+
+var vbg_investigationsreal1 = $('#vbg_investigationsreal1'); var vbg_investigationsreal2 = $('#vbg_investigationsreal2');
+if (vbg_investigationsx === true){
+redstyles(vbg_investigationsreal1); greenstyles(vbg_investigationsreal2);
+}
+
+var bnp_investigationsreal1 = $('#bnp_investigationsreal1'); var bnp_investigationsreal2 = $('#bnp_investigationsreal2');
+if (bnp_investigationsx === true){
+redstyles(bnp_investigationsreal1); greenstyles(bnp_investigationsreal2);
+}
+
+var normalbloods_investigationsreal1 = $('#normalbloods_investigationsreal1'); var normalbloods_investigationsreal2 = $('#normalbloods_investigationsreal2');
+if (normalbloods_investigationsx === true){
+redstyles(normalbloods_investigationsreal1); greenstyles(normalbloods_investigationsreal2);
+}
+
+var echo_investigationsreal1 = $('#echo_investigationsreal1'); var echo_investigationsreal2 = $('#echo_investigationsreal2');
+if (echo_investigationsx === true){
+redstyles(echo_investigationsreal1); greenstyles(echo_investigationsreal2);
+}
+
+var stresstest_investigationsreal1 = $('#stresstest_investigationsreal1'); var stresstest_investigationsreal2 = $('#stresstest_investigationsreal2');
+if (stresstest_investigationsx === true){
+redstyles(stresstest_investigationsreal1); greenstyles(stresstest_investigationsreal2);
+}
+
+var ddimer_investigationsreal1 = $('#ddimer_investigationsreal1'); var ddimer_investigationsreal2 = $('#ddimer_investigationsreal2');
+if (ddimer_investigationsx === true){
+redstyles_aboveline(ddimer_investigationsreal1); greenstyles_aboveline(ddimer_investigationsreal2);
+}
+
+
+
+function redstyles(element){
+  element.css({'visibility': 'hidden'});}
+
+function greenstyles(element){
+  element.css({'visibility': 'visible','border-bottom':'1px solid rgb(190, 188, 188)','border-top':'1px solid rgb(190, 188, 188)'});}
+
+function redstyles_aboveline(element){
+  element.css({'visibility': 'hidden','border-bottom':'4px solid rgb(190, 188, 188)','border-top':'none'});}
+    
+function greenstyles_aboveline(element){
+  element.css({'visibility': 'visible','border-bottom':'4px solid rgb(190, 188, 188)','border-top':'1px solid rgb(190, 188, 188)'});}
+  
+
+
 
 }, 2000);
 
@@ -3926,6 +4239,138 @@ recognition_riskfactors.stop();
 
   var riskfactorsfinal = $('#riskfactorsfinal');
   riskfactorsfinal.text(noteriskfactors);
+  riskfactorsfinal = noteriskfactors.toLowerCase();
+
+
+
+
+
+
+
+  if(riskfactorsfinal.includes("age")||riskfactorsfinal.includes("old")||riskfactorsfinal.includes("year")){ 
+    age_riskfactorsx = true;
+  }
+
+  if(riskfactorsfinal.includes("famil")){ 
+    FH_riskfactorsx = true;
+  }
+
+  if(riskfactorsfinal.includes("ethnic")||riskfactorsfinal.includes("background")||riskfactorsfinal.includes("ancestry")||riskfactorsfinal.includes("rac")||riskfactorsfinal.includes("origin")||riskfactorsfinal.includes("asian")||riskfactorsfinal.includes("india")||riskfactorsfinal.includes("bangla")||riskfactorsfinal.includes("pak")||
+  (riskfactorsfinal.includes("from")&&riskfactorsfinal.includes("where"))){ 
+    ethnicity_riskfactorsx = true;
+  }
+
+  if(riskfactorsfinal.includes("pressure")||riskfactorsfinal.includes("hyper")||riskfactorsfinal.includes("tension")||riskfactorsfinal.includes("high blood")){ 
+    hypertension_riskfactorsx = true;
+  }
+
+  if(riskfactorsfinal.includes("cholesterol")||riskfactorsfinal.includes("chol")||riskfactorsfinal.includes("col")||riskfactorsfinal.includes("lipid")||riskfactorsfinal.includes("lipo")||riskfactorsfinal.includes("athero")){ 
+    highcholesterol_riskfactorsx = true;
+  }
+
+  if(riskfactorsfinal.includes("diabet")||riskfactorsfinal.includes("high sugar")||riskfactorsfinal.includes("glucose")||riskfactorsfinal.includes("insulin")||riskfactorsfinal.includes("type two")||riskfactorsfinal.includes("type 2")){ 
+    diabetes_riskfactorsx = true;
+  }
+
+if(riskfactorsfinal.includes("fat")||riskfactorsfinal.includes("obesity")||riskfactorsfinal.includes("bmi")||riskfactorsfinal.includes("body mass")||riskfactorsfinal.includes("index")||riskfactorsfinal.includes("weight")||riskfactorsfinal.includes("obes")){ 
+    obesity_riskfactorsx = true;
+  }
+
+  if(riskfactorsfinal.includes("diet")||riskfactorsfinal.includes("food")||riskfactorsfinal.includes("eat")||riskfactorsfinal.includes("nutritio")||riskfactorsfinal.includes("calo")){ 
+    unhealthydiet_riskfactorsx = true;
+  }
+
+  if(riskfactorsfinal.includes("alcohol")||riskfactorsfinal.includes("drink")||riskfactorsfinal.includes("unit")||riskfactorsfinal.includes("ethanol")){ 
+    excessivealcohol_riskfactorsx = true;
+  }
+
+  if(riskfactorsfinal.includes("smoking")||riskfactorsfinal.includes("cig")||riskfactorsfinal.includes("canna")||riskfactorsfinal.includes("weed")||riskfactorsfinal.includes("smoke")){ 
+    smoking_riskfactorsx = true;
+  }
+
+  if(riskfactorsfinal.includes("stress")||riskfactorsfinal.includes("overwhelm")||riskfactorsfinal.includes("psychol")||riskfactorsfinal.includes("tension")||riskfactorsfinal.includes("anxi")||riskfactorsfinal.includes("worr")){ 
+    stress_riskfactorsx = true;
+  }
+
+//////////////////////////////////////////////////////
+
+var age_riskfactorsreal1 = $('#age_riskfactorsreal1'); var age_riskfactorsreal2 = $('#age_riskfactorsreal2');
+if (age_riskfactorsx === true){
+redstyles(age_riskfactorsreal1); greenstyles(age_riskfactorsreal2);
+}
+
+var FH_riskfactorsreal1 = $('#FH_riskfactorsreal1'); var FH_riskfactorsreal2 = $('#FH_riskfactorsreal2');
+if (FH_riskfactorsx === true){
+redstyles(FH_riskfactorsreal1); greenstyles(FH_riskfactorsreal2);
+}
+
+var ethnicity_riskfactorsreal1 = $('#ethnicity_riskfactorsreal1'); var ethnicity_riskfactorsreal2 = $('#ethnicity_riskfactorsreal2');
+if (ethnicity_riskfactorsx === true){
+redstyles(ethnicity_riskfactorsreal1); greenstyles(ethnicity_riskfactorsreal2);
+}
+
+var hypertension_riskfactorsreal1 = $('#hypertension_riskfactorsreal1'); var hypertension_riskfactorsreal2 = $('#hypertension_riskfactorsreal2');
+if (hypertension_riskfactorsx === true){
+redstyles(hypertension_riskfactorsreal1); greenstyles(hypertension_riskfactorsreal2);
+}
+
+var highcholesterol_riskfactorsreal1 = $('#highcholesterol_riskfactorsreal1'); var highcholesterol_riskfactorsreal2 = $('#highcholesterol_riskfactorsreal2');
+if (highcholesterol_riskfactorsx === true){
+redstyles(highcholesterol_riskfactorsreal1); greenstyles(highcholesterol_riskfactorsreal2);
+}
+
+var diabetes_riskfactorsreal1 = $('#diabetes_riskfactorsreal1'); var diabetes_riskfactorsreal2 = $('#diabetes_riskfactorsreal2');
+if (diabetes_riskfactorsx === true){
+redstyles(diabetes_riskfactorsreal1); greenstyles(diabetes_riskfactorsreal2);
+}
+
+var obesity_riskfactorsreal1 = $('#obesity_riskfactorsreal1'); var obesity_riskfactorsreal2 = $('#obesity_riskfactorsreal2');
+if (obesity_riskfactorsx === true){
+redstyles(obesity_riskfactorsreal1); greenstyles(obesity_riskfactorsreal2);
+}
+
+var unhealthydiet_riskfactorsreal1 = $('#unhealthydiet_riskfactorsreal1'); var unhealthydiet_riskfactorsreal2 = $('#unhealthydiet_riskfactorsreal2');
+if (unhealthydiet_riskfactorsx === true){
+redstyles(unhealthydiet_riskfactorsreal1); greenstyles(unhealthydiet_riskfactorsreal2);
+}
+
+var excessivealcohol_riskfactorsreal1 = $('#excessivealcohol_riskfactorsreal1'); var excessivealcohol_riskfactorsreal2 = $('#excessivealcohol_riskfactorsreal2');
+if (excessivealcohol_riskfactorsx === true){
+redstyles(excessivealcohol_riskfactorsreal1); greenstyles(excessivealcohol_riskfactorsreal2);
+}
+
+var smoking_riskfactorsreal1 = $('#smoking_riskfactorsreal1'); var smoking_riskfactorsreal2 = $('#smoking_riskfactorsreal2');
+if (smoking_riskfactorsx === true){
+redstyles(smoking_riskfactorsreal1); greenstyles(smoking_riskfactorsreal2);
+}
+
+var stress_riskfactorsreal1 = $('#stress_riskfactorsreal1'); var stress_riskfactorsreal2 = $('#stress_riskfactorsreal2');
+if (stress_riskfactorsx === true){
+redstyles_aboveline(stress_riskfactorsreal1); greenstyles_aboveline(stress_riskfactorsreal2);
+}
+
+
+function redstyles(element){
+  element.css({'visibility': 'hidden'});}
+
+function greenstyles(element){
+  element.css({'visibility': 'visible','border-bottom':'1px solid rgb(190, 188, 188)','border-top':'1px solid rgb(190, 188, 188)'});}
+
+function redstyles_aboveline(element){
+  element.css({'visibility': 'hidden','border-bottom':'4px solid rgb(190, 188, 188)','border-top':'none'});}
+    
+function greenstyles_aboveline(element){
+  element.css({'visibility': 'visible','border-bottom':'4px solid rgb(190, 188, 188)','border-top':'1px solid rgb(190, 188, 188)'});}
+  
+
+
+
+
+
+
+
+
+
 
 }, 2000);
 
@@ -4060,6 +4505,193 @@ recognition_treatments.stop();
 
   var treatmentsfinal = $('#treatmentsfinal');
   treatmentsfinal.text(notetreatments);
+
+
+
+
+  treatmentsfinal = notetreatments.toLowerCase();
+
+
+
+
+
+
+
+  if(treatmentsfinal.includes("analgesia")||treatmentsfinal.includes("paracet")||treatmentsfinal.includes("pain relief")||treatmentsfinal.includes("morph")||treatmentsfinal.includes("ibuprof")||treatmentsfinal.includes("cod")||treatmentsfinal.includes("edge")){ 
+    analgesia_treatmentsx = true;
+  }
+
+  if(treatmentsfinal.includes("nitrate")||treatmentsfinal.includes("gtn")||treatmentsfinal.includes("spray")||treatmentsfinal.includes("nitro")||treatmentsfinal.includes("glyc")||treatmentsfinal.includes("aerosol")||treatmentsfinal.includes("lingual")||treatmentsfinal.includes("angina")){ 
+    nitrates_treatmentsx = true;
+  }
+
+  if(treatmentsfinal.includes("oxygen")||treatmentsfinal.includes("o2")||treatmentsfinal.includes("o two")||treatmentsfinal.includes("mask")||treatmentsfinal.includes("nasal cannula")){ 
+    oxygen_treatmentsx = true;
+  }
+
+  if(treatmentsfinal.includes("aspirin")){ 
+    aspirin_treatmentsx = true;
+  }
+
+  if(treatmentsfinal.includes("platelet")||treatmentsfinal.includes("dual")||treatmentsfinal.includes("cox")||treatmentsfinal.includes("ticag")||treatmentsfinal.includes("clopid")||treatmentsfinal.includes("pras")){ 
+    dapt_treatmentsx = true;
+  }
+
+  if(treatmentsfinal.includes("grace")||treatmentsfinal.includes("score")){ 
+    grace_treatmentsx = true;
+  }
+
+  if(treatmentsfinal.includes("pc")||treatmentsfinal.includes("perc")||treatmentsfinal.includes("myocardial")||treatmentsfinal.includes("infarction")||treatmentsfinal.includes("coronary")||treatmentsfinal.includes("syndrome")){ 
+    pci_treatmentsx = true;
+  }
+
+  if(treatmentsfinal.includes("fibr")||treatmentsfinal.includes("lysis")||treatmentsfinal.includes("thromb")||treatmentsfinal.includes("breakdown")){ 
+    fibrinolysis_treatmentsx = true;
+  }
+
+  if(treatmentsfinal.includes("cardiolog")||treatmentsfinal.includes("speciali")||treatmentsfinal.includes("specialt")||treatmentsfinal.includes("multi dis")||treatmentsfinal.includes("disciplin")||treatmentsfinal.includes("mdt")){ 
+    cardiologyreferral_treatmentsx = true;
+  }
+
+  if(treatmentsfinal.includes("kin")||treatmentsfinal.includes("update")||treatmentsfinal.includes("famil")){ 
+    nok_treatmentsx = true;
+  }
+
+  if(treatmentsfinal.includes("complica")||treatmentsfinal.includes("failure")||treatmentsfinal.includes("arrhythmias")||treatmentsfinal.includes("surg")||treatmentsfinal.includes("treat")||treatmentsfinal.includes("ace")||treatmentsfinal.includes("arb")||treatmentsfinal.includes("papill")||treatmentsfinal.includes("septal")||treatmentsfinal.includes("blocker")||treatmentsfinal.includes("diuretic")||treatmentsfinal.includes("furosemide")||treatmentsfinal.includes("pril")||treatmentsfinal.includes("artan")){ 
+    complications_treatmentsx = true;
+  }
+
+  if(treatmentsfinal.includes("nurse")||treatmentsfinal.includes("failure special")||treatmentsfinal.includes("failure support")){ 
+    HFnurse_treatmentsx = true;
+  }
+
+  if(treatmentsfinal.includes("life")||treatmentsfinal.includes("routine")||treatmentsfinal.includes("habit")||treatmentsfinal.includes("health pract")||treatmentsfinal.includes("behav")||treatmentsfinal.includes("cultur")||treatmentsfinal.includes("exercise")||treatmentsfinal.includes("diet")||treatmentsfinal.includes("alcohol")||treatmentsfinal.includes("smok")||treatmentsfinal.includes("weight")){ 
+    lifestyle_treatmentsx = true;
+  }
+
+  if(treatmentsfinal.includes("platelet")||treatmentsfinal.includes("dual")||treatmentsfinal.includes("cox")||treatmentsfinal.includes("ticag")||treatmentsfinal.includes("clopid")||treatmentsfinal.includes("pras")||treatmentsfinal.includes("aspirin")){ 
+    daptlongterm_treatmentsx = true;
+  }
+
+  if(treatmentsfinal.includes("statin")||treatmentsfinal.includes("starting")){ 
+    statin_treatmentsx = true;
+  }
+
+  if(treatmentsfinal.includes("optimi")||treatmentsfinal.includes("monitor")||treatmentsfinal.includes("morbid")||treatmentsfinal.includes("enhanc")){ 
+    monitoring_treatmentsx = true;
+  }
+
+  if(treatmentsfinal.includes("counsel")||treatmentsfinal.includes("psych")||treatmentsfinal.includes("mental")||treatmentsfinal.includes("support")||treatmentsfinal.includes("depress")||treatmentsfinal.includes("anxi")){ 
+    psychsupport_treatmentsx = true;
+  }
+  
+
+//////////////////////////////////////////////////////
+
+var analgesia_treatmentsreal1 = $('#analgesia_treatmentsreal1'); var analgesia_treatmentsreal2 = $('#analgesia_treatmentsreal2');
+if (analgesia_treatmentsx === true){
+redstyles(analgesia_treatmentsreal1); greenstyles(analgesia_treatmentsreal2);
+}
+
+var nitrates_treatmentsreal1 = $('#nitrates_treatmentsreal1'); var nitrates_treatmentsreal2 = $('#nitrates_treatmentsreal2');
+if (nitrates_treatmentsx === true){
+redstyles(nitrates_treatmentsreal1); greenstyles(nitrates_treatmentsreal2);
+}
+
+var oxygen_treatmentsreal1 = $('#oxygen_treatmentsreal1'); var oxygen_treatmentsreal2 = $('#oxygen_treatmentsreal2');
+if (oxygen_treatmentsx === true){
+redstyles(oxygen_treatmentsreal1); greenstyles(oxygen_treatmentsreal2);
+}
+
+var aspirin_treatmentsreal1 = $('#aspirin_treatmentsreal1'); var aspirin_treatmentsreal2 = $('#aspirin_treatmentsreal2');
+if (aspirin_treatmentsx === true){
+redstyles(aspirin_treatmentsreal1); greenstyles(aspirin_treatmentsreal2);
+}
+
+var dapt_treatmentsreal1 = $('#dapt_treatmentsreal1'); var dapt_treatmentsreal2 = $('#dapt_treatmentsreal2');
+if (dapt_treatmentsx === true){
+redstyles(dapt_treatmentsreal1); greenstyles(dapt_treatmentsreal2);
+}
+
+var grace_treatmentsreal1 = $('#grace_treatmentsreal1'); var grace_treatmentsreal2 = $('#grace_treatmentsreal2');
+if (grace_treatmentsx === true){
+redstyles(grace_treatmentsreal1); greenstyles(grace_treatmentsreal2);
+}
+
+var pci_treatmentsreal1 = $('#pci_treatmentsreal1'); var pci_treatmentsreal2 = $('#pci_treatmentsreal2');
+if (pci_treatmentsx === true){
+redstyles(pci_treatmentsreal1); greenstyles(pci_treatmentsreal2);
+}
+
+var fibrinolysis_treatmentsreal1 = $('#fibrinolysis_treatmentsreal1'); var fibrinolysis_treatmentsreal2 = $('#fibrinolysis_treatmentsreal2');
+if (fibrinolysis_treatmentsx === true){
+redstyles(fibrinolysis_treatmentsreal1); greenstyles(fibrinolysis_treatmentsreal2);
+}
+
+var cardiologyreferral_treatmentsreal1 = $('#cardiologyreferral_treatmentsreal1'); var cardiologyreferral_treatmentsreal2 = $('#cardiologyreferral_treatmentsreal2');
+if (cardiologyreferral_treatmentsx === true){
+redstyles(cardiologyreferral_treatmentsreal1); greenstyles(cardiologyreferral_treatmentsreal2);
+}
+
+var nok_treatmentsreal1 = $('#nok_treatmentsreal1'); var nok_treatmentsreal2 = $('#nok_treatmentsreal2');
+if (nok_treatmentsx === true){
+redstyles(nok_treatmentsreal1); greenstyles(nok_treatmentsreal2);
+}
+
+var complications_treatmentsreal1 = $('#complications_treatmentsreal1'); var complications_treatmentsreal2 = $('#complications_treatmentsreal2');
+if (complications_treatmentsx === true){
+redstyles(complications_treatmentsreal1); greenstyles(complications_treatmentsreal2);
+}
+
+var HFnurse_treatmentsreal1 = $('#HFnurse_treatmentsreal1'); var HFnurse_treatmentsreal2 = $('#HFnurse_treatmentsreal2');
+if (HFnurse_treatmentsx === true){
+redstyles(HFnurse_treatmentsreal1); greenstyles(HFnurse_treatmentsreal2);
+}
+
+var lifestyle_treatmentsreal1 = $('#lifestyle_treatmentsreal1'); var lifestyle_treatmentsreal2 = $('#lifestyle_treatmentsreal2');
+if (lifestyle_treatmentsx === true){
+redstyles(lifestyle_treatmentsreal1); greenstyles(lifestyle_treatmentsreal2);
+}
+
+var daptlongterm_treatmentsreal1 = $('#daptlongterm_treatmentsreal1'); var daptlongterm_treatmentsreal2 = $('#daptlongterm_treatmentsreal2');
+if (daptlongterm_treatmentsx === true){
+redstyles(daptlongterm_treatmentsreal1); greenstyles(daptlongterm_treatmentsreal2);
+}
+
+var statin_treatmentsreal1 = $('#statin_treatmentsreal1'); var statin_treatmentsreal2 = $('#statin_treatmentsreal2');
+if (statin_treatmentsx === true){
+redstyles(statin_treatmentsreal1); greenstyles(statin_treatmentsreal2);
+}
+
+var monitoring_treatmentsreal1 = $('#monitoring_treatmentsreal1'); var monitoring_treatmentsreal2 = $('#monitoring_treatmentsreal2');
+if (monitoring_treatmentsx === true){
+redstyles(monitoring_treatmentsreal1); greenstyles(monitoring_treatmentsreal2);
+}
+
+var psychsupport_treatmentsreal1 = $('#psychsupport_treatmentsreal1'); var psychsupport_treatmentsreal2 = $('#psychsupport_treatmentsreal2');
+if (psychsupport_treatmentsx === true){
+redstyles_aboveline(psychsupport_treatmentsreal1); greenstyles_aboveline(psychsupport_treatmentsreal2);
+}
+
+
+
+
+function redstyles(element){
+  element.css({'visibility': 'hidden'});}
+
+function greenstyles(element){
+  element.css({'visibility': 'visible','border-bottom':'1px solid rgb(190, 188, 188)','border-top':'1px solid rgb(190, 188, 188)'});}
+
+function redstyles_aboveline(element){
+  element.css({'visibility': 'hidden','border-bottom':'4px solid rgb(190, 188, 188)','border-top':'none'});}
+    
+function greenstyles_aboveline(element){
+  element.css({'visibility': 'visible','border-bottom':'4px solid rgb(190, 188, 188)','border-top':'1px solid rgb(190, 188, 188)'});}
+  
+
+
+
+
 
 }, 2000);
 
