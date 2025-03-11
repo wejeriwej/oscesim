@@ -138,6 +138,7 @@ function initialstopConsultation(){
 
 
 
+
 //this one is to go straight to the 'review section'
 function endConsultation(){
   document.getElementById('review-section').style.display = 'unset';
@@ -1132,7 +1133,7 @@ var timerforsubmitting = null;
       
     //pain
     
-    else if (wherepainexactly_repeat == 0 && (noteContent.includes("where")&&(noteContent.includes("pain")||noteContent.includes("discomfort")||noteContent.includes("hurt"))&&!noteContent.includes("else")&&!noteContent.includes("somewhere")&&!noteContent.includes("anywhere")
+    else if (wherepainexactly_repeat == 0 && (noteContent.includes("where")&&(noteContent.includes("pain")||noteContent.includes("discomfort")||noteContent.includes("hurt"))&&!noteContent.includes("else")&&!noteContent.includes("somewhere")&&!noteContent.includes("anywhere")&&!noteContent.includes("everywhere")
     )) {
       //readOutLoud("The pain is in the middle of my chest"); - DON'T REMOVE THE SPACE BEFORE 'WHERE' AS CAN BE 'ANYWHERE (ELSE)'FOR RADIATION OF PAIN
       previousquestion = noteContent; wherepainexactly_repeat++;  response_question = "The pain's in the middle of my chest";
@@ -1389,7 +1390,7 @@ var timerforsubmitting = null;
       associatedsymptomsx = true;
       document.getElementById("mp4_src").src = "videos/bloating.mp4"; allifsaction();}//bloating
     
-    else if (yellow_repeat == 0 && (noteContent.includes("yellow"))) {
+    else if (yellow_repeat == 0 && (noteContent.includes("yellow")||noteContent.includes("jaundice"))) {
       //readOutLoud("I've not noticed any yellowing of the skin or of my eyes");
       previousquestion = noteContent; yellow_repeat++;  response_question = "I've not noticed any yellowing of the skin or of my eyes'";
       associatedsymptomsx = true;
@@ -1472,7 +1473,7 @@ else if (urine_repeat == 0 && (noteContent.includes("urin")||noteContent.include
   document.getElementById("mp4_src").src = "videos/changesinurine.mp4"; allifsaction();}//urine/voiding
 
 //red flags   
-else if (weight_repeat == 0 && (noteContent.includes("weight"))) {
+else if (weight_repeat == 0 && (noteContent.includes("weigh"))) {
   //readOutLoud("I've not noticed any weight loss to be honest");
   previousquestion = noteContent; weight_repeat++;  response_question = "I've not noticed any weight loss";
   weightx = true;
@@ -1483,7 +1484,7 @@ else if (blood_repeat == 0 && (noteContent.includes("blood"))) {
   previousquestion = noteContent; blood_repeat++;  response_question = "I've not noticed any blood loss from anywhere";
   document.getElementById("mp4_src").src = "videos/bloodloss.mp4"; allifsaction();}//blood loss
 
-else if (appetite_repeat == 0 && (noteContent.includes("appetite"))) {
+else if (appetite_repeat == 0 && (noteContent.includes("appetite")||noteContent.includes("eating"))) {
   //readOutLoud("I've not noticed any changes in my appetite");
   previousquestion = noteContent; appetite_repeat++;  response_question = "I've not noticed any changes in my appetite";
   document.getElementById("mp4_src").src = "videos/changesinappetite.mp4"; allifsaction();}//changes in appetite
@@ -1503,7 +1504,7 @@ else if (concerns_repeat == 0 && (noteContent.includes("concern")||noteContent.i
   concernsx = true;
   document.getElementById("mp4_src").src = "videos/concerns.mp4"; allifsaction();}//Concerns/anything scaring you
 
-else if (expectations_repeat == 0 && (noteContent.includes("expect")||noteContent.includes("get out of")||noteContent.includes("like from us")||noteContent.includes("hop")
+else if (expectations_repeat == 0 && (noteContent.includes("expect")||noteContent.includes("get out of")||noteContent.includes("like from us")||noteContent.includes("hoping")||noteContent.includes("hope")
 ||noteContent.includes("can we help")||noteContent.includes("what can we do for you")||noteContent.includes("what can i do for you"))) {
   //readOutLoud("I would like to figure out what is going on with me if that's possible, and maybe run a few tests?");
   previousquestion = noteContent; expectations_repeat++;  response_question = "I want to figure out what's going on with me, and maybe run a few tests?";
@@ -1768,6 +1769,8 @@ else if (noteContent === ""){
   
 }
 
+
+
     else {
       
 
@@ -1790,7 +1793,7 @@ else if (noteContent === ""){
         body: JSON.stringify({
           prompt: prompt + '\n' + 'Previous question: ' + previousquestion + '\n' + 'Response to previous question:' + response_question + '\n' + 'question: ' + input + '\n' + 'answer: ', //'\n' + 'output: '
           temperature: 0.1,
-          max_tokens: 45,
+          max_tokens: 5,
           top_p: 1,
           frequency_penalty: 0,
           presence_penalty: 0
@@ -1809,7 +1812,7 @@ else if (noteContent === ""){
   // Check if generatedText ends with sentence-ending punctuation
   while (!(generatedText.endsWith('.') || generatedText.endsWith('!') || generatedText.endsWith('?'))) {
     // Generate additional tokens to complete the sentence
-    const additionalResponse = await fetch('https://api.openai.com/v1/engines/text-davinci-003/completions', {
+    const additionalResponse = await fetch('https://api.openai.com/v1/engines/gpt-3.5-turbo-instruct/completions', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -1880,20 +1883,39 @@ const handleUserInput = async (noteContent) => {
 */
 
 document.getElementById('myVideo').style.display = 'none';
-document.getElementById('mutedVideo').style.display = 'unset';
 
 
 
+
+
+
+
+//for the video without speaking
+document.getElementById('inbetweenVideo').style.display = 'unset'; 
+const inbetweenVideo = document.getElementById('inbetweenVideo');
+inbetweenVideo.load();
+inbetweenVideo.onloadedmetadata = () => {
+  inbetweenVideo.muted = true;
+  inbetweenVideo.play();
+}
+document.getElementById("inbetweenmp4_src").src = "videos/silentvideo.mp4";
+
+
+
+
+
+
+document.getElementById('mutedVideo').style.display = 'unset';  
 const gptvideo = document.getElementById('mutedVideo');
 
 
 const handleUserInput = async (noteContent) => {
   const responsePromise = generateResponse(noteContent);
   const videoPromise = new Promise((resolve) => {
-    gptvideo.onloadedmetadata = () => {
-      gptvideo.muted = true;
+    inbetweenVideo.onloadedmetadata = () => {
+      inbetweenVideo.muted = true;
 
-      gptvideo.play();
+      inbetweenVideo.play();
       resolve();
 
     };
@@ -1902,16 +1924,20 @@ const handleUserInput = async (noteContent) => {
     document.getElementById('errormsg').style.display = 'unset';
 
     document.getElementById("mutedmp4_src").src = "videos/bitmore.mp4";
+    
+    
+   
+
+
     setTimeout(() => {
-
-    gptvideo.load();
-    document.getElementById('loadingcircle').style.display = 'none';
-
+      inbetweenVideo.load(); inbetweenVideo.loop = true;
+      //document.getElementById('loadingcircle').style.display = 'none';
+  /*  
     setTimeout(() => {
       gptvideo.currentTime = gptvideo.duration; // Skip to the end of the video
     }, 7500);//will force stop video ater 7.5secs
-
-  }, 4500);
+*/
+  }, 1);
 
 
 
@@ -1973,6 +1999,29 @@ fetch(`https://api.elevenlabs.io/v1/text-to-speech/${voiceId}/stream`, {
     const url = window.URL.createObjectURL(blob);
     const audio = new Audio(url);
 
+
+    const gptvideo = document.getElementById('mutedVideo');
+    gptvideo.style.display = 'unset';
+    gptvideo.muted = true;
+    gptvideo.play();
+
+    
+
+    audio.onplay = () => {
+        // Stop silent video once voice starts
+        document.getElementById('inbetweenVideo').style.display = 'none';//for the video without speaking
+        silentVideo.pause();
+        silentVideo.style.display = 'none';
+
+        // Start muted video
+        const gptvideo = document.getElementById('mutedVideo');
+        gptvideo.style.display = 'unset';
+        gptvideo.muted = true;
+        gptvideo.play();gptvideo.load();
+    };
+
+
+
     audio.onended = () => {
         const gptvideo = document.getElementById('mutedVideo');
         gptvideo.pause(); // Pause the video after the audio finishes
@@ -1990,6 +2039,19 @@ fetch(`https://api.elevenlabs.io/v1/text-to-speech/${voiceId}/stream`, {
     };
 
     audio.play(); // Play the audio
+
+    audio.onplay = () => {
+      document.getElementById('loadingcircle').style.display = 'none';
+      document.getElementById('errormsg').style.display = 'none';
+
+      inbetweenVideo.loop = false;
+      inbetweenVideo.style.display = 'none';//for the video without speaking
+       
+      const gptvideo = document.getElementById('mutedVideo');
+      gptvideo.style.display = 'unset';
+      gptvideo.muted = true;
+      gptvideo.play();gptvideo.load();
+  }
 })
 
 
@@ -2025,9 +2087,11 @@ fetch(`https://api.elevenlabs.io/v1/text-to-speech/${voiceId}/stream`, {
 
 
 
-
 const userInput = noteContent;
 handleUserInput(userInput);
+
+previousquestion = input;
+response_question = generatedText;
 };//end of the else statement
 
 function allifsaction(){
@@ -5785,6 +5849,61 @@ window.onload = function () {
   loadAnswers(current);
   
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//micisworking.style.boxShadow = `0px 0px 30px rgba(255, 0, 0, 45)`;
+
+navigator.mediaDevices.getUserMedia({ audio: true }).then(stream => {
+  const audioContext = new AudioContext();
+  const analyser = audioContext.createAnalyser();
+  const microphone = audioContext.createMediaStreamSource(stream);
+  const dataArray = new Uint8Array(analyser.frequencyBinCount);
+
+  analyser.fftSize = 512;
+  microphone.connect(analyser);
+
+  function updateGlow() {
+      analyser.getByteFrequencyData(dataArray);
+      let volume = dataArray.reduce((a, b) => a + b) / dataArray.length;
+
+      let glowIntensity = Math.min(volume * 1.5, 50); // Cap intensity at 50px
+
+      micisworking.style.boxShadow = `0px 0px ${glowIntensity}px ${glowIntensity / 2}px rgba(255, 0, 0, 0.8)`;
+      micisworkingexaminations.style.boxShadow = `0px 0px ${glowIntensity}px ${glowIntensity / 2}px rgba(255, 0, 0, 0.8)`;
+      micisworkingsummary.style.boxShadow = `0px 0px ${glowIntensity}px ${glowIntensity / 2}px rgba(255, 0, 0, 0.8)`;
+      micisworkingdifferentials.style.boxShadow = `0px 0px ${glowIntensity}px ${glowIntensity / 2}px rgba(255, 0, 0, 0.8)`;
+      micisworkinginvestigations.style.boxShadow = `0px 0px ${glowIntensity}px ${glowIntensity / 2}px rgba(255, 0, 0, 0.8)`;
+      micisworkingriskfactors.style.boxShadow = `0px 0px ${glowIntensity}px ${glowIntensity / 2}px rgba(255, 0, 0, 0.8)`;
+      micisworkingtreatments.style.boxShadow = `0px 0px ${glowIntensity}px ${glowIntensity / 2}px rgba(255, 0, 0, 0.8)`;
+
+      requestAnimationFrame(updateGlow);
+  }
+
+  updateGlow();
+}).catch(error => console.error(error));
+
+
+
+
+
+
+
+
 
 
 
