@@ -844,7 +844,7 @@ content: "";
 
 
 
-#myVideo, #mutedVideo {
+#myVideo, #mutedVideo, #inbetweenVideo {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1459,6 +1459,19 @@ margin-top: 40px;
 
 
 
+.containerhalfscreen {
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  height: 100vh; /* Full height of viewport */
+}
+
+.left-sidehalfscreen, .right-sidehalfscreen {
+  flex: 1; /* Takes half the screen */
+  display: flex;
+  justify-content: center; /* Center card horizontally */
+  align-items: center; /* Center card vertically */
+}
 
 
 .cardforchecklist {
@@ -1470,15 +1483,24 @@ margin-top: 40px;
   text-align: left;
   font-family: LTSoul;
   font-size: larger;
-  float: right;
-  margin-right: 200px;
-  margin-top: 30px;
+  
 }
 
-@media only screen and (max-width: 650px){
-  .cardforchecklist {
-    width: 100%;    margin-right: 0px;
-  }}
+@media (max-width: 850px) {
+  .containerhalfscreen {
+      flex-direction: column; /* Stack items vertically */
+      height: auto; /* Remove full-height on smaller screens */
+  }
+
+  .left-sidehalfscreen, .right-sidehalfscreen {
+      flex: none; /* Allow sections to take up full width */
+      width: 100%; /* Make each side take the full width */
+      margin: 10px 0; /* Add margin between sections for spacing */
+  }
+}
+
+
+
 
 .cardforchecklist h2 {
   margin-top: 0;
@@ -1542,6 +1564,7 @@ margin-top: 40px;
   right: 0;
   bottom: 0;
   margin: auto;
+  border-radius: 50%;
   
 }
 
@@ -1556,36 +1579,89 @@ margin-top: 40px;
 
 /* IS FOR THE HORIZONTAL SCROLL OF THE DIFFERENT CASES*/
 
+/* Scroll container */
 div.scroll-container {
-  background-color: #333;
-  overflow: auto;
-  white-space: nowrap;
-  padding: 10px;
+  background-color: #333; /* Dark background */
+  overflow-x: auto; /* Horizontal scrolling only */
+  white-space: nowrap; /* Prevent wrapping */
+  padding: 20px; /* Add space inside */
   display: block;
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Soft shadow */
+  
+  /* Customize the scrollbar */
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: #a0c7e0 #333; /* Thumb color and track color for Firefox */
 }
 
+/* Customize the scrollbar for Webkit browsers (Chrome, Safari) */
+div.scroll-container::-webkit-scrollbar {
+  width: 12px; /* Make the scrollbar wider */
+}
+
+div.scroll-container::-webkit-scrollbar-track {
+  background: #333; /* Track color */
+  border-radius: 12px;
+}
+
+div.scroll-container::-webkit-scrollbar-thumb {
+  background-color: #3498db; /* Thumb color */
+  border-radius: 12px;
+  border: 3px solid #333; /* Border around the thumb */
+}
+
+div.scroll-container::-webkit-scrollbar-thumb:hover {
+  background-color: #2980b9; /* Darker color on hover */
+}
+
+/* Images inside the scroll container */
 div.scroll-container img {
-  padding: 10px;
-  padding-bottom: 70px;
+  padding: 15px;
+  border-radius: 10px; /* Rounded corners for images */
+  transition: transform 0.4s ease, box-shadow 0.3s ease; /* Smooth transitions */
+  display: inline-block;
 }
 
-
-
+/* Image container positioning */
 .image-container {
   position: relative;
   display: inline-block;
-  margin: 10px;
+  margin: 15px; /* Space between images */
 }
 
+/* Image caption styles */
 .image-caption {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: white;
-  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+  color: white; /* White text for contrast */
+  padding: 15px;
   text-align: center;
+  font-family: 'Helvetica', sans-serif;
+  font-size: 1.1em;
+  letter-spacing: 1px;
+  transform: translateY(100%); /* Hide caption initially */
+  transition: transform 0.3s ease-in-out; /* Smooth transition */
 }
+
+/* Hover effect on image caption */
+.image-container:hover .image-caption {
+  transform: translateY(0); /* Slide caption up */
+}
+
+.image-container:hover img {
+  transform: scale(1.05); /* Zoom effect on image */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25); /* Stronger shadow on hover */
+}
+
+/* Caption text color change on hover */
+.image-container:hover .image-caption p {
+  color: #3498db; /* Blue text color */
+  font-weight: bold; /* Make text bold on hover */
+}
+
 
 
 
