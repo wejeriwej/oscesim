@@ -6,11 +6,11 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/shoelace-css/1.0.0-beta16/shoelace.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/shoelace-css/1.0.0-beta16/shoelace.css"><!--IS FOR THE HEADER ICON AND FORMAT-->
         <link rel="stylesheet" href="styles.css">
         <link rel="icon" type="image/png" href="logoupdated1.png">
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"><!--IS FOR THE HEADER ICON AND FORMAT-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><!--IS FOR THE HEADER ICON AND FORMAT-->
 
 
     </head>
@@ -57,6 +57,10 @@
               Your browser does not support HTML5 video.
             </video>
 
+            <video id="inbetweenVideo" autoplay><!--if you add the 'controls' before autoplay then you can pause and mute etc -->
+              <source id="inbetweenmp4_src" src="silentvideo.mp4" type="video/mp4">
+              Your browser does not support HTML5 video.
+            </video>
 
             <img id="loadingcircle" src="loadingcircle.gif">
 
@@ -125,8 +129,14 @@
 
 
  <button id="executeButton">Submit ❯</button>
+
+
  
- <img id="micisworking" src="micfinal.gif" style="display: none; z-index: 1;"></img>
+  <img id="micisworking" src="micfinal.gif" style="display: none; z-index: 1;"></img>
+
+
+
+ 
  <p id="micisworking"style="display: none; z-index: 2;">Mic is on</p>
  <img id="messagebeforeacceptingmic" src="permissionformic.png" style=" display : none; z-index: 1;"></img>
 
